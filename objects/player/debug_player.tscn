@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd2x6xpjvqgd3"]
+
+[ext_resource type="Script" path="res://objects/player/DebugPlayer.cs" id="1_b45dx"]
+
+[node name="DebugPlayer" type="Node3D" node_paths=PackedStringArray("Camera")]
+script = ExtResource("1_b45dx")
+Camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]

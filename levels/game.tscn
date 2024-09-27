@@ -1,0 +1,148 @@
+[gd_scene load_steps=19 format=3 uid="uid://rttevpbgllka"]
+
+[ext_resource type="PackedScene" uid="uid://wf8120kbeuqp" path="res://objects/network_spawner/NetworkManager.tscn" id="1_jgd3v"]
+[ext_resource type="Environment" uid="uid://ccmvq7elalltf" path="res://world_env.tres" id="2_3jlda"]
+[ext_resource type="Material" uid="uid://ca7pxvv0xs464" path="res://materials/test/test.material" id="3_pphyk"]
+[ext_resource type="Script" path="res://shaders/fur/fur_testing.gd" id="5_68khy"]
+[ext_resource type="Material" uid="uid://cho7mwegnl6c4" path="res://shaders/fur/fur_test.material" id="6_eggvb"]
+[ext_resource type="Shader" path="res://shaders/fur/fur_test.gdshader" id="7_2oiif"]
+[ext_resource type="Texture2D" uid="uid://bivos5r8usf7w" path="res://shaders/fur/base.jpg" id="8_rinm0"]
+[ext_resource type="PackedScene" uid="uid://b3glpnv4451dh" path="res://animatronics/Bonnie/Bonnie.tscn" id="9_ghfww"]
+[ext_resource type="Texture2D" uid="uid://cyvqwxqnhbdbb" path="res://shaders/fur/base_n.jpg" id="10_yfsp8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dgqp"]
+render_priority = 0
+shader = ExtResource("7_2oiif")
+shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
+shader_parameter/index = 0
+shader_parameter/albedo = ExtResource("8_rinm0")
+shader_parameter/alpha = ExtResource("8_rinm0")
+shader_parameter/normal = ExtResource("10_yfsp8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_56tbb"]
+material = SubResource("ShaderMaterial_0dgqp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgraw"]
+render_priority = 0
+shader = ExtResource("7_2oiif")
+shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
+shader_parameter/index = 1
+shader_parameter/albedo = ExtResource("8_rinm0")
+shader_parameter/alpha = ExtResource("8_rinm0")
+shader_parameter/normal = ExtResource("10_yfsp8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_oxump"]
+material = SubResource("ShaderMaterial_qgraw")
+radius = 0.485
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08ppf"]
+render_priority = 0
+shader = ExtResource("7_2oiif")
+shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
+shader_parameter/index = 2
+shader_parameter/albedo = ExtResource("8_rinm0")
+shader_parameter/alpha = ExtResource("8_rinm0")
+shader_parameter/normal = ExtResource("10_yfsp8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_j0i2o"]
+material = SubResource("ShaderMaterial_08ppf")
+radius = 0.47
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crete"]
+render_priority = 0
+shader = ExtResource("7_2oiif")
+shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
+shader_parameter/index = 3
+shader_parameter/albedo = ExtResource("8_rinm0")
+shader_parameter/alpha = ExtResource("8_rinm0")
+shader_parameter/normal = ExtResource("10_yfsp8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_netuk"]
+material = SubResource("ShaderMaterial_crete")
+radius = 0.455
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_plol2"]
+material = ExtResource("6_eggvb")
+
+[node name="Game" type="Node3D"]
+
+[node name="NetworkManager" parent="." instance=ExtResource("1_jgd3v")]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Sun" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.312067, 0.949992, 0.0114023, 0.256318, -0.0957433, 0.961839, 0.914831, -0.297236, -0.273378, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = ExtResource("2_3jlda")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Environment"]
+size = Vector3(40, 20, 40)
+enable_shadows = true
+
+[node name="Map" type="Node" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("3_pphyk")
+use_collision = true
+size = Vector3(32, 1, 32)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523294, 0.943162, -13.175)
+material_override = ExtResource("3_pphyk")
+radial_segments = 40
+rings = 40
+smooth_faces = false
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17331, 0.943162, -13.175)
+material_override = ExtResource("3_pphyk")
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.942738, 0.943162, -13.175)
+material_override = ExtResource("3_pphyk")
+radial_segments = 100
+rings = 100
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425444, 2.28567, -13.5794)
+shadow_enabled = true
+omni_range = 16.019
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425444, 2.28567, 11.3412)
+shadow_enabled = true
+omni_range = 16.019
+
+[node name="Animatronics" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Animatronics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14235, -6.82851)
+
+[node name="FurTesting" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07125, 0.690404, -8.78378)
+script = ExtResource("5_68khy")
+material = ExtResource("6_eggvb")
+
+[node name="0" type="MeshInstance3D" parent="FurTesting"]
+mesh = SubResource("SphereMesh_56tbb")
+
+[node name="1" type="MeshInstance3D" parent="FurTesting"]
+mesh = SubResource("SphereMesh_oxump")
+
+[node name="2" type="MeshInstance3D" parent="FurTesting"]
+mesh = SubResource("SphereMesh_j0i2o")
+
+[node name="3" type="MeshInstance3D" parent="FurTesting"]
+mesh = SubResource("SphereMesh_netuk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.52801, 0.315392, -8.7718)
+mesh = SubResource("PlaneMesh_plol2")
+
+[node name="Bonnie" parent="." instance=ExtResource("9_ghfww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24858, -0.721816, -4.255)

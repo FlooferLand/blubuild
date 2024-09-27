@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wf8120kbeuqp"]
+
+[ext_resource type="Script" path="res://objects/network_spawner/NetworkManager.cs" id="1_d8xsk"]
+
+[node name="NetworkManager" type="Node" node_paths=PackedStringArray("PlayerSpawnNode")]
+script = ExtResource("1_d8xsk")
+PlayerSpawnNode = NodePath("Players")
+
+[node name="Players" type="Node3D" parent="."]

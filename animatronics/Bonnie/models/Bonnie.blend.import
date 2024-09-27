@@ -1,0 +1,82 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ckmn4b2yyovcm"
+path="res://.godot/imported/Bonnie.blend-95c45fb58d4a65a2864e77313b31de63.scn"
+
+[deps]
+
+source_file="res://animatronics/Bonnie/models/Bonnie.blend"
+dest_files=["res://.godot/imported/Bonnie.blend-95c45fb58d4a65a2864e77313b31de63.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=0.5
+nodes/import_as_skeleton_bones=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=3
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=true
+import_script/path=""
+_subresources={
+"materials": {
+"Bowtie": {
+"use_external/enabled": true,
+"use_external/path": "res://animatronics/Bonnie/materials/bowtie.material"
+},
+"Eyes": {
+"use_external/enabled": true,
+"use_external/path": "res://animatronics/Bonnie/materials/eye.material"
+},
+"Fur": {
+"use_external/enabled": true,
+"use_external/path": "res://animatronics/Bonnie/materials/fur.material"
+},
+"Glass": {
+"use_external/enabled": true,
+"use_external/path": "res://animatronics/Bonnie/materials/glasses_glass.material"
+},
+"Glasses": {
+"use_external/enabled": true,
+"use_external/path": "res://animatronics/Bonnie/materials/glasses_metal.material"
+},
+"Nose": {
+"use_external/enabled": true,
+"use_external/path": ""
+},
+"Teeth": {
+"use_external/enabled": true,
+"use_external/path": "res://animatronics/Bonnie/materials/teeth.material"
+}
+}
+}
+blender/nodes/visible=2
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=false
+blender/nodes/cameras=false
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
