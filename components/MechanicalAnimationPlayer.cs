@@ -40,7 +40,7 @@ public partial class MechanicalAnimationPlayer : Node {
 	}
 
 	public override void _Process(double delta) {
-		foreach ((string animKey, var anim) in activeAnimations) {
+		foreach ((StringName animKey, var anim) in activeAnimations) {
 			RunUpdate(delta, animKey, anim);
 		}
 	}

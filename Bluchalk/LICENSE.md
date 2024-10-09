@@ -1,0 +1,1 @@
+﻿https://github.com/FlooferLand/blubuild/blob/main/LICENSE

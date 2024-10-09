@@ -12,23 +12,35 @@ config_version=5
 
 config/name="Blubuild"
 config/description="Animatronic animation engine"
-run/main_scene="res://levels/game.tscn"
+config/version="0.0.1-DEV"
+run/main_scene="res://levels/init.tscn"
+run/print_header=false
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="res://ui/BluIcon.png"
 
 [autoload]
 
-Autoload="*res://scripts/Autoload.cs"
+SystemAutoload="*res://scripts/autoload/SystemAutoload.cs"
+GlobalStorage="*res://scripts/autoload/GlobalStorage.cs"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/window_width_override=1366
+window/size/window_height_override=768
+window/subwindows/embed_subwindows=false
 
 [dotnet]
 
 project/assembly_name="Blubuild"
+
+[gui]
+
+theme/default_theme_scale=1.25
+theme/custom="res://ui/ui.theme"
+theme/default_font_antialiasing=2
 
 [input]
 

@@ -1,0 +1,158 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj": {}
+  },
+  "projects": {
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj",
+        "projectName": "Bluchalk",
+        "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj",
+        "packagesPath": "/home/flooferland/.nuget/packages/",
+        "outputPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/flooferland/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj": {
+                "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Melanchall.DryWetMidi.Nativeless": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/app/lib/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj",
+        "projectName": "GodotUtils",
+        "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj",
+        "packagesPath": "/home/flooferland/.nuget/packages/",
+        "outputPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/.godot/mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/flooferland/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Godot.SourceGenerators": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "GodotSharp": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "GodotSharpEditor": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/app/lib/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2o6ya2m8wjcr"]
+
+[ext_resource type="Script" path="res://scripts/levels/MainMenu.cs" id="1_hvh3b"]
+[ext_resource type="Shader" path="res://ui/shader/grid.gdshader" id="2_o45by"]
+[ext_resource type="AudioStream" uid="uid://bqpti8mx2thi5" path="res://audio/music/Blubuild Title (crooked smiles).mp3" id="2_sx3u3"]
+[ext_resource type="PackedScene" uid="uid://ckmn4b2yyovcm" path="res://animatronics/Bonnie/models/Bonnie.blend" id="2_wu0v5"]
+[ext_resource type="Texture2D" uid="uid://q1s0sv1r30o5" path="res://ui/grid.png" id="3_m4app"]
+
+[sub_resource type="Environment" id="Environment_1x0aw"]
+background_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1glql"]
+bg_color = Color(0.0352941, 0.0980392, 0.14902, 0.823529)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_481kn"]
+shader = ExtResource("2_o45by")
+shader_parameter/opacity = 0.25
+shader_parameter/tile = 2.0
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvh3b")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Animatronics" type="SubViewportContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Viewport" type="SubViewport" parent="Background/Animatronics"]
+msaa_3d = 1
+size = Vector2i(1920, 1080)
+
+[node name="Scene" type="Node3D" parent="Background/Animatronics/Viewport"]
+
+[node name="Bonnie" parent="Background/Animatronics/Viewport/Scene" instance=ExtResource("2_wu0v5")]
+transform = Transform3D(1.455, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Background/Animatronics/Viewport/Scene"]
+transform = Transform3D(0.895261, 0, 0.445542, 0, 1, 0, -0.445542, 0, 0.895261, 0.051, 1.993, 0.689)
+near = 0.001
+far = 2000.0
+
+[node name="Light" type="OmniLight3D" parent="Background/Animatronics/Viewport/Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8858, 0.530318)
+omni_range = 0.48
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background/Animatronics/Viewport/Scene"]
+environment = SubResource("Environment_1x0aw")
+
+[node name="Side panel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 695.0
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="Side panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1glql")
+
+[node name="TextureRect" type="TextureRect" parent="Side panel"]
+material = SubResource("ShaderMaterial_481kn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_m4app")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Side panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Container" type="VBoxContainer" parent="Side panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="VBoxContainer" parent="Side panel/MarginContainer/Container"]
+layout_mode = 2
+theme_override_constants/separation = -25
+
+[node name="Title" type="Label" parent="Side panel/MarginContainer/Container/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 91
+text = "blubuild"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Author" type="Label" parent="Side panel/MarginContainer/Container/Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.641934, 0.641934, 0.641934, 1)
+text = "FlooferLand 2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Side panel/MarginContainer/Container"]
+layout_mode = 2
+
+[node name="Story mode" type="Button" parent="Side panel/MarginContainer/Container/Buttons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "story mode"
+
+[node name="Sandbox" type="Button" parent="Side panel/MarginContainer/Container/Buttons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "sandbox"
+
+[node name="Editor" type="Button" parent="Side panel/MarginContainer/Container/Buttons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "editor"
+
+[node name="Settings" type="Button" parent="Side panel/MarginContainer/Container/Buttons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "settings"
+
+[node name="Quit" type="Button" parent="Side panel/MarginContainer/Container/Buttons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0, 0, 1)
+text = "nah get me the fuck out"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sx3u3")
+autoplay = true

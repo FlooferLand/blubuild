@@ -13,7 +13,7 @@ public partial class DebugPlayer : Node3D {
 	
 	public void SetNetworkPlayerId(int id) {
 		PlayerId = id;
-		InputSynchronizer.SetMultiplayerAuthority(id);
+		InputSynchronizer!.SetMultiplayerAuthority(id);
 	}
 	
 	public override void _PhysicsProcess(double delta) {

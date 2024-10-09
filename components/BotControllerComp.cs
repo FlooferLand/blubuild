@@ -1,7 +1,8 @@
 using System;
+using GodotUtils;
+using Godot;
 
 namespace Project.Components;
-using Godot;
 
 public partial class BotControllerComp : Node {
 	[Export] public BotInfoComp[] Animatronics = Array.Empty<BotInfoComp>();

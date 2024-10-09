@@ -1,5 +1,7 @@
-namespace Project;
 using Godot;
+using GodotUtils;
+
+namespace Project;
 
 public partial class Player : CharacterBody3D {
 	// Settings
@@ -25,21 +27,16 @@ public partial class Player : CharacterBody3D {
 	private float gravity = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
 	private bool jumping = false;
 	private float speed = Speed;
-	[Export] public int PlayerId = 1;
+	[Export] public int PlayerId = -1;
 	
 	public void SetNetworkPlayerId(int id) {
 		PlayerId = id;
-		Autoload.Player = this;
+		GlobalStorage.LocalPlayer = this;
 		InputSynchronizer.SetMultiplayerAuthority(id);
-	}
-
-	/// Returns true if the current client is controlling this object
-	public bool IsOwner() {
-		return !Multiplayer.IsServer() && PlayerId == Multiplayer.MultiplayerPeer.GetUniqueId();
 	}
 	
 	public override void _Ready() {
-		if (IsOwner()) {
+		if (LocalPeer.ThisClientOwns(this)) {
 			Input.MouseMode = Input.MouseModeEnum.Captured;
 			Camera.MakeCurrent();
 		} else {
@@ -50,14 +47,14 @@ public partial class Player : CharacterBody3D {
 	public override void _PhysicsProcess(double delta) {
 		ApplyMovementServerside(delta);
 		if (Rotation != Vector3.Zero) {
-			GD.PushWarning($"Player rotation should be achieved with {BodyPivot.Name}! Rotation was set on {Name}");
+			GD.PushWarning($"Player rotation should be achieved with {nameof(BodyPivot)}! Rotation was set on {Name}");
 			Rotation = Vector3.Zero;
 		}
 	}
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
-	public void ApplyInteractionServerside(double delta) {
-		Log.Info(InteractRay?.GetCollider()?.ToString());
+	public void ApplyInteractionServerside() {
+		Log.Debug(InteractRay.GetCollider()?.ToString());
 	}
 
 	public void ApplyMovementServerside(double delta) {
@@ -102,7 +99,7 @@ public partial class Player : CharacterBody3D {
 		if (!active || !OS.IsDebugBuild())
 			return;
 
-		bool isOwner = IsOwner();
+		bool isOwner = LocalPeer.ThisClientOwns(this);
 		
 		// Adding a new debug player
 		var debugPlayer = DebugPlayerScene.Instantiate<DebugPlayer>();

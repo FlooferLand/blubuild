@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "d4tez5DuCTaCJXdOLsmYAsyBcqiDVXJ/ofRTqNHZNoRf/cWPnuYzFUXCoY6beCvyCvLfKF9KiwCHUD3ryO1vCw==",
+  "success": true,
+  "projectFilePath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj",
+  "expectedPackageFiles": [
+    "/home/flooferland/.nuget/packages/godot.sourcegenerators/4.3.0/godot.sourcegenerators.4.3.0.nupkg.sha512",
+    "/home/flooferland/.nuget/packages/godotsharp/4.3.0/godotsharp.4.3.0.nupkg.sha512",
+    "/home/flooferland/.nuget/packages/godotsharpeditor/4.3.0/godotsharpeditor.4.3.0.nupkg.sha512",
+    "/home/flooferland/.nuget/packages/melanchall.drywetmidi.nativeless/7.2.0/melanchall.drywetmidi.nativeless.7.2.0.nupkg.sha512",
+    "/home/flooferland/.nuget/packages/microsoft.netcore.app.ref/6.0.25/microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "/home/flooferland/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.25/microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

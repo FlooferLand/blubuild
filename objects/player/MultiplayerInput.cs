@@ -9,7 +9,7 @@ public partial class MultiplayerInput : MultiplayerSynchronizer {
 
 	public override void _Ready() {
 		// Stop processing in this class from running on the server
-		if (GetMultiplayerAuthority() != Multiplayer.GetUniqueId() || Multiplayer.IsServer()) {
+		if (!LocalPeer.ThisClientOwns(this) || !LocalPeer.IsClient) {
 			SetProcess(false);
 			SetProcessInput(false);
 			SetPhysicsProcess(false);
@@ -21,12 +21,12 @@ public partial class MultiplayerInput : MultiplayerSynchronizer {
 			InputMouse = (motion.Relative * 0.002f);
 		}
 		if (Input.IsActionPressed("interact_primary")) {
-			Autoload.Player.Rpc(nameof(Autoload.Player.ApplyInteractionServerside), true);
+			GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.ApplyInteractionServerside), true);
 		} else if (Input.IsActionPressed("interact_secondary")) {
-			Autoload.Player.Rpc(nameof(Autoload.Player.ApplyInteractionServerside), false);
+			GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.ApplyInteractionServerside), false);
 		} else if (Input.IsActionPressed("debug")) {
 			FlyCamEnabled = !FlyCamEnabled;
-			Autoload.Player.Rpc(nameof(Autoload.Player.SetFlyCam), FlyCamEnabled);
+			GlobalStorage.LocalPlayer.Rpc(nameof(GlobalStorage.LocalPlayer.SetFlyCam), FlyCamEnabled);
 		} else if (Input.IsActionJustPressed("window_toggle_focus") && GetWindow().HasFocus()) {
 			Input.MouseMode = Input.MouseMode == Input.MouseModeEnum.Visible
 				? Input.MouseModeEnum.Captured

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ks5hjk7s3l07"]
+
+[ext_resource type="Script" path="res://scripts/levels/Init.cs" id="1_5ekc4"]
+
+[node name="Init" type="Node"]
+process_mode = 3
+script = ExtResource("1_5ekc4")

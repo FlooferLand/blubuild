@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3glpnv4451dh" path="res://animatronics/Bonnie/Bonnie.tscn" id="9_ghfww"]
 [ext_resource type="Texture2D" uid="uid://cyvqwxqnhbdbb" path="res://shaders/fur/base_n.jpg" id="10_yfsp8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dgqp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5s6le"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -19,10 +19,10 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_56tbb"]
-material = SubResource("ShaderMaterial_0dgqp")
+[sub_resource type="SphereMesh" id="SphereMesh_vsahf"]
+material = SubResource("ShaderMaterial_5s6le")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgraw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxiom"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -31,11 +31,11 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_oxump"]
-material = SubResource("ShaderMaterial_qgraw")
+[sub_resource type="SphereMesh" id="SphereMesh_qg7vk"]
+material = SubResource("ShaderMaterial_rxiom")
 radius = 0.485
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_08ppf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ist6t"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -44,11 +44,11 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_j0i2o"]
-material = SubResource("ShaderMaterial_08ppf")
+[sub_resource type="SphereMesh" id="SphereMesh_1s5o4"]
+material = SubResource("ShaderMaterial_ist6t")
 radius = 0.47
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_crete"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djm2g"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -57,8 +57,8 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_netuk"]
-material = SubResource("ShaderMaterial_crete")
+[sub_resource type="SphereMesh" id="SphereMesh_ul2sy"]
+material = SubResource("ShaderMaterial_djm2g")
 radius = 0.455
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_plol2"]
@@ -129,16 +129,16 @@ script = ExtResource("5_68khy")
 material = ExtResource("6_eggvb")
 
 [node name="0" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_56tbb")
+mesh = SubResource("SphereMesh_vsahf")
 
 [node name="1" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_oxump")
+mesh = SubResource("SphereMesh_qg7vk")
 
 [node name="2" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_j0i2o")
+mesh = SubResource("SphereMesh_1s5o4")
 
 [node name="3" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_netuk")
+mesh = SubResource("SphereMesh_ul2sy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.52801, 0.315392, -8.7718)

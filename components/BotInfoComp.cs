@@ -1,5 +1,3 @@
-using System;
-
 namespace Project.Components;
 using Godot;
 
@@ -8,11 +6,11 @@ using Godot;
  */
 public partial class BotInfoComp : Node {
 	[ExportCategory("Name")]
-	[Export] public string DisplayName;
+	[Export] public string DisplayName = string.Empty;
 
 	[ExportCategory("Name")]
-	[Export] public string IdNamespace;
-	[Export] public string IdName;
+	[Export] public string IdNamespace = string.Empty;
+	[Export] public string IdName = string.Empty;
 
 	[ExportCategory("Nodes")]
 	[Export] public Node3D Mesh;
@@ -31,8 +29,5 @@ public partial class BotInfoComp : Node {
 				id == str,
 			_ => false
 		};
-	}
-	public override int GetHashCode() {
-		return HashCode.Combine(IdNamespace, IdName);
 	}
 }

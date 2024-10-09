@@ -2,6 +2,12 @@
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blubuild", "Blubuild.csproj", "{C2704406-6D1C-49C2-A998-FFDEF0D2306A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bluchalk", "Bluchalk\Bluchalk.csproj", "{26A70034-FC73-4964-8B42-55E062CF417A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GodotUtils", "GodotUtils\GodotUtils.csproj", "{0E0A40F8-64B3-4529-A70F-089312BA1B6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bluchalk.Tests", "Bluchalk.Tests\Bluchalk.Tests.csproj", "{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	Debug|Any CPU = Debug|Any CPU
@@ -15,5 +21,23 @@ Global
 		{C2704406-6D1C-49C2-A998-FFDEF0D2306A}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{C2704406-6D1C-49C2-A998-FFDEF0D2306A}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{C2704406-6D1C-49C2-A998-FFDEF0D2306A}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{26A70034-FC73-4964-8B42-55E062CF417A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A70034-FC73-4964-8B42-55E062CF417A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A70034-FC73-4964-8B42-55E062CF417A}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A70034-FC73-4964-8B42-55E062CF417A}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{26A70034-FC73-4964-8B42-55E062CF417A}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A70034-FC73-4964-8B42-55E062CF417A}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{0E0A40F8-64B3-4529-A70F-089312BA1B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0A40F8-64B3-4529-A70F-089312BA1B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0A40F8-64B3-4529-A70F-089312BA1B6A}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0A40F8-64B3-4529-A70F-089312BA1B6A}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0A40F8-64B3-4529-A70F-089312BA1B6A}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0A40F8-64B3-4529-A70F-089312BA1B6A}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C04065-FAA1-48E7-B5A6-C59E6A0C401A}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

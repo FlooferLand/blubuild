@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "O+cDd8G5bpIPGIPpyoY8LTKEu95TbP0cRsX1E4pMFwpEqQXqY/35lA7CZmIAndXtB/iddGcO17bCGzMYwVgbOQ==",
+  "success": true,
+  "projectFilePath": "F:\\Godot Projects\\blubuild\\GodotUtils\\GodotUtils.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FlooferLand\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\FlooferLand\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\FlooferLand\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
