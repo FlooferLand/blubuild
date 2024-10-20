@@ -50,6 +50,31 @@
           }
         }
       },
+      "SharpCompress/0.38.0": {
+        "type": "package",
+        "dependencies": {
+          "ZstdSharp.Port": "0.8.1"
+        },
+        "compile": {
+          "lib/net6.0/SharpCompress.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SharpCompress.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "ZstdSharp.Port/0.8.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ZstdSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ZstdSharp.dll": {}
+        }
+      },
       "GodotUtils/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -123,6 +148,47 @@
         "melanchall.drywetmidi.nativeless.nuspec"
       ]
     },
+    "SharpCompress/0.38.0": {
+      "sha512": "8i6KqjAFI3mvya8W8rnQrf5h4vz6ilw4zqk2AzInVqqqZ25TD6fmVeYBnlisjTWwP26eltZc0buSmJ8a3YIGxg==",
+      "type": "package",
+      "path": "sharpcompress/0.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/SharpCompress.dll",
+        "lib/net462/SharpCompress.pdb",
+        "lib/net6.0/SharpCompress.dll",
+        "lib/net6.0/SharpCompress.pdb",
+        "lib/net8.0/SharpCompress.dll",
+        "lib/net8.0/SharpCompress.pdb",
+        "lib/netstandard2.0/SharpCompress.dll",
+        "lib/netstandard2.0/SharpCompress.pdb",
+        "lib/netstandard2.1/SharpCompress.dll",
+        "lib/netstandard2.1/SharpCompress.pdb",
+        "sharpcompress.0.38.0.nupkg.sha512",
+        "sharpcompress.nuspec"
+      ]
+    },
+    "ZstdSharp.Port/0.8.1": {
+      "sha512": "19tNz33kn2EkyViFXuxfVn338UJaRmkwBphVqP2dVJIYQUQgFrgG5h061mxkRRg1Ax6r+6WOj1FxaFZ5qaWqqg==",
+      "type": "package",
+      "path": "zstdsharp.port/0.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/ZstdSharp.dll",
+        "lib/net5.0/ZstdSharp.dll",
+        "lib/net6.0/ZstdSharp.dll",
+        "lib/net7.0/ZstdSharp.dll",
+        "lib/net8.0/ZstdSharp.dll",
+        "lib/netcoreapp3.1/ZstdSharp.dll",
+        "lib/netstandard2.0/ZstdSharp.dll",
+        "lib/netstandard2.1/ZstdSharp.dll",
+        "zstdsharp.port.0.8.1.nupkg.sha512",
+        "zstdsharp.port.nuspec"
+      ]
+    },
     "GodotUtils/1.0.0": {
       "type": "project",
       "path": "../GodotUtils/GodotUtils.csproj",
@@ -132,7 +198,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "GodotUtils >= 1.0.0",
-      "Melanchall.DryWetMidi.Nativeless >= 7.2.0"
+      "Melanchall.DryWetMidi.Nativeless >= 7.2.0",
+      "SharpCompress >= 0.38.0"
     ]
   },
   "packageFolders": {
@@ -170,6 +237,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -179,6 +251,10 @@
           "Melanchall.DryWetMidi.Nativeless": {
             "target": "Package",
             "version": "[7.2.0, )"
+          },
+          "SharpCompress": {
+            "target": "Package",
+            "version": "[0.38.0, )"
           }
         },
         "imports": [
@@ -195,11 +271,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
+            "version": "[6.0.30, 6.0.30]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
+            "version": "[6.0.30, 6.0.30]"
           }
         ],
         "frameworkReferences": {
@@ -207,7 +283,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/app/lib/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.300/RuntimeIdentifierGraph.json"
       }
     }
   }

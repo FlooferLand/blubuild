@@ -344,11 +344,31 @@
       },
       "NUnit.Analyzers/3.6.1": {},
       "NUnit3TestAdapter/4.2.1": {},
+      "SharpCompress/0.38.0": {
+        "dependencies": {
+          "ZstdSharp.Port": "0.8.1"
+        },
+        "runtime": {
+          "lib/net8.0/SharpCompress.dll": {
+            "assemblyVersion": "0.38.0.0",
+            "fileVersion": "0.38.0.0"
+          }
+        }
+      },
       "System.Reflection.Metadata/1.6.0": {},
+      "ZstdSharp.Port/0.8.1": {
+        "runtime": {
+          "lib/net8.0/ZstdSharp.dll": {
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
+          }
+        }
+      },
       "Bluchalk/1.0.0": {
         "dependencies": {
           "GodotUtils": "1.0.0",
-          "Melanchall.DryWetMidi.Nativeless": "7.2.0"
+          "Melanchall.DryWetMidi.Nativeless": "7.2.0",
+          "SharpCompress": "0.38.0"
         },
         "runtime": {
           "Bluchalk.dll": {}
@@ -484,12 +504,26 @@
       "path": "nunit3testadapter/4.2.1",
       "hashPath": "nunit3testadapter.4.2.1.nupkg.sha512"
     },
+    "SharpCompress/0.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8i6KqjAFI3mvya8W8rnQrf5h4vz6ilw4zqk2AzInVqqqZ25TD6fmVeYBnlisjTWwP26eltZc0buSmJ8a3YIGxg==",
+      "path": "sharpcompress/0.38.0",
+      "hashPath": "sharpcompress.0.38.0.nupkg.sha512"
+    },
     "System.Reflection.Metadata/1.6.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
       "path": "system.reflection.metadata/1.6.0",
       "hashPath": "system.reflection.metadata.1.6.0.nupkg.sha512"
+    },
+    "ZstdSharp.Port/0.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-19tNz33kn2EkyViFXuxfVn338UJaRmkwBphVqP2dVJIYQUQgFrgG5h061mxkRRg1Ax6r+6WOj1FxaFZ5qaWqqg==",
+      "path": "zstdsharp.port/0.8.1",
+      "hashPath": "zstdsharp.port.0.8.1.nupkg.sha512"
     },
     "Bluchalk/1.0.0": {
       "type": "project",

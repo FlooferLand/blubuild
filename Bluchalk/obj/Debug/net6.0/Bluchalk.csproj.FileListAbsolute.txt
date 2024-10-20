@@ -32,9 +32,12 @@ F:/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.csproj.CopyComplet
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfoInputs.cache
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfo.cs
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.csproj.CoreCompileInputs.cache
-/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.csproj.CopyComplete
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.dll
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/refint/Bluchalk.dll
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.pdb
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.genruntimeconfig.cache
 /mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/ref/Bluchalk.dll
+/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/bin/Debug/net6.0/SharpCompress.dll
+/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/bin/Debug/net6.0/ZstdSharp.dll
+/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.sourcelink.json
+/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/Debug/net6.0/Bluchalk.csproj.Up2Date

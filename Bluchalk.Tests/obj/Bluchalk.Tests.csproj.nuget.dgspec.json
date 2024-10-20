@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\Bluchalk.Tests.csproj": {}
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/Bluchalk.Tests.csproj": {}
   },
   "projects": {
-    "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\Bluchalk.Tests.csproj": {
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/Bluchalk.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\Bluchalk.Tests.csproj",
+        "projectUniqueName": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/Bluchalk.Tests.csproj",
         "projectName": "Bluchalk.Tests",
-        "projectPath": "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\Bluchalk.Tests.csproj",
-        "packagesPath": "C:\\Users\\FlooferLand\\.nuget\\packages\\",
-        "outputPath": "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\obj\\",
+        "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/Bluchalk.Tests.csproj",
+        "packagesPath": "/home/flooferland/.nuget/packages/",
+        "outputPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FlooferLand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/flooferland/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj": {
-                "projectPath": "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj"
+              "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj": {
+                "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj"
               }
             }
           }
@@ -36,6 +36,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -79,21 +84,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\FlooferLand\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/flooferland/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj": {
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj",
+        "projectUniqueName": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj",
         "projectName": "Bluchalk",
-        "projectPath": "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj",
-        "packagesPath": "C:\\Users\\FlooferLand\\.nuget\\packages\\",
-        "outputPath": "F:\\Godot Projects\\blubuild\\Bluchalk\\obj\\",
+        "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj",
+        "packagesPath": "/home/flooferland/.nuget/packages/",
+        "outputPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FlooferLand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/flooferland/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -105,8 +110,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Godot Projects\\blubuild\\GodotUtils\\GodotUtils.csproj": {
-                "projectPath": "F:\\Godot Projects\\blubuild\\GodotUtils\\GodotUtils.csproj"
+              "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj": {
+                "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj"
               }
             }
           }
@@ -115,6 +120,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -124,6 +134,10 @@
             "Melanchall.DryWetMidi.Nativeless": {
               "target": "Package",
               "version": "[7.2.0, )"
+            },
+            "SharpCompress": {
+              "target": "Package",
+              "version": "[0.38.0, )"
             }
           },
           "imports": [
@@ -140,15 +154,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.33, 6.0.33]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.33, 6.0.33]"
             }
           ],
           "frameworkReferences": {
@@ -156,21 +166,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\FlooferLand\\.dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/flooferland/.dotnet/sdk/9.0.100-rc.1.24452.12/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\Godot Projects\\blubuild\\GodotUtils\\GodotUtils.csproj": {
+    "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Godot Projects\\blubuild\\GodotUtils\\GodotUtils.csproj",
+        "projectUniqueName": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj",
         "projectName": "GodotUtils",
-        "projectPath": "F:\\Godot Projects\\blubuild\\GodotUtils\\GodotUtils.csproj",
-        "packagesPath": "C:\\Users\\FlooferLand\\.nuget\\packages\\",
-        "outputPath": "F:\\Godot Projects\\blubuild\\GodotUtils\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/GodotUtils.csproj",
+        "packagesPath": "/home/flooferland/.nuget/packages/",
+        "outputPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/GodotUtils/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FlooferLand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/flooferland/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -188,6 +198,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -221,15 +236,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.33, 6.0.33]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.33, 6.0.33]"
             }
           ],
           "frameworkReferences": {
@@ -237,7 +248,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\FlooferLand\\.dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/flooferland/.dotnet/sdk/9.0.100-rc.1.24452.12/RuntimeIdentifierGraph.json"
         }
       }
     }

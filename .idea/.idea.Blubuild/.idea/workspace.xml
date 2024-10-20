@@ -4,11 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d969e4-497a-4dde-9973-bbf2c3d28bee" name="Changes" comment="" />
+    <list default="true" id="70d969e4-497a-4dde-9973-bbf2c3d28bee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/bin/Debug/net8.0/CoverletSourceRootsMapping_Bluchalk.Tests" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/bin/Debug/net8.0/CoverletSourceRootsMapping_Bluchalk.Tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/rider.project.model.nuget.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/08f0ea1144634eedbe3a87b9762ef1dd4bd200/d2/0cd53ab3/NodePath.cs" root0="SKIP_HIGHLIGHTING" />
@@ -36,33 +68,38 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Executable.Bluchalk.executor": "Run",
-    ".NET Executable.Player.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.3536",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\FlooferLand\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\FlooferLand\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\FlooferLand\\AppData\\Local\\Symbols\\src"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Executable.Bluchalk.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Executable.Player.executor&quot;: &quot;Run&quot;,
+    &quot;9c36bb73-6a3c-4e5e-91ed-8fbe0d27a3cf.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.3536&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Executable.Player">
+}</component>
+  <component name="RunManager" selected=".NET Executable.Editor">
+    <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
+      <option name="address" value="127.0.0.1" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
     <configuration name="Bluchalk" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/scoop/apps/godot-mono/current/godot-mono.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/.local/bin/godot_mono/godot_mono.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="chalk convert --input=./test.rshw --output=./test.zshw" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.local/bin/godot_mono" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -73,9 +110,9 @@
       </method>
     </configuration>
     <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/scoop/apps/godot-mono/current/godot-mono.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/godot_mono.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
-      <option name="WORKING_DIRECTORY" value="F:\Godot Projects\blubuild" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -86,7 +123,7 @@
       </method>
     </configuration>
     <configuration name="Player" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/scoop/apps/godot-mono/current/godot-mono.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/godot_mono.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -102,6 +139,7 @@
       <item itemvalue=".NET Executable.Editor" />
       <item itemvalue=".NET Executable.Player" />
       <item itemvalue=".NET Executable.Bluchalk" />
+      <item itemvalue="GdScript Start and Debug.Player GDScript" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -126,6 +164,9 @@
       <workItem from="1728053752268" duration="603000" />
       <workItem from="1728110395327" duration="1732000" />
       <workItem from="1728114870689" duration="8255000" />
+      <workItem from="1728555492745" duration="1191000" />
+      <workItem from="1728725626450" duration="41000" />
+      <workItem from="1728726359233" duration="1286000" />
     </task>
     <servers />
   </component>

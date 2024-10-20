@@ -36,6 +36,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -45,6 +50,10 @@
             "Melanchall.DryWetMidi.Nativeless": {
               "target": "Package",
               "version": "[7.2.0, )"
+            },
+            "SharpCompress": {
+              "target": "Package",
+              "version": "[0.38.0, )"
             }
           },
           "imports": [
@@ -61,11 +70,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.30, 6.0.30]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.30, 6.0.30]"
             }
           ],
           "frameworkReferences": {
@@ -73,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/app/lib/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.300/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -105,6 +114,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -138,11 +152,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.30, 6.0.30]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.30, 6.0.30]"
             }
           ],
           "frameworkReferences": {
@@ -150,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/app/lib/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }

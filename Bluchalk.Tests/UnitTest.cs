@@ -10,7 +10,12 @@ public class Tests {
     }
 
     [Test]
-    public void Test1() {
-        Assert.Pass();
+    public void TestRshow() {
+        using var fileStream = File.OpenRead("../../../../tapes/test_raw/signal.mid");
+        using (var streamReader = new StreamReader(fileStream)) {
+            rshow?.Read(streamReader.BaseStream);
+            Assert.Pass();
+        }
+        Assert.Fail();
     }
 }

@@ -417,6 +417,22 @@
           "build/netcoreapp2.1/NUnit3TestAdapter.props": {}
         }
       },
+      "SharpCompress/0.38.0": {
+        "type": "package",
+        "dependencies": {
+          "ZstdSharp.Port": "0.8.1"
+        },
+        "compile": {
+          "lib/net8.0/SharpCompress.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/SharpCompress.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "System.Reflection.Metadata/1.6.0": {
         "type": "package",
         "compile": {
@@ -430,12 +446,22 @@
           }
         }
       },
+      "ZstdSharp.Port/0.8.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/ZstdSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/ZstdSharp.dll": {}
+        }
+      },
       "Bluchalk/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GodotUtils": "1.0.0",
-          "Melanchall.DryWetMidi.Nativeless": "7.2.0"
+          "Melanchall.DryWetMidi.Nativeless": "7.2.0",
+          "SharpCompress": "0.38.0"
         },
         "compile": {
           "bin/placeholder/Bluchalk.dll": {}
@@ -1086,6 +1112,28 @@
         "nunit3testadapter.nuspec"
       ]
     },
+    "SharpCompress/0.38.0": {
+      "sha512": "8i6KqjAFI3mvya8W8rnQrf5h4vz6ilw4zqk2AzInVqqqZ25TD6fmVeYBnlisjTWwP26eltZc0buSmJ8a3YIGxg==",
+      "type": "package",
+      "path": "sharpcompress/0.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/SharpCompress.dll",
+        "lib/net462/SharpCompress.pdb",
+        "lib/net6.0/SharpCompress.dll",
+        "lib/net6.0/SharpCompress.pdb",
+        "lib/net8.0/SharpCompress.dll",
+        "lib/net8.0/SharpCompress.pdb",
+        "lib/netstandard2.0/SharpCompress.dll",
+        "lib/netstandard2.0/SharpCompress.pdb",
+        "lib/netstandard2.1/SharpCompress.dll",
+        "lib/netstandard2.1/SharpCompress.pdb",
+        "sharpcompress.0.38.0.nupkg.sha512",
+        "sharpcompress.nuspec"
+      ]
+    },
     "System.Reflection.Metadata/1.6.0": {
       "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
       "type": "package",
@@ -1105,6 +1153,25 @@
         "system.reflection.metadata.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "ZstdSharp.Port/0.8.1": {
+      "sha512": "19tNz33kn2EkyViFXuxfVn338UJaRmkwBphVqP2dVJIYQUQgFrgG5h061mxkRRg1Ax6r+6WOj1FxaFZ5qaWqqg==",
+      "type": "package",
+      "path": "zstdsharp.port/0.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/ZstdSharp.dll",
+        "lib/net5.0/ZstdSharp.dll",
+        "lib/net6.0/ZstdSharp.dll",
+        "lib/net7.0/ZstdSharp.dll",
+        "lib/net8.0/ZstdSharp.dll",
+        "lib/netcoreapp3.1/ZstdSharp.dll",
+        "lib/netstandard2.0/ZstdSharp.dll",
+        "lib/netstandard2.1/ZstdSharp.dll",
+        "zstdsharp.port.0.8.1.nupkg.sha512",
+        "zstdsharp.port.nuspec"
       ]
     },
     "Bluchalk/1.0.0": {
@@ -1129,19 +1196,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FlooferLand\\.nuget\\packages\\": {}
+    "/home/flooferland/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\Bluchalk.Tests.csproj",
+      "projectUniqueName": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/Bluchalk.Tests.csproj",
       "projectName": "Bluchalk.Tests",
-      "projectPath": "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\Bluchalk.Tests.csproj",
-      "packagesPath": "C:\\Users\\FlooferLand\\.nuget\\packages\\",
-      "outputPath": "F:\\Godot Projects\\blubuild\\Bluchalk.Tests\\obj\\",
+      "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/Bluchalk.Tests.csproj",
+      "packagesPath": "/home/flooferland/.nuget/packages/",
+      "outputPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FlooferLand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/flooferland/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1153,8 +1220,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj": {
-              "projectPath": "F:\\Godot Projects\\blubuild\\Bluchalk\\Bluchalk.csproj"
+            "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj": {
+              "projectPath": "/mnt/SuperFastStorage/Godot Projects/blubuild/Bluchalk/Bluchalk.csproj"
             }
           }
         }
@@ -1163,6 +1230,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
       }
     },
     "frameworks": {
@@ -1206,7 +1278,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\FlooferLand\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/flooferland/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

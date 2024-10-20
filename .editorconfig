@@ -1,0 +1,8 @@
+[*.cs]
+
+# Default severity for analyzer diagnostics with category 'Style'
+dotnet_analyzer_diagnostic.category-Style.severity = none
+[*.{cs,vb}]
+
+# IDE0049: Simplify Names
+dotnet_diagnostic.IDE0049.severity = none

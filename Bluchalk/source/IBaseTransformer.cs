@@ -10,5 +10,5 @@ public interface IBaseTransformer {
     
     /// Creates a file from a buffer. <br/>
     /// Only called if <see cref="RespectsFormat"/> returns <c>true</c>.
-    public Result<SignalContainer> Read();
+    public Result<SignalContainer> Read(Stream stream);
 }
