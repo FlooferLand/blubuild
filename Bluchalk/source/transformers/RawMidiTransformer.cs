@@ -21,8 +21,8 @@ public class RawMidiTransformer : IBaseTransformer {
         foreach (var note in file.GetNotes()) {
             var startTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOnEvent().Time, file.GetTempoMap());
             var endTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOffEvent().Time, file.GetTempoMap());
-            output.Add(new SignalEvents.BitEvent(startTime, note, true));
-            output.Add(new SignalEvents.BitEvent(endTime, note, false));
+            output.AddEvent(note.NoteNumber, new SignalEvents.BitEvent(startTime, note, true));
+            output.AddEvent(note.NoteNumber, new SignalEvents.BitEvent(endTime, note, false));
         }
         return Result<ShowData>.Ok(new ShowData("Unknown", file.GetDuration<MetricTimeSpan>(), output));
     }

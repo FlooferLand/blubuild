@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Godot;
 using GodotUtils;
 
@@ -37,7 +38,7 @@ public partial class Player : CharacterBody3D {
 	
 	public override void _Ready() {
 		if (LocalPeer.ThisClientOwns(this)) {
-			Input.MouseMode = Input.MouseModeEnum.Captured;
+			if (!Debugger.IsAttached) Input.MouseMode = Input.MouseModeEnum.Captured;
 			Camera.MakeCurrent();
 		} else {
 			Camera.ClearCurrent();

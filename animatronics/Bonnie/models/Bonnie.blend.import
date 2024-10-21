@@ -26,10 +26,10 @@ meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
-animation/fps=30
+animation/fps=60.0
 animation/trimming=true
-animation/remove_immutable_tracks=true
-animation/import_rest_as_RESET=true
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
@@ -61,6 +61,13 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://animatronics/Bonnie/materials/teeth.material"
 }
+},
+"nodes": {
+"PATH:Skeleton3D": {
+"rest_pose/external_animation_library": null,
+"rest_pose/load_pose": 1,
+"rest_pose/selected_animation": "Armature"
+}
 }
 }
 blender/nodes/visible=2
@@ -75,8 +82,8 @@ blender/meshes/normals=true
 blender/meshes/tangents=true
 blender/meshes/skins=2
 blender/meshes/export_bones_deforming_mesh_only=false
-blender/materials/unpack_enabled=true
+blender/materials/unpack_enabled=false
 blender/materials/export_materials=1
-blender/animation/limit_playback=true
-blender/animation/always_sample=true
+blender/animation/limit_playback=false
+blender/animation/always_sample=false
 blender/animation/group_tracks=true

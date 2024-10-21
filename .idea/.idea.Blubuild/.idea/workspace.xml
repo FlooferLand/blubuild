@@ -5,34 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d969e4-497a-4dde-9973-bbf2c3d28bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/BluTransformer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/ShowData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/SignalEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/SignalEvents.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/bash/godot_path.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/bash/run-singleplayer.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/bash/run-twoplayer.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/SignalChannel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/Bluchalk.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/Bluchalk.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/RawTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/RshowTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/RshowTransformer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Option.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Option.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BotControllerComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/BotControllerComp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/Bonnie.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/Bonnie.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend.import" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.fbx.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MechanicalAnimationPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/MechanicalAnimationPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/network_spawner/LocalPeer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/network_spawner/LocalPeer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/network_spawner/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/network_spawner/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/MultiplayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/MultiplayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tapes/test_raw/audio.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tapes/test_raw/audio.mp3.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tapes/test_raw/signal.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/show_player/ShowPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/show_player/ShowPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/show_player/ShowPlayer.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/objects/show_player/ShowPlayer.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +35,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4fd22cd129a84c16b5d8004b467c426f518800/d7/981162b0/CSharpInstanceBridge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9191eac31f284a10b284fabb9f96c4bcc2d600/a4/2fbb6dbd/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9191eac31f284a10b284fabb9f96c4bcc2d600/f2/f413f601/File.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2573b8ba349ab892b6ec716eeef54e6079ce39ad7efae8544a7fa7e739073/MidiFile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46a322d26154b982566e1817203e5452c91223f93b0e392d9c5b4806696fdc1/Assert.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67eee66a83caf7a85359d31bf0130cf12998edca034697eb379f860a256df/AnimationMixer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7c810b14959e374951c1199291087581a9748ffa8c449c7b0c0208b52bdba/TimeDivision.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -82,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Shell Script.Multiplayer (2 players).executor": "Run",
-    "Shell Script.Singleplayer.executor": "Run",
+    "Shell Script.Singleplayer.executor": "Debug",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/mnt/SuperFastStorage/Godot Projects/blubuild/scripts/debug/run-twoplayer.sh",
     "node.js.detected.package.eslint": "true",
@@ -94,7 +86,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Shell Script.Singleplayer">
+  <component name="RunManager" selected=".NET Executable.Singleplayer">
     <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
       <option name="address" value="127.0.0.1" />
       <option name="allowRunningInParallel" value="false" />
@@ -108,6 +100,32 @@
     <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
       <option name="EXE_PATH" value="$USER_HOME$/.local/bin/godot_mono/godot_mono.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Player" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/.local/bin/godot_mono/godot_mono.x86_64" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot;" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Singleplayer" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/.local/bin/godot_mono/godot_mono.x86_64" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -149,6 +167,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue=".NET Executable.Player" />
+      <item itemvalue=".NET Executable.Singleplayer" />
       <item itemvalue=".NET Executable.Editor" />
       <item itemvalue="GdScript Start and Debug.Player GDScript" />
       <item itemvalue="Shell Script.Singleplayer" />
@@ -182,6 +202,8 @@
       <workItem from="1728726359233" duration="1286000" />
       <workItem from="1729436047971" duration="3854000" />
       <workItem from="1729442277386" duration="30687000" />
+      <workItem from="1729509317780" duration="6311000" />
+      <workItem from="1729536750534" duration="13627000" />
     </task>
     <servers />
   </component>

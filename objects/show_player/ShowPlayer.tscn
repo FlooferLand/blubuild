@@ -4,7 +4,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_nr5gl"]
 
-[node name="ShowPlayer" type="Node" node_paths=PackedStringArray("Audio", "VisualBitMap")]
+[node name="ShowPlayer" type="Node3D" node_paths=PackedStringArray("Audio", "VisualBitMap")]
 script = ExtResource("1_pakm1")
 Audio = NodePath("Audio")
 VisualBitMap = NodePath("CanvasLayer/Debug/BitMap")

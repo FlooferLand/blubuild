@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://ui/BluIcon.png"
 
+[audio]
+
+buses/default_bus_layout="res://audio/audio_bus.tres"
+
 [autoload]
 
 SystemAutoload="*res://scripts/autoload/SystemAutoload.cs"

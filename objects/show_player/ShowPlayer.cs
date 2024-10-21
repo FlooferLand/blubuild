@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Bluchalk;
 using Bluchalk.types;
@@ -8,7 +9,7 @@ namespace Project;
 using Godot;
 
 /// Handles playing a show from a file
-public partial class ShowPlayer : Node {
+public partial class ShowPlayer : Node3D {
 	[ExportGroup("Public")]
 	[Export] public BotControllerComp BotController;
 	
@@ -18,7 +19,8 @@ public partial class ShowPlayer : Node {
 
 	private Option<ShowData> showData = Option<ShowData>.None();
 	private bool playing = false;
-	private int currentEvent = 0;
+	private Dictionary<int, int> currentEvents = new();
+	private Dictionary<int, bool> bitMap = new();
 	private TimeSpan currentTime = TimeSpan.Zero;
 	
 	public override void _Ready() {
@@ -28,46 +30,60 @@ public partial class ShowPlayer : Node {
 	// TODO: Make it so it can read several bits at the same time
 	public override void _Process(double delta) {
 		// Playing the show
-		if (playing && showData.LetSome(out var data) && currentEvent < data.Signal.Count()) {
-			if (currentEvent == 0) {
+		if (playing && showData.LetSome(out var data)) {
+			if (!Audio.Playing)
 				Audio.Play();
-			}
-			
-			// Getting the events
-			var current = data.Signal.Get(currentEvent);
-			if (current == null) return;
-			var next = data.Signal.Get(currentEvent + 1) ?? current;
-			
-			if (currentTime > next.TimeStamp) {
-				currentEvent += 1;
-				DebugUpdateBit(current.RawNote.NoteNumber, !current.Enabled);
+			foreach ((int id, var channel) in data.Signal.Channels()) {
+				if (!currentEvents.ContainsKey(id))
+					currentEvents.TryAdd(id, 0);
+				if (!bitMap.ContainsKey(id))
+					bitMap.TryAdd(id, false);
+				if (currentEvents[id] >= channel.CountEvents())
+					continue;
+
+				// Getting the events
+				var current = channel.GetEvent(currentEvents[id]);
+				if (current == null) return;
+				var next = channel.GetEvent(currentEvents[id] + 1) ?? current;
+
+				if (currentTime > next.TimeStamp) {
+					currentEvents[id] += 1;
+					DebugUpdateBit(current.RawNote.NoteNumber, ! current.Enabled);
+				}
 			}
 			
 			// Counting the time
 			currentTime += TimeSpan.FromSeconds(delta);
-			//GD.Print($"Time: {currentTime}  |  Event: {currentEvent / 2}");
+			if (currentTime >= data.Length) {
+				Stop();
+			}
+			
+			// Updating the debug bit visualizer
+			var img = (VisualBitMap.Texture as ImageTexture).GetImage()
+			          ?? Image.CreateEmpty(4, 4, false, Image.Format.Rgb8);
+			int i = 0;
+			img.Fill(Colors.Black);
+			foreach ((int k, bool v) in bitMap) {
+				img.SetPixel(i, 0, v ? Colors.Green : Colors.DarkRed);
+				i++;
+			}
+			(VisualBitMap.Texture as ImageTexture).SetImage(img);
 		}
 	}
 
 	private void DebugUpdateBit(int bit, bool value) {
 		const int jawBit = 84;
-		const int headUpBit = 48;
+		const int headUpBit = 56;
+		const int strumBit = 48;
 		
 		string bitString = bit switch {
+			headUpBit => "10 TD - Head up",
 			jawBit => "20 TD - Jaw",
-			headUpBit => "10 TD - Head up"
+			strumBit => "30 TD - Strum",
 		};
 		
-		// Updating the animation
 		BotController?.TriggerAction(bitString, value);
-		
-		// Updating the debug bit visualizer
-		var img = (VisualBitMap.Texture as ImageTexture).GetImage()
-		          ?? Image.CreateEmpty(4, 4, false, Image.Format.Rgb8);
-		img.Fill(Colors.Black);
-		img.SetPixel(0, 0, (bit == jawBit && value) ? Colors.Green : Colors.DarkRed);
-		img.SetPixel(1, 0, (bit == headUpBit && value) ? Colors.Green : Colors.DarkRed);
-		(VisualBitMap.Texture as ImageTexture).SetImage(img);
+		bitMap[bit] = value;
 	}
 
 	#region Public playback stuff
@@ -96,7 +112,7 @@ public partial class ShowPlayer : Node {
 	}
 
 	public void Stop() {
-		currentEvent = 0;
+		currentEvents.Clear();
 		showData = Option<ShowData>.None();
 		playing = false;
 		Audio.Stop();

@@ -7,21 +7,35 @@ namespace Bluchalk;
 
 /// Holds event signals and has some handy methods
 public class SignalContainer {
-    private List<SignalEvents.BitEvent> events = new();
+    private Dictionary<int, SignalChannel> channels = new();
     
-    public void Add(SignalEvents.BitEvent signal) {
-        events.Add(signal);
+    public void AddChannel(int channelId, SignalChannel channel) {
+        channels.Add(channelId, channel);
     }
     
-    public SignalEvents.BitEvent? Get(int i) {
-        return i < events.Count ? events[i] : null;
+    public void AddEvent(int channelId, SignalEvents.BitEvent signalEvent) {
+        if (!Exists(channelId)) {
+            AddChannel(channelId, new SignalChannel());
+        }
+        Get(channelId).AddEvent(signalEvent);
+    }
+    
+    public SignalChannel? Get(int channelId) {
+        return Exists(channelId) ? channels[channelId] : null;
+    }
+    
+    public bool Exists(int channelId) {
+        return channels.ContainsKey(channelId);
     }
     
     public int Count() {
-        return events.Count;
+        return channels.Count;
     }
-
-    public IEnumerable<SignalEvents.BitEvent> Events() {
-        return events;
+    
+    public IEnumerable<KeyValuePair<int, SignalChannel>> Channels() {
+        var e = channels.GetEnumerator();
+        while (e.MoveNext()) {
+            yield return e.Current;
+        }
     }
 }
