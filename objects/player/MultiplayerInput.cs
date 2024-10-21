@@ -1,3 +1,5 @@
+using System;
+
 namespace Project;
 using Godot;
 
@@ -20,13 +22,18 @@ public partial class MultiplayerInput : MultiplayerSynchronizer {
 		if (@event is InputEventMouseMotion motion) {
 			InputMouse = (motion.Relative * 0.002f);
 		}
-		if (Input.IsActionPressed("interact_primary")) {
-			GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.ApplyInteractionServerside), true);
-		} else if (Input.IsActionPressed("interact_secondary")) {
-			GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.ApplyInteractionServerside), false);
-		} else if (Input.IsActionPressed("debug")) {
+
+		// TODO: Finish networking the interaction system
+		// if (Input.IsActionPressed("interact_primary")) {
+		// 	GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.ApplyInteractionServerside), true);
+		// }
+		// else if (Input.IsActionPressed("interact_secondary")) {
+		// 	GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.ApplyInteractionServerside), false);
+		// }
+
+		if (Input.IsActionPressed("debug")) {
 			FlyCamEnabled = !FlyCamEnabled;
-			GlobalStorage.LocalPlayer.Rpc(nameof(GlobalStorage.LocalPlayer.SetFlyCam), FlyCamEnabled);
+			GlobalStorage.LocalPlayer?.Rpc(nameof(GlobalStorage.LocalPlayer.SetFlyCam), FlyCamEnabled);
 		} else if (Input.IsActionJustPressed("window_toggle_focus") && GetWindow().HasFocus()) {
 			Input.MouseMode = Input.MouseMode == Input.MouseModeEnum.Visible
 				? Input.MouseModeEnum.Captured

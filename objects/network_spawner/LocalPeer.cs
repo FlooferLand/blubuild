@@ -3,6 +3,7 @@ using Godot;
 
 namespace Project;
 
+/// Keeps track of what the local instance of the game is (is it a client, is it a server, etc.)
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public static class LocalPeer {
     private static bool _isClient = false;

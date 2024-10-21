@@ -5,57 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d969e4-497a-4dde-9973-bbf2c3d28bee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/BluTransformer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/ShowData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/SignalEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/SignalEvents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/bash/godot_path.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/bash/run-singleplayer.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/bash/run-twoplayer.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/bin/Debug/net8.0/CoverletSourceRootsMapping_Bluchalk.Tests" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/bin/Debug/net8.0/CoverletSourceRootsMapping_Bluchalk.Tests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Bluchalk.Tests.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.GlobalUsings.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/Debug/net8.0/Bluchalk.Tests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Bluchalk.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/Debug/net6.0/Bluchalk.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/Bluchalk.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/Bluchalk.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/source/RawTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/source/RshowTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/RshowTransformer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Option.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Option.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BotControllerComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/BotControllerComp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/network_spawner/LocalPeer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/network_spawner/LocalPeer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/network_spawner/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/network_spawner/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/MultiplayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/MultiplayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tapes/test_raw/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tapes/test_raw/audio.mp3.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tapes/test_raw/signal.mid" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/08f0ea1144634eedbe3a87b9762ef1dd4bd200/d2/0cd53ab3/NodePath.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/84/7a53b5d2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e65599dd4514f1f98ec9fea8615070874510/5a/f5cf947b/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2f4d8fc47c1b775bb749d8672e815dfa6e8de81af32c541219339c7384be230/MultiplayerSynchronizer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4c106212bbf2629b38ab58a197c420211743e719d36bb53a9d215c473b644a60/Window.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71cae0e57536a516a3b79ad9552b2632fdb5cd252bd7e096ec4b851c4d65262/AnimationPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b92585a2941c39bc3abf3f7f1d5ab117aae375b2c5c977a2baff656fbeb65/NativeCalls.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bb1b701f3c7411227a9d2e09f965d857ff3e771557650c4f513e427d77c/Node.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f62b88e5b5b5849ad215d302c3a54ecd2a9ab42/Godot.NativeInterop.NativeFuncs.generated.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9191eac31f284a10b284fabb9f96c4bcc2d600/f2/f413f601/File.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2573b8ba349ab892b6ec716eeef54e6079ce39ad7efae8544a7fa7e739073/MidiFile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46a322d26154b982566e1817203e5452c91223f93b0e392d9c5b4806696fdc1/Assert.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7c810b14959e374951c1199291087581a9748ffa8c449c7b0c0208b52bdba/TimeDivision.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Bluchalk/source/RshowTransformer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Bluchalk/source/transformers/RshowTransformer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -65,27 +63,38 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2mPfaofRmpIQTVWuh2oEWEA5Otw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Executable.Bluchalk.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Executable.Player.executor&quot;: &quot;Run&quot;,
-    &quot;9c36bb73-6a3c-4e5e-91ed-8fbe0d27a3cf.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.3536&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Executable.Bluchalk.executor": "Run",
+    ".NET Executable.Multiplayer (1 player).executor": "Run",
+    ".NET Executable.Multiplayer (2 players).executor": "Run",
+    ".NET Executable.Player.executor": "Run",
+    ".NET Executable.Server.executor": "Run",
+    ".NET Executable.Singleplayer.executor": "Run",
+    "9c36bb73-6a3c-4e5e-91ed-8fbe0d27a3cf.executor": "Debug",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Shell Script.Multiplayer (2 players).executor": "Run",
+    "Shell Script.Singleplayer.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/mnt/SuperFastStorage/Godot Projects/blubuild/scripts/debug/run-twoplayer.sh",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected=".NET Executable.Editor">
+}]]></component>
+  <component name="RunManager" selected="Shell Script.Singleplayer">
     <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
       <option name="address" value="127.0.0.1" />
       <option name="allowRunningInParallel" value="false" />
@@ -96,21 +105,8 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Bluchalk" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/.local/bin/godot_mono/godot_mono.x86_64" />
-      <option name="PROGRAM_PARAMETERS" value="chalk convert --input=./test.rshw --output=./test.zshw" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.local/bin/godot_mono" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="RUNTIME_TYPE" value="coreclr" />
-      <method v="2">
-        <option name="Build Solution" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/godot_mono.x86_64" />
+      <option name="EXE_PATH" value="$USER_HOME$/.local/bin/godot_mono/godot_mono.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -122,24 +118,41 @@
         <option name="Build Solution" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Player" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/godot_mono.x86_64" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="RUNTIME_TYPE" value="coreclr" />
-      <method v="2">
-        <option name="Build Solution" enabled="true" />
-      </method>
+    <configuration name="Multiplayer (2 players)" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/scripts/bash/run-twoplayer.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="false" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Singleplayer" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/scripts/bash/run-singleplayer.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="false" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue=".NET Executable.Editor" />
-      <item itemvalue=".NET Executable.Player" />
-      <item itemvalue=".NET Executable.Bluchalk" />
       <item itemvalue="GdScript Start and Debug.Player GDScript" />
+      <item itemvalue="Shell Script.Singleplayer" />
+      <item itemvalue="Shell Script.Multiplayer (2 players)" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -167,6 +180,8 @@
       <workItem from="1728555492745" duration="1191000" />
       <workItem from="1728725626450" duration="41000" />
       <workItem from="1728726359233" duration="1286000" />
+      <workItem from="1729436047971" duration="3854000" />
+      <workItem from="1729442277386" duration="30687000" />
     </task>
     <servers />
   </component>

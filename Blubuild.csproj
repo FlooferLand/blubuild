@@ -27,4 +27,9 @@
     <ProjectReference Include="Bluchalk\Bluchalk.csproj" />
     <ProjectReference Include="GodotUtils\GodotUtils.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\bash\godot_path.txt" />
+    <Content Include="scripts\bash\run-singleplayer.sh" />
+    <Content Include="scripts\bash\run-twoplayer.sh" />
+  </ItemGroup>
 </Project>

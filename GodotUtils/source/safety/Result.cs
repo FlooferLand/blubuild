@@ -83,4 +83,11 @@ public class Result<TOk, TErr> {
         return value ?? @default;
     }
     #endregion
+    
+    #region Getting the error
+    public bool LetErr(out TErr err) {
+        err = error!;
+        return !IsOk;
+    }
+    #endregion
 }

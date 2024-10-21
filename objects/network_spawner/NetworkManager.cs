@@ -13,13 +13,11 @@ public partial class NetworkManager : Node {
 	[Export] public Node3D PlayerSpawnNode;
 	private PackedScene playerScene = GD.Load<PackedScene>("res://objects/player/player.tscn");
 	
-	// State
-
 	public override void _EnterTree() {
 		var window = GetWindow();
 		var clientNum = SystemAutoload.Args.GetValueFlag<int>("client");
 		bool isServer = SystemAutoload.Args.GetBoolFlag("server");
-
+		
 		// If the server, or a client
 		window.Size = new Vector2I(900, 648);
 		if (isServer) {
@@ -27,21 +25,23 @@ public partial class NetworkManager : Node {
 			window.Mode = Window.ModeEnum.Minimized;
 			LocalPeer.Init(true, false, false);
 			StartServer();
-		} else {
-			if (clientNum.HasValue) {
-				var pos = (DisplayServer.ScreenGetSize() / 2) - (window.Size / 2);
-				pos.X += (window.Size.X - (window.Size.X / 2)) * (clientNum.UnwrapOr(0) == 1 ? -1 : 1);
-				window.Position = pos;
-				SystemAutoload.TitleNetworkingType = "client";
-				LocalPeer.Init(false, true, false);
-				StartClient();
-			} else {  // Integrated server with client (no arguments)
-				window.MoveToCenter();
-				SystemAutoload.TitleNetworkingType = "singleplayer";
-				LocalPeer.Init(true, true, true);
-				StartServer();
-			}
+			return;
 		}
+		if (clientNum.LetSome(out int num)) {
+			var pos = (DisplayServer.ScreenGetSize() / 2) - (window.Size / 2);
+			pos.X += (window.Size.X - (window.Size.X / 2)) * (num == 1 ? -1 : 1);
+			window.Position = pos;
+			SystemAutoload.TitleNetworkingType = "client";
+			LocalPeer.Init(false, true, false);
+			StartClient(num);
+			return;
+		}
+
+		// Integrated server with client (no arguments)
+		window.MoveToCenter();
+		SystemAutoload.TitleNetworkingType = "singleplayer";
+		LocalPeer.Init(true, true, true);
+		StartServer();
 	}
 
 	public override void _ExitTree() {
@@ -52,7 +52,7 @@ public partial class NetworkManager : Node {
 
 	#region Management
 	public void StartServer() {
-		Log.Info($"Starting server ({nameof(LocalPeer.IntegratedServer)}={LocalPeer.IntegratedServer})");
+		Log.Info("Starting server" + (LocalPeer.IntegratedServer ? $"(integrated)" : ""));
 
 		var peer = new ENetMultiplayerPeer();
 		peer.CreateServer(ServerPort);
@@ -69,8 +69,8 @@ public partial class NetworkManager : Node {
 		if (LocalPeer.IntegratedServer) AddPlayer(peer.GetUniqueId());
 	}
 
-	public void StartClient() {
-		Log.Info("Starting client");
+	public void StartClient(int num) {
+		Log.Info($"Starting client {num}");
 
 		var peer = new ENetMultiplayerPeer();
 		peer.CreateClient(ServerAddress, ServerPort);

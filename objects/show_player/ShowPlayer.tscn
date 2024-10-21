@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://huxs3b3aw1i6"]
+
+[ext_resource type="Script" path="res://objects/show_player/ShowPlayer.cs" id="1_pakm1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_nr5gl"]
+
+[node name="ShowPlayer" type="Node" node_paths=PackedStringArray("Audio", "VisualBitMap")]
+script = ExtResource("1_pakm1")
+Audio = NodePath("Audio")
+VisualBitMap = NodePath("CanvasLayer/Debug/BitMap")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Debug" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BitMap" type="TextureRect" parent="CanvasLayer/Debug"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 24.0
+offset_right = 121.0
+offset_bottom = 112.0
+texture = SubResource("ImageTexture_nr5gl")

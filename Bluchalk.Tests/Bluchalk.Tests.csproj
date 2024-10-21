@@ -20,5 +20,4 @@
     <ItemGroup>
       <ProjectReference Include="..\Bluchalk\Bluchalk.csproj" />
     </ItemGroup>
-
 </Project>

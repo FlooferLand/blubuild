@@ -1,0 +1,1 @@
+/home/flooferland/.local/bin/godot_mono/godot_mono.x86_64

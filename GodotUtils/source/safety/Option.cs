@@ -39,14 +39,15 @@ public readonly struct Option<T> {
     #endregion
 
     #region Getting the value
-    public T LetSome() {
-        return value;
+    public bool LetSome(out T val) {
+        val = value!;
+        return HasValue;
     }
     
     public delegate T MapSomeValue(T val);
     public Option<T> MapSome(MapSomeValue mapper) {
         var val = Some(value);
-        return val.LetSome() is {} v ? Some(mapper(v)) : None();
+        return val.LetSome(out var v) ? Some(mapper(v)) : None();
     }
     
     public T Expect(string message) {
@@ -62,4 +63,8 @@ public readonly struct Option<T> {
         return value ?? @default;
     }
     #endregion
+
+    public override string ToString() {
+        return HasValue ? $"Some({value})" : "None";
+    }
 }

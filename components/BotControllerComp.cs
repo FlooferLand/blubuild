@@ -23,7 +23,7 @@ public partial class BotControllerComp : Node {
 		AnimPlayer.PlayAnimation(animation, !on);
 	}
 
-	public override void _Input(InputEvent @event) {
+	/*public override void _Input(InputEvent @event) {
 		if (@event is InputEventKey key) {
 			if (key.Echo) return;
 			if (key.Keycode == Key.J) {
@@ -45,5 +45,5 @@ public partial class BotControllerComp : Node {
 					TriggerAction("30 TD - Strum", false);
 			}
 		}
-	}
+	}*/
 }

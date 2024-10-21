@@ -1,20 +1,20 @@
 namespace Bluchalk.Tests;
 
 public class Tests {
-    private RshowTransformer? rshow;
-
     [SetUp]
-    public void Setup() {
-        // Loading in an rshow
-        rshow = new RshowTransformer();
-    }
+    public void Setup() { }
 
     [Test]
-    public void TestRshow() {
-        using var fileStream = File.OpenRead("../../../../tapes/test_raw/signal.mid");
+    public void TestRaw() {
+        var show = new RawMidiTransformer();
+        using var fileStream = File.OpenRead("../../../../showtapes/test_raw/signal.mid");
         using (var streamReader = new StreamReader(fileStream)) {
-            rshow?.Read(streamReader.BaseStream);
-            Assert.Pass();
+            var result = show.Read(streamReader.BaseStream);
+            if (result.LetOk(out var container)) {
+                Assert.Pass();
+            } else if (result.LetErr(out string err)) {
+                Assert.Fail(err);
+            }
         }
         Assert.Fail();
     }

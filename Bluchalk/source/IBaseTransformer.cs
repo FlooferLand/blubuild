@@ -1,4 +1,5 @@
-﻿using Project;
+﻿using Bluchalk.types;
+using Project;
 
 namespace Bluchalk;
 
@@ -6,9 +7,9 @@ namespace Bluchalk;
 /// Mostly used for conversion between formats.
 public interface IBaseTransformer {
     /// Returns <c>true</c> if the buffer matches the specifications for this format
-    public Boolean RespectsFormat();
+    public Boolean RespectsFormat(Stream stream);
     
     /// Creates a file from a buffer. <br/>
     /// Only called if <see cref="RespectsFormat"/> returns <c>true</c>.
-    public Result<SignalContainer> Read(Stream stream);
+    public Result<ShowData> Read(Stream stream);
 }

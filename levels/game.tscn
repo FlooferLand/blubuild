@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://rttevpbgllka"]
+[gd_scene load_steps=20 format=3 uid="uid://rttevpbgllka"]
 
 [ext_resource type="PackedScene" uid="uid://wf8120kbeuqp" path="res://objects/network_spawner/NetworkManager.tscn" id="1_jgd3v"]
 [ext_resource type="Environment" uid="uid://ccmvq7elalltf" path="res://world_env.tres" id="2_3jlda"]
 [ext_resource type="Material" uid="uid://ca7pxvv0xs464" path="res://materials/test/test.material" id="3_pphyk"]
+[ext_resource type="PackedScene" uid="uid://huxs3b3aw1i6" path="res://objects/show_player/ShowPlayer.tscn" id="3_x7ney"]
 [ext_resource type="Script" path="res://shaders/fur/fur_testing.gd" id="5_68khy"]
 [ext_resource type="Material" uid="uid://cho7mwegnl6c4" path="res://shaders/fur/fur_test.material" id="6_eggvb"]
 [ext_resource type="Shader" path="res://shaders/fur/fur_test.gdshader" id="7_2oiif"]
@@ -10,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3glpnv4451dh" path="res://animatronics/Bonnie/Bonnie.tscn" id="9_ghfww"]
 [ext_resource type="Texture2D" uid="uid://cyvqwxqnhbdbb" path="res://shaders/fur/base_n.jpg" id="10_yfsp8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpyyg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3geal"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -19,10 +20,10 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_c343r"]
-material = SubResource("ShaderMaterial_xpyyg")
+[sub_resource type="SphereMesh" id="SphereMesh_v81px"]
+material = SubResource("ShaderMaterial_3geal")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dx51g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1a8x"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -31,11 +32,11 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_xhemh"]
-material = SubResource("ShaderMaterial_dx51g")
+[sub_resource type="SphereMesh" id="SphereMesh_5xg4g"]
+material = SubResource("ShaderMaterial_u1a8x")
 radius = 0.485
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pnsj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01df5"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -44,11 +45,11 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_bicmw"]
-material = SubResource("ShaderMaterial_1pnsj")
+[sub_resource type="SphereMesh" id="SphereMesh_4aukr"]
+material = SubResource("ShaderMaterial_01df5")
 radius = 0.47
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yinm8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0okij"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -57,8 +58,8 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_eyaoy"]
-material = SubResource("ShaderMaterial_yinm8")
+[sub_resource type="SphereMesh" id="SphereMesh_vps66"]
+material = SubResource("ShaderMaterial_0okij")
 radius = 0.455
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_plol2"]
@@ -80,6 +81,38 @@ environment = ExtResource("2_3jlda")
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Environment"]
 size = Vector3(40, 20, 40)
 enable_shadows = true
+
+[node name="Animatronics" type="Node" parent="."]
+
+[node name="ShowPlayer" parent="Animatronics" node_paths=PackedStringArray("BotController") instance=ExtResource("3_x7ney")]
+BotController = NodePath("../Bonnie/Components/Controller")
+
+[node name="Bonnie" parent="Animatronics" instance=ExtResource("9_ghfww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24858, -0.721816, -4.255)
+
+[node name="Teeth" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="0"]
+transform = Transform3D(1, 8.90395e-10, 1.88578e-11, -8.89941e-10, 0.999993, 0.00373877, -1.52696e-11, -0.00373877, 0.999993, 8.17269e-11, 1.77916, 0.219869)
+
+[node name="Tongue" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="1"]
+transform = Transform3D(1, 8.90395e-10, 1.88578e-11, -8.89941e-10, 0.999993, 0.00373877, -1.52696e-11, -0.00373877, 0.999993, 1.17562e-10, 1.82359, -0.000495657)
+
+[node name="Glasses" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="2"]
+transform = Transform3D(1, 8.81528e-10, 1.7792e-11, -8.81755e-10, 0.999993, 0.0037374, -1.43814e-11, -0.0037374, 0.999993, -1.49061e-09, -0.00337708, 0.00633247)
+
+[node name="Glasses glass" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="3"]
+transform = Transform3D(1, 8.81528e-10, 1.7792e-11, -8.81755e-10, 0.999993, 0.0037374, -1.43814e-11, -0.0037374, 0.999993, -1.4867e-09, 0.00106035, 0.00631589)
+
+[node name="Teeth_001" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="4"]
+transform = Transform3D(1, 8.81528e-10, 1.75646e-11, -8.81755e-10, 0.999993, 0.0037374, -1.42677e-11, -0.0037374, 0.999993, -1.48698e-09, -7.52211e-05, 0.00632006)
+
+[node name="Eyes" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="5"]
+transform = Transform3D(1, 8.90766e-10, 2.14158e-11, -8.9084e-10, 0.999993, 0.00373712, -1.81331e-11, -0.00373712, 0.999993, 3.38416e-10, 2.06778, 0.180607)
+
+[node name="Eyes_001" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="6"]
+transform = Transform3D(1, 6.77106e-10, 5.7918e-10, -8.9084e-10, 0.772958, 0.634457, -1.81331e-11, -0.634458, 0.772958, 3.38539e-10, 2.0678, 0.18653)
+
+[node name="Cube_003" parent="Animatronics/Bonnie/Bonnie/Skeleton3D" index="7"]
+transform = Transform3D(1, 3.81917e-14, 4.12115e-13, -3.81917e-14, 1, -5.96046e-08, -4.68958e-13, 5.96046e-08, 1, -2.61012e-14, -1.19209e-07, 1.49012e-08)
 
 [node name="Map" type="Node" parent="."]
 
@@ -118,9 +151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425444, 2.28567, 11.3412)
 shadow_enabled = true
 omni_range = 16.019
 
-[node name="Animatronics" type="Node" parent="."]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Animatronics"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14235, -6.82851)
 
 [node name="FurTesting" type="Node3D" parent="."]
@@ -129,20 +160,20 @@ script = ExtResource("5_68khy")
 material = ExtResource("6_eggvb")
 
 [node name="0" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_c343r")
+mesh = SubResource("SphereMesh_v81px")
 
 [node name="1" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_xhemh")
+mesh = SubResource("SphereMesh_5xg4g")
 
 [node name="2" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_bicmw")
+mesh = SubResource("SphereMesh_4aukr")
 
 [node name="3" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_eyaoy")
+mesh = SubResource("SphereMesh_vps66")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.52801, 0.315392, -8.7718)
 mesh = SubResource("PlaneMesh_plol2")
 
-[node name="Bonnie" parent="." instance=ExtResource("9_ghfww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24858, -0.721816, -4.255)
+[editable path="Animatronics/Bonnie"]
+[editable path="Animatronics/Bonnie/Bonnie"]
