@@ -73,6 +73,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="Camera" type="Camera3D" parent="Pivot/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 fov = 80.0
 
 [node name="InteractRay" type="RayCast3D" parent="Pivot/Head"]

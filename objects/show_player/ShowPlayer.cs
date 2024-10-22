@@ -116,6 +116,7 @@ public partial class ShowPlayer : Node3D {
 		showData = Option<ShowData>.None();
 		playing = false;
 		Audio.Stop();
+		BotController.AnimPlayer.StopAll();
 	}
 
 	public void Pause() {

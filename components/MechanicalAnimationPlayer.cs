@@ -114,6 +114,12 @@ public partial class MechanicalAnimationPlayer : Node {
 			audio.Release.Play();
 		}
 	}
+
+	public void StopAll() {
+		foreach (var (animName, _) in activeAnimations) {
+			StopAnimation(animName);
+		}
+	}
 	
 	public void RunUpdate(double delta, StringName animKey, RunningAnimation anim) {
 		var animation = anim.Animation;

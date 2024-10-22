@@ -65,7 +65,6 @@ _subresources={
 "nodes": {
 "PATH:Skeleton3D": {
 "rest_pose/external_animation_library": null,
-"rest_pose/load_pose": 1,
 "rest_pose/selected_animation": "Armature"
 }
 }

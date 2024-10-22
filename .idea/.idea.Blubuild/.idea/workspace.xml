@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d969e4-497a-4dde-9973-bbf2c3d28bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bluchalk/source/types/SignalChannel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/Bonnie.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/Bonnie.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend.import" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend.import" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.fbx.import" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MechanicalAnimationPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/MechanicalAnimationPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objects/show_player/ShowPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/show_player/ShowPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/show_player/ShowPlayer.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/objects/show_player/ShowPlayer.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,31 +53,31 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Executable.Bluchalk.executor": "Run",
-    ".NET Executable.Multiplayer (1 player).executor": "Run",
-    ".NET Executable.Multiplayer (2 players).executor": "Run",
-    ".NET Executable.Player.executor": "Run",
-    ".NET Executable.Server.executor": "Run",
-    ".NET Executable.Singleplayer.executor": "Run",
-    "9c36bb73-6a3c-4e5e-91ed-8fbe0d27a3cf.executor": "Debug",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Shell Script.Multiplayer (2 players).executor": "Run",
-    "Shell Script.Singleplayer.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/mnt/SuperFastStorage/Godot Projects/blubuild/scripts/debug/run-twoplayer.sh",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Executable.Bluchalk.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Executable.Multiplayer (1 player).executor&quot;: &quot;Run&quot;,
+    &quot;.NET Executable.Multiplayer (2 players).executor&quot;: &quot;Run&quot;,
+    &quot;.NET Executable.Player.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Executable.Server.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Executable.Singleplayer.executor&quot;: &quot;Run&quot;,
+    &quot;9c36bb73-6a3c-4e5e-91ed-8fbe0d27a3cf.executor&quot;: &quot;Debug&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Shell Script.Multiplayer (2 players).executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.Singleplayer.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/SuperFastStorage/Godot Projects/blubuild/scripts/debug/run-twoplayer.sh&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Executable.Singleplayer">
     <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
       <option name="address" value="127.0.0.1" />
@@ -204,6 +196,7 @@
       <workItem from="1729442277386" duration="30687000" />
       <workItem from="1729509317780" duration="6311000" />
       <workItem from="1729536750534" duration="13627000" />
+      <workItem from="1729554964430" duration="2378000" />
     </task>
     <servers />
   </component>

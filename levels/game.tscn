@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b3glpnv4451dh" path="res://animatronics/Bonnie/Bonnie.tscn" id="9_ghfww"]
 [ext_resource type="Texture2D" uid="uid://cyvqwxqnhbdbb" path="res://shaders/fur/base_n.jpg" id="10_yfsp8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b81ro"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iuejr"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -21,10 +21,10 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_2a452"]
-material = SubResource("ShaderMaterial_b81ro")
+[sub_resource type="SphereMesh" id="SphereMesh_dlepx"]
+material = SubResource("ShaderMaterial_iuejr")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ro0s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31wwh"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -33,11 +33,11 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_ttjvw"]
-material = SubResource("ShaderMaterial_0ro0s")
+[sub_resource type="SphereMesh" id="SphereMesh_3oyo0"]
+material = SubResource("ShaderMaterial_31wwh")
 radius = 0.485
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsbn1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0vh1"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -46,11 +46,11 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_r5g5h"]
-material = SubResource("ShaderMaterial_xsbn1")
+[sub_resource type="SphereMesh" id="SphereMesh_clkrr"]
+material = SubResource("ShaderMaterial_i0vh1")
 radius = 0.47
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sk1sk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8grtn"]
 render_priority = 0
 shader = ExtResource("7_2oiif")
 shader_parameter/color = Color(0.478461, 0.761152, 0.590608, 1)
@@ -59,8 +59,8 @@ shader_parameter/albedo = ExtResource("8_rinm0")
 shader_parameter/alpha = ExtResource("8_rinm0")
 shader_parameter/normal = ExtResource("10_yfsp8")
 
-[sub_resource type="SphereMesh" id="SphereMesh_bsl6m"]
-material = SubResource("ShaderMaterial_sk1sk")
+[sub_resource type="SphereMesh" id="SphereMesh_tefij"]
+material = SubResource("ShaderMaterial_8grtn")
 radius = 0.455
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_plol2"]
@@ -90,10 +90,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 BotController = NodePath("../Bonnie/Components/Controller")
 
 [node name="Bonnie" parent="Animatronics" instance=ExtResource("9_ghfww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24858, -0.721816, -4.255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24858, -0.15291, -4.255)
 
 [node name="BonnieModel" parent="Animatronics" instance=ExtResource("5_pp6va")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86513, -0.802625, -6.13695)
+transform = Transform3D(0.819932, -0.572461, -2.50231e-08, 0, -4.37114e-08, 1, -0.572461, -0.819932, -3.58404e-08, 2.35771, -0.00933951, -6.13695)
 
 [node name="Map" type="Node" parent="."]
 
@@ -141,16 +141,16 @@ script = ExtResource("5_68khy")
 material = ExtResource("6_eggvb")
 
 [node name="0" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_2a452")
+mesh = SubResource("SphereMesh_dlepx")
 
 [node name="1" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_ttjvw")
+mesh = SubResource("SphereMesh_3oyo0")
 
 [node name="2" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_r5g5h")
+mesh = SubResource("SphereMesh_clkrr")
 
 [node name="3" type="MeshInstance3D" parent="FurTesting"]
-mesh = SubResource("SphereMesh_bsl6m")
+mesh = SubResource("SphereMesh_tefij")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.52801, 0.315392, -8.7718)
