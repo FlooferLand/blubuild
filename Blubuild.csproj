@@ -1,35 +1,25 @@
-<Project Sdk="Godot.NET.Sdk/4.3.0">
+<Project Sdk="Godot.NET.Sdk/4.6.2-rc.2">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net7.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'ios' ">net8.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;ExportDebug;ExportRelease;Release;Benchmark</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="GodotUtils\**" />
     <Compile Remove="script_templates\**" />
     <Compile Remove="Bluchalk\**" />
-    <Compile Remove="Test\**" />
-    <Compile Remove="GodotUtils\**" />
-    <Compile Remove="Bluchalk.Tests\**" />
+    <Compile Remove="Blutest\**" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Remove="GodotUtils\**" />
     <EmbeddedResource Remove="script_templates\**" />
     <EmbeddedResource Remove="Bluchalk\**" />
-    <EmbeddedResource Remove="Test\**" />
-    <EmbeddedResource Remove="GodotUtils\**" />
-    <EmbeddedResource Remove="Bluchalk.Tests\**" />
+    <EmbeddedResource Remove="Blutest\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Melanchall.DryWetMidi.Nativeless" Version="7.2.0" />
-    <PackageReference Include="SharpCompress" Version="0.38.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Bluchalk\Bluchalk.csproj" />
     <ProjectReference Include="GodotUtils\GodotUtils.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="scripts\bash\godot_path.txt" />
-    <Content Include="scripts\bash\run-singleplayer.sh" />
-    <Content Include="scripts\bash\run-twoplayer.sh" />
   </ItemGroup>
 </Project>

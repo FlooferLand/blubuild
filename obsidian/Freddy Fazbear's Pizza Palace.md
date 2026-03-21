@@ -1,1 +1,0 @@
-A brand new Fazbear Entertainment ™️ location that features a working steam locomotive running through it, as well as some fun outside bits!

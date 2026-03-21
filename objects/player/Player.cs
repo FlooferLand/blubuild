@@ -6,38 +6,34 @@ namespace Project;
 
 public partial class Player : CharacterBody3D {
 	// Settings
-	private const float Speed = 4.0f;
-	private const float Acceleration = 0.6f;
-	private const float JumpHeight = 4.0f;
+	const float Speed = 4.0f;
+	const float Acceleration = 0.6f;
+	const float JumpHeight = 4.0f;
 	public float MouseSensitivity = 1.0f;
 	
 	// Nodes
-	[ExportGroup("Nodes")]
-	[Export] public Node3D Head;
-	[Export] public Camera3D Camera;
-	[Export] public RayCast3D InteractRay;
-	[Export] public Node3D BodyPivot;
-	[Export] public MultiplayerInput InputSynchronizer;
-	
-	// Resources
-	[ExportGroup("Resources")]
-	[Export] public PackedScene DebugPlayerScene;
+	[ExportGroup("Local")]
+	[Export] public required Node3D Head;
+	[Export] public required Camera3D Camera;
+	[Export] public required RayCast3D InteractRay;
+	[Export] public required Node3D BodyPivot;
+	[Export] public required PlayerInput PlayerInput;
 	
 	// Variables
 	[ExportGroup("Variables")]
-	private float gravity = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
-	private bool jumping = false;
-	private float speed = Speed;
+	float gravity = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
+	bool jumping = false;
+	float speed = Speed;
 	[Export] public int PlayerId = -1;
 	
 	public void SetNetworkPlayerId(int id) {
 		PlayerId = id;
-		GlobalStorage.LocalPlayer = this;
-		InputSynchronizer.SetMultiplayerAuthority(id);
+		BlubuildClient.LocalPlayer = this;
+		PlayerInput.SetMultiplayerAuthority(id);
 	}
 	
 	public override void _Ready() {
-		if (LocalPeer.ThisClientOwns(this)) {
+		if (GetTree().ClientOwns(this)) {
 			if (!Debugger.IsAttached) Input.MouseMode = Input.MouseModeEnum.Captured;
 			Camera.MakeCurrent();
 		} else {
@@ -46,7 +42,7 @@ public partial class Player : CharacterBody3D {
 	}
 
 	public override void _PhysicsProcess(double delta) {
-		ApplyMovementServerside(delta);
+		if (Multiplayer.IsServer()) ApplyMovementServerside(delta);
 		if (Rotation != Vector3.Zero) {
 			GD.PushWarning($"Player rotation should be achieved with {nameof(BodyPivot)}! Rotation was set on {Name}");
 			Rotation = Vector3.Zero;
@@ -59,10 +55,8 @@ public partial class Player : CharacterBody3D {
 	}
 
 	public void ApplyMovementServerside(double delta) {
-		if (InputSynchronizer.FlyCamEnabled) return;
-		
 		// Camera
-		var mouseInput = InputSynchronizer.InputMouse * MouseSensitivity;
+		var mouseInput = PlayerInput.InputMouse * MouseSensitivity;
 		BodyPivot.RotateY(-mouseInput.X);
 		Head.RotateX(-mouseInput.Y);
 		var rot = Head.Rotation;
@@ -74,7 +68,7 @@ public partial class Player : CharacterBody3D {
 			Velocity = Velocity.WithY(Velocity.Y - (gravity * delta));
 		
 		// Movement
-		var inputDir = InputSynchronizer.InputDirection;
+		var inputDir = PlayerInput.InputDirection;
 		var direction = (BodyPivot.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y).Normalized());
 		if (!direction.IsZeroApprox()) {
 			Velocity = Velocity.WithX(direction.X * Speed);
@@ -89,26 +83,5 @@ public partial class Player : CharacterBody3D {
 		if (IsOnFloor()) {
 			// TODO: Footstep sounds
 		}
-	}
-	
-	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
-	public void SetFlyCam(bool active) {
-		string name = Name + "-DEBUG";
-		
-		// Removing an already existing one
-		GetParent().GetNodeOrNull<DebugPlayer>(name)?.QueueFree();
-		if (!active || !OS.IsDebugBuild())
-			return;
-
-		bool isOwner = LocalPeer.ThisClientOwns(this);
-		
-		// Adding a new debug player
-		var debugPlayer = DebugPlayerScene.Instantiate<DebugPlayer>();
-		debugPlayer.InputSynchronizer = InputSynchronizer;
-		debugPlayer.Camera.Current = isOwner;
-		debugPlayer.SetNetworkPlayerId(PlayerId);
-		Camera.Current = !isOwner;
-		
-		GetParent().AddChild(debugPlayer);
 	}
 }

@@ -8,7 +8,9 @@
 
 _The modern home of computer animated animatronics_
 
-Blubuild is a simulation and animation engine built from the ground up for animatronic shows the likes of [The Rockafire Explosion](https://www.youtube.com/watch?v=8SeSavNd9_c&list=PLB8A625C54121DA04). Blubuild lets you create and animate shows without investing hundreds of dollars making real animatronics, as well as letting you animate real world animatronics by exporting a selection of shows to an Arduino-compatible board or using one as a relay.
+Blubuild is a simulation and animation engine built from the ground up for animatronic shows the likes of [The Rockafire Explosion](https://www.youtube.com/watch?v=8SeSavNd9_c&list=PLB8A625C54121DA04).
+
+Blubuild lets you create and animate shows without investing hundreds of dollars making real animatronics, as well as letting you animate real world animatronics by exporting a selection of shows to an Arduino-compatible board or using one as a relay.
 
 ### `⚠️ This project is in VERY early development ⚠️`
 View the [social](#Social) section if you want to get news about development or further info about this project
@@ -30,5 +32,4 @@ Feel free to join to see progress! <br/>
 - The Discord server is at https://discord.gg/fCZM3NkTVq
 
 ## NOTE: This is _NOT_ a Rockafire Explosion simulator
-Rockafire Explosion or CEC characters will _not_ be included in the base game _(unless Aaron specifically gives this project permission)_
-There may be private builds of the game including them at some point in the future.
+Rockafire Explosion or CEC characters will _not_ be included in the base game _(unless Aaron specifically gives this project permission)_.

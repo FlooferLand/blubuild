@@ -1,30 +1,23 @@
-using System;
 using System.Diagnostics;
 
-namespace Project;
+namespace GodotUtils;
 
 // ReSharper disable UnusedMember.Global
 public readonly struct Option<T> {
-    private readonly T value;
-
+    readonly T value;
     public bool HasValue { get; }
 
     #region Constructors
-    private Option(T value, bool hasValue) {
+    Option(T value, bool hasValue) {
         this.HasValue = hasValue;
         this.value = value;
     }
     
-    public Option() {
-        HasValue = false;
-        value = default;
-    }
-    
     /** Stores a value; stores nothing is the value is <c>null</c> */
     public static Option<T> Some(T value) {
-        return value == null
-            ? new Option<T>()
-            : new Option<T>(value, true)!;
+        return value != null
+            ? new Option<T>(value, true)
+            : new Option<T>();
     }
     
     /** Stores nothing */
@@ -55,8 +48,7 @@ public readonly struct Option<T> {
     }
 
     public T Unwrap() {
-        Debug.Assert(value != null, nameof(value) + " != null");
-        return value;
+        return value ?? throw new InvalidOperationException("Unwrap called on a missing value");
     }
     
     public T UnwrapOr(T @default) {

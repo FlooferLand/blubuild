@@ -45,8 +45,8 @@ public static class Extensions {
 	/// </summary>
 	public static Vector2 SnappyBoi(this Vector2 self, float snap = 16) {
 		return new Vector2(
-			Utils.SnappyBoi(self.X, snap),
-			Utils.SnappyBoi(self.Y, snap)
+			GdUtils.SnappyBoi(self.X, snap),
+			GdUtils.SnappyBoi(self.Y, snap)
 		);
 	}
 
@@ -102,13 +102,24 @@ public static class Extensions {
 		);
 	}
 	#endregion
+
+	#region Quaternion extensions
+
+	public static bool IsEqualApprox(this Quaternion self, Quaternion other, float tolerance) {
+		return Mathf.IsEqualApprox(self.X, other.X, tolerance)
+		       && Mathf.IsEqualApprox(self.Y, other.Y, tolerance)
+		       && Mathf.IsEqualApprox(self.Z, other.Z, tolerance)
+		       && Mathf.IsEqualApprox(self.W, other.W, tolerance);
+	}
+
+	#endregion
 	
 	#region AudioStreamPlayer extensions
 	/// <summary>
 	/// Plays a sound effect while randomizing the pitch.
 	/// If an <c>AudioStream</c> is not specified, it will play the current stream.
 	/// </summary>
-	private static void InternalPlaySfx(
+	static void InternalPlaySfx(
 		Node audio,
         AudioStream? stream = null,
 		float pitchRandomOffset = 0f,
@@ -125,7 +136,7 @@ public static class Extensions {
 		
 		audio.Set(
 			pitchScaleProp,
-			(1f + pitchOffset) + Utils.Random.RandfRange(-pitchRandom, pitchRandom)
+			(1f + pitchOffset) + GdUtils.Random.RandfRange(-pitchRandom, pitchRandom)
 		);
 		audio.Call(playFunc);
 	}
@@ -147,5 +158,12 @@ public static class Extensions {
 		float pitchOffset = 0f
 	) => InternalPlaySfx(self, stream, pitchRandomOffset, pitchOffset);
 	#endregion
+	#endregion
+
+	#region Color extensions
+	[Pure] public static Color WithR(this Color self, float r) => new(r, self.G, self.B, self.A);
+	[Pure] public static Color WithG(this Color self, float g) => new(self.R, g, self.B, self.A);
+	[Pure] public static Color WithB(this Color self, float b) => new(self.R, self.G, b, self.A);
+	[Pure] public static Color WithA(this Color self, float a) => new(self.R, self.G, self.B, a);
 	#endregion
 }

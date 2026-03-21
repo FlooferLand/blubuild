@@ -1,1 +1,0 @@
-The editor is used for recording and editing tapes

@@ -1,46 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://de2k8uj3pffye"]
+[gd_scene format=3 uid="uid://de2k8uj3pffye"]
 
-[ext_resource type="Script" path="res://objects/player/Player.cs" id="1_57cuq"]
-[ext_resource type="Script" path="res://objects/player/MultiplayerInput.cs" id="2_b8yme"]
-[ext_resource type="PackedScene" uid="uid://bd2x6xpjvqgd3" path="res://objects/player/debug_player.tscn" id="2_lt6w8"]
+[ext_resource type="Script" uid="uid://ddgn63l28y60p" path="res://objects/player/Player.cs" id="1_57cuq"]
+[ext_resource type="Script" uid="uid://djx2bxvdqyuv2" path="res://objects/player/PlayerInput.cs" id="2_b8yme"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wfy3h"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/0/replication_mode = 2
 properties/1/path = NodePath("Pivot:rotation")
 properties/1/spawn = true
-properties/1/replication_mode = 1
+properties/1/replication_mode = 2
 properties/2/path = NodePath("Pivot/Head:rotation")
 properties/2/spawn = true
-properties/2/replication_mode = 1
+properties/2/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gk12k"]
 properties/0/path = NodePath("InputSynchronizer:InputDirection")
 properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/0/replication_mode = 2
 properties/1/path = NodePath("InputSynchronizer:InputMouse")
 properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("InputSynchronizer:FlyCamEnabled")
-properties/2/spawn = true
-properties/2/replication_mode = 2
+properties/1/replication_mode = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwjv4"]
 radius = 0.3
 height = 1.8
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7ett"]
+albedo_color = Color(0.39765668, 0.12765601, 0.09311793, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u7nur"]
 lightmap_size_hint = Vector2i(11, 12)
+material = SubResource("StandardMaterial3D_g7ett")
 radius = 0.3
 height = 1.8
 radial_segments = 16
 rings = 4
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssrue"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jnjyq"]
+material = SubResource("StandardMaterial3D_ssrue")
+radius = 0.15
+height = 0.3
+
 [sub_resource type="PrismMesh" id="PrismMesh_vrx8j"]
 size = Vector3(1, 1, 0.01)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("Head", "Camera", "InteractRay", "BodyPivot", "InputSynchronizer")]
+[node name="Player" type="CharacterBody3D" unique_id=1693905901 node_paths=PackedStringArray("Head", "Camera", "InteractRay", "BodyPivot", "PlayerInput")]
 collision_layer = 2
 wall_min_slide_angle = 0.0872665
 script = ExtResource("1_57cuq")
@@ -48,40 +56,51 @@ Head = NodePath("Pivot/Head")
 Camera = NodePath("Pivot/Head/Camera")
 InteractRay = NodePath("Pivot/Head/InteractRay")
 BodyPivot = NodePath("Pivot")
-InputSynchronizer = NodePath("InputSynchronizer")
-DebugPlayerScene = ExtResource("2_lt6w8")
+PlayerInput = NodePath("InputSynchronizer")
 
-[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=697153966]
 replication_config = SubResource("SceneReplicationConfig_wfy3h")
 
-[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1893214569]
 replication_config = SubResource("SceneReplicationConfig_gk12k")
 script = ExtResource("2_b8yme")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1145566289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_fwjv4")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=319943196]
 
-[node name="Model" type="MeshInstance3D" parent="Pivot"]
+[node name="Model" type="MeshInstance3D" parent="Pivot" unique_id=2084603454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 mesh = SubResource("CapsuleMesh_u7nur")
 skeleton = NodePath("../..")
 
-[node name="Head" type="Node3D" parent="Pivot"]
+[node name="EyeR" type="MeshInstance3D" parent="Pivot/Model" unique_id=159067622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.562, -0.202)
+visibility_range_begin = 0.5
+mesh = SubResource("SphereMesh_jnjyq")
+skeleton = NodePath("../../..")
+
+[node name="EyeL" type="MeshInstance3D" parent="Pivot/Model" unique_id=281358514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.562, -0.202)
+visibility_range_begin = 0.5
+mesh = SubResource("SphereMesh_jnjyq")
+skeleton = NodePath("../../..")
+
+[node name="Head" type="Node3D" parent="Pivot" unique_id=1452173429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
-[node name="Camera" type="Camera3D" parent="Pivot/Head"]
+[node name="Camera" type="Camera3D" parent="Pivot/Head" unique_id=2016312324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 fov = 80.0
 
-[node name="InteractRay" type="RayCast3D" parent="Pivot/Head"]
+[node name="InteractRay" type="RayCast3D" parent="Pivot/Head" unique_id=1701467710]
 target_position = Vector3(0, 0, -2)
 hit_from_inside = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=1713490160]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0597637, -0.124905)
 mesh = SubResource("PrismMesh_vrx8j")
 
-[node name="FootstepManager" type="Node" parent="."]
+[node name="FootstepManager" type="Node" parent="." unique_id=411544777]

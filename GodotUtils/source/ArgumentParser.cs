@@ -1,6 +1,4 @@
-﻿using Project;
-
-namespace GodotUtils;
+﻿namespace GodotUtils;
 
 public class ArgumentParser {
     public static Dictionary<string, Values.Base> Arguments = new();

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bv3htlv02xc31"]
+
+[ext_resource type="Script" uid="uid://pxxi7qm7d5e4" path="res://levels/init/Init.cs" id="1_2r24f"]
+[ext_resource type="PackedScene" uid="uid://c2crtmvgpbe1v" path="res://levels/game/game.tscn" id="2_tu4rc"]
+
+[node name="Init" type="Node" unique_id=1826464302]
+script = ExtResource("1_2r24f")
+GameScene = ExtResource("2_tu4rc")

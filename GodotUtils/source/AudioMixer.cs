@@ -4,14 +4,14 @@ using Godot;
 /// Bus/effect focused wrapper around AudioServer
 /// <b>Heavily recommended for safety to only use this class at startup and cache the results</b>
 public class AudioMixerBus {
-	private readonly int busId;
+	readonly int busId;
 	public AudioMixerBus(int id) {
 		busId = id;
 	}
 
 	/// Gets an effect and casts it to a requested type. Returns <c>null</c> if it can't find the effect.
 	/// <b>Heavily recommended to call this at game startup to avoid errors</b>
-	public T GetEffect<T>(int effectId) where T: AudioEffect {
+	public T? GetEffect<T>(int effectId) where T: AudioEffect {
 		if (AudioServer.GetBusEffect(busId, effectId) is T effect)
 			return effect;
 

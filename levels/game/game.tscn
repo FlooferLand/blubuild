@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c2crtmvgpbe1v"]
+
+[ext_resource type="Script" uid="uid://b4aylrhxu2msc" path="res://scripts/networking/NetworkManager.cs" id="1_sg147"]
+[ext_resource type="PackedScene" uid="uid://de2k8uj3pffye" path="res://objects/player/player.tscn" id="2_71jyj"]
+[ext_resource type="Material" uid="uid://6ntkjjlg1fm4" path="res://assets/materials/carpet/carpet.tres" id="3_71jyj"]
+[ext_resource type="PackedScene" uid="uid://tfkspr1kkdh1" path="res://assets/blender/remina/beach_bear/BeachBear.blend" id="4_6ojey"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oeyt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_71jyj"]
+sky_material = SubResource("ProceduralSkyMaterial_2oeyt")
+
+[sub_resource type="Environment" id="Environment_6ojey"]
+background_mode = 2
+sky = SubResource("Sky_71jyj")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Game" type="Node3D" unique_id=361021312]
+
+[node name="ServerDebugCam" type="Camera3D" parent="." unique_id=112379445]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 19.410845, 0)
+current = true
+
+[node name="NetworkManager" type="Node" parent="." unique_id=1146013533 node_paths=PackedStringArray("PlayerContainer")]
+script = ExtResource("1_sg147")
+PlayerScene = ExtResource("2_71jyj")
+PlayerContainer = NodePath("../Players")
+
+[node name="Players" type="Node3D" parent="." unique_id=1155536668]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1070789087]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=299933618]
+environment = SubResource("Environment_6ojey")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=282406396]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.445
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Environment" unique_id=168153153]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/CSGCombiner3D" unique_id=1961013492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(25, 4, 25)
+material = ExtResource("3_71jyj")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/CSGCombiner3D" unique_id=1946051757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+operation = 2
+size = Vector3(23, 3, 23)
+material = ExtResource("3_71jyj")
+
+[node name="BeachBear" parent="Environment" unique_id=601836506 instance=ExtResource("4_6ojey")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1238985, -0.14222598, -0.024494648)

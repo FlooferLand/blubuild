@@ -1,3 +1,5 @@
+assets/blender/remina/
+
 # Godot 4+ specific ignores
 .godot/
 
@@ -13,3 +15,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+**/obj/
+**/bin/

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6ntkjjlg1fm4"]
+
+[ext_resource type="Texture2D" uid="uid://d1570xge3n413" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_Color.jpg" id="1_8h3nk"]
+[ext_resource type="Texture2D" uid="uid://dntxtqfgli1q" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_NormalGL.jpg" id="2_tqae6"]
+
+[resource]
+albedo_color = Color(0, 0.58431375, 1, 1)
+albedo_texture = ExtResource("1_8h3nk")
+roughness_texture = ExtResource("1_8h3nk")
+normal_enabled = true
+normal_texture = ExtResource("2_tqae6")
+uv1_triplanar = true
