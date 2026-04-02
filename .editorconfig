@@ -1,4 +1,6 @@
 [*.cs]
+csharp_brace_style = end_of_line
+brace_style = end_of_line
 
 # Default severity for analyzer diagnostics with category 'Style'
 dotnet_analyzer_diagnostic.category-Style.severity = none

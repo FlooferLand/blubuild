@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://buj2upqoj2vmx"]
+
+[ext_resource type="Script" uid="uid://ccmqwkglsuop" path="res://objects/greybox/Greybox.cs" id="1_i7fdn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oemd"]
+albedo_color = Color(0.32172796, 0.32172796, 0.32172796, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i7fdn"]
+material = SubResource("StandardMaterial3D_6oemd")
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Greybox" type="Node3D" unique_id=1612911414]
+script = ExtResource("1_i7fdn")
+
+[node name="Model" type="Node3D" parent="." unique_id=2059668342]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=1759053623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24689378, 0)
+mesh = SubResource("BoxMesh_i7fdn")
+
+[node name="Label3D" type="Label3D" parent="Model" unique_id=29982899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.677694, 0)
+pixel_size = 0.001
+billboard = 1
+text = "Greybox..
+Get it?"
+font_size = 96
+outline_size = 38

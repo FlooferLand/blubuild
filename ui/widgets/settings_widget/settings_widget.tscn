@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d01qolvrxvvi"]
+
+[ext_resource type="Script" uid="uid://mkbjb3nphpgn" path="res://ui/widgets/settings_widget/SettingsWidget.cs" id="1_tymfo"]
+[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/world_env.tres" id="2_hv072"]
+
+[node name="SettingsWidget" type="PanelContainer" unique_id=409275632 node_paths=PackedStringArray("BadGraphicsButton", "GoodGraphicsButton")]
+anchors_preset = -1
+anchor_right = 0.36800003
+anchor_bottom = 0.106000006
+offset_right = 0.063964844
+offset_bottom = 0.31199646
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tymfo")
+Environment = ExtResource("2_hv072")
+BadGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphical presets/BadGraphics")
+GoodGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphical presets/GoodGraphics")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=124743652]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2123953653]
+layout_mode = 2
+text = "Settings:"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=938998405]
+layout_mode = 2
+current_tab = 0
+
+[node name="Graphical presets" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=2026174990]
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 0
+
+[node name="BadGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphical presets" unique_id=1750465677]
+layout_mode = 2
+text = "Shit"
+
+[node name="GoodGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphical presets" unique_id=1349125638]
+layout_mode = 2
+text = "Good"

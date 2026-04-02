@@ -5,7 +5,10 @@ namespace Bluchalk.shows;
 
 public abstract class ShowFormat<T> {
     protected abstract Result<T> Read(Stream stream);
-    protected abstract Result<Unit> Write(Stream stream);
+    protected abstract Result<Unit> Write(Stream stream, T data);
+
+    public Result<T> ReadStream(Stream stream) => Read(stream);
+    public Result<Unit> WriteStream(Stream stream, T data) => Write(stream, data);
 
     /// File-specific way of reading shows. Faster than just reading off a stream
     public Result<T> ReadFile(string path) {

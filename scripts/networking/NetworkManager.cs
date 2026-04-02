@@ -6,14 +6,19 @@ namespace Project;
 
 public partial class NetworkManager : Node {
 	// Constants
-	const int ServerPort = 1712;
-	const string ServerAddress = "127.0.0.1";
+	public const int ServerPort = 1712;
+	public const string ServerAddress = "127.0.0.1";
+
+	// Temporary stores for client join stuff
+	public static string? RemoteJoinAddress = null;
+	public static string? RemoteJoinUsername = null;
 
 	// Nodes
 	[Export] public required PackedScene PlayerScene;
 	[Export] public required Node3D PlayerContainer;
 
 	public static bool IsIntegratedServer = false;
+	public static bool IsDedicatedServer = false;
 	public static Dictionary<long, Player> Players = new();
 
 	public override void _EnterTree() {
@@ -29,6 +34,8 @@ public partial class NetworkManager : Node {
 			window.MinSize = Vector2I.One * 10;
 			window.MaxSize = Vector2I.One * 10;
 			window.Size = Vector2I.One * 10;
+			window.SetCurrentScreen(1);
+			IsDedicatedServer = true;
 			StartServer();
 			return;
 		}
@@ -37,15 +44,25 @@ public partial class NetworkManager : Node {
 			SystemAutoload.TitleNetworkingType = "client";
 			SystemAutoload.ClientNum = num;
 			window.GrabFocus();
-			StartClient(num);
+			StartClient();
 			return;
 		}
 
+		// Joining a remote server
+		if (RemoteJoinAddress != null) {
+			GD.Print($"Joining remote address '{RemoteJoinAddress}'");
+			SystemAutoload.TitleNetworkingType = "client (connected to remote)";
+			SystemAutoload.ClientNum = 1;
+			StartClient();
+		}
+
 		// Integrated server with client (no arguments)
-		window.MoveToCenter();
-		SystemAutoload.TitleNetworkingType = "singleplayer";
-		IsIntegratedServer = true;
-		StartServer();
+		if (RemoteJoinAddress == null) {
+			window.MoveToCenter();
+			SystemAutoload.TitleNetworkingType = "singleplayer";
+			IsIntegratedServer = true;
+			StartServer();
+		}
 	}
 
 	public override void _ExitTree() {
@@ -60,7 +77,11 @@ public partial class NetworkManager : Node {
 		Log.Info("Starting server" + (IsIntegratedServer ? " (integrated)" : ""));
 
 		var peer = new ENetMultiplayerPeer();
-		peer.CreateServer(ServerPort);
+		var status = peer.CreateServer(ServerPort);
+		if (status != Error.Ok) {
+			OS.Alert($"Status: {status}", "Failed to create server");
+			GetTree().Quit(-1);
+		}
 
 		var multiplayer = ((SceneMultiplayer) Multiplayer);
 		multiplayer.MultiplayerPeer = peer;
@@ -76,6 +97,11 @@ public partial class NetworkManager : Node {
 		if (IsIntegratedServer) {
 			AddPlayer(peer.GetUniqueId());
 		} else {
+			// Dedicated server
+			for (int i = 0; i < AudioServer.GetBusCount(); i++) {
+				AudioServer.SetBusVolumeLinear(i, 0f);
+			}
+
 			// For development
 			var node = new Node();
 			node.Name = MultiplayerPeer.TargetPeerServer.ToString();
@@ -83,18 +109,24 @@ public partial class NetworkManager : Node {
 		}
 	}
 
-	public void StartClient(int num) {
-		Log.Info($"Starting client {num}");
+	public void StartClient() {
+		Log.Info($"Starting client {SystemAutoload.ClientNum}");
 
 		var peer = new ENetMultiplayerPeer();
-		peer.CreateClient(ServerAddress, ServerPort);
+		var status = peer.CreateClient(RemoteJoinAddress ?? ServerAddress, ServerPort);
+		if (status != Error.Ok) {
+			OS.Alert($"Status: {status}", "Failed to join server");
+			GetTree().Quit(-1);
+		}
 
 		var multiplayer = ((SceneMultiplayer) Multiplayer);
 		multiplayer.MultiplayerPeer = peer;
 		multiplayer.PeerPacket += NetworkTransport.OnPeerPacket;
 		multiplayer.PeerConnected += AddPlayer;
 		multiplayer.PeerDisconnected += RemovePlayer;
+		multiplayer.ServerDisconnected += () => GetTree().Quit();
 		multiplayer.ConnectedToServer += () => AddPlayer(Multiplayer.GetUniqueId());
+		multiplayer.ConnectionFailed += () => OS.Alert("No other details", "Connection failed");
 	}
 
 	public void AddPlayer(long id) {
@@ -102,20 +134,28 @@ public partial class NetworkManager : Node {
 			return;
 		
 		var player = PlayerScene.Instantiate<Player>();
-		player.SetNetworkPlayerId((int) id);
 		player.Name = id.ToString();
 		player.TreeEntered += () => {
+			player.SetNetworkPlayerId((int) id);
 			player.GlobalPosition = new Vector3(Players.Count * 2.0f, 0f, 0f);
 		};
 
+		if (BlubuildClient.LocalPlayer == player) {
+			Rpc(nameof(AnnouncePlayerUsername), id, RemoteJoinUsername!);
+		}
 		PlayerContainer.AddChild(player, forceReadableName:true);
 		Players.Add(id, player);
 	}
 
 	public void RemovePlayer(long id) {
-		if (PlayerContainer.GetNode(id.ToString()) is {} node) {
+		if (PlayerContainer.GetNodeOrNull(id.ToString()) is {} node) {
 			node.QueueFree();
 		}
+	}
+
+	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true)]
+	public void AnnouncePlayerUsername(long playerId, string username) {
+		Players[playerId].PlayerUsername = username;
 	}
 	#endregion
 }

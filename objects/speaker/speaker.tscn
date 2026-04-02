@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://culddebwgo2fp"]
+
+[ext_resource type="Script" uid="uid://bl1y7yynniwxc" path="res://objects/speaker/Speaker.cs" id="1_f3cla"]
+[ext_resource type="Script" uid="uid://coey4j4g7md3v" path="res://objects/speaker/SpeakerVisual.cs" id="2_hfwa4"]
+[ext_resource type="PackedScene" uid="uid://b18m8fk47llkd" path="res://components/better_audio_player/better_audio_player_3d.tscn" id="3_762dr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hfwa4"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3cla"]
+albedo_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+roughness = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3cla"]
+material = SubResource("StandardMaterial3D_f3cla")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="TorusMesh" id="TorusMesh_f3cla"]
+material = SubResource("StandardMaterial3D_f3cla")
+inner_radius = 0.067
+outer_radius = 0.214
+ring_segments = 5
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_762dr"]
+resource_local_to_scene = true
+buffer_length = 0.1
+
+[node name="Speaker" type="StaticBody3D" unique_id=1138908106 node_paths=PackedStringArray("AudioPlayer")]
+script = ExtResource("1_f3cla")
+AudioPlayer = NodePath("BetterAudioPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1240109053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_hfwa4")
+
+[node name="Model" type="Node3D" parent="." unique_id=437755106]
+
+[node name="Cube" type="MeshInstance3D" parent="Model" unique_id=1683009779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24782301, 0)
+mesh = SubResource("BoxMesh_f3cla")
+
+[node name="SpeakerVisual" type="MeshInstance3D" parent="Model" unique_id=1630875210 node_paths=PackedStringArray("AudioPlayer")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.24782301, -0.22821689)
+mesh = SubResource("TorusMesh_f3cla")
+script = ExtResource("2_hfwa4")
+AudioPlayer = NodePath("../../BetterAudioPlayer3D")
+
+[node name="BetterAudioPlayer3D" parent="." unique_id=153939727 instance=ExtResource("3_762dr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.4)
+Stream = SubResource("AudioStreamGenerator_762dr")
+Bus = &"Show"
+PlaybackType = 1

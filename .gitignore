@@ -1,4 +1,5 @@
 assets/blender/remina/
+builds/
 
 # Godot 4+ specific ignores
 .godot/
@@ -17,3 +18,4 @@ data_*/
 mono_crash.*.json
 **/obj/
 **/bin/
+msbuild.binlog

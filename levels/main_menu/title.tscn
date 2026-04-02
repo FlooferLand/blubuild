@@ -1,0 +1,462 @@
+[gd_scene format=3 uid="uid://ce8b8r2ytosoh"]
+
+[ext_resource type="Script" uid="uid://0m1o3uel8sfs" path="res://levels/main_menu/MainMenu.cs" id="1_wd5la"]
+[ext_resource type="Texture2D" uid="uid://cy7hh1rrsx2rv" path="res://assets/images/grid.png" id="1_xeu1g"]
+[ext_resource type="Script" uid="uid://d328lre4wicsq" path="res://levels/main_menu/BeatTimer.cs" id="2_26oqi"]
+[ext_resource type="PackedScene" uid="uid://tfkspr1kkdh1" path="res://assets/blender/remina/beach_bear/BeachBear.blend" id="3_2ywry"]
+[ext_resource type="Texture2D" uid="uid://dhaws16p7alkj" path="res://assets/images/logo.svg" id="3_jnmcb"]
+[ext_resource type="AudioStream" uid="uid://bt4qjj6kmnjqq" path="res://assets/music/smiles.ogg" id="3_qey2a"]
+[ext_resource type="PackedScene" uid="uid://b7oxqiayxwtcn" path="res://assets/blender/remina/rolfe_dewolfe/Rolfe.blend" id="4_t7fky"]
+[ext_resource type="Script" uid="uid://bgdrwqhoq2u3" path="res://levels/main_menu/MiddleMenu.cs" id="7_qey2a"]
+[ext_resource type="PackedScene" uid="uid://c1wx1iw8q0gv3" path="res://ui/widgets/title_widget/title_widget.tscn" id="8_4s7fn"]
+[ext_resource type="PackedScene" uid="uid://c2crtmvgpbe1v" path="res://levels/game/game.tscn" id="8_ljyev"]
+[ext_resource type="PackedScene" uid="uid://d01qolvrxvvi" path="res://ui/widgets/settings_widget/settings_widget.tscn" id="11_66ocq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ywry"]
+bg_color = Color(0.05625219, 0.07301488, 0.1065472, 1)
+
+[sub_resource type="Environment" id="Environment_jnmcb"]
+
+[sub_resource type="World3D" id="World3D_2ywry"]
+environment = SubResource("Environment_jnmcb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ros5a"]
+bg_color = Color(0.11834886, 0.14400503, 0.1979791, 1)
+border_width_left = 15
+border_width_right = 15
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7fky"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd5la"]
+bg_color = Color(1, 1, 1, 0.09019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7fky"]
+resource_local_to_scene = true
+font_size = 62
+font_color = Color(7.123351e-06, 0.5843603, 0.7921197, 1)
+outline_size = 12
+outline_color = Color(0.10980392, 0.4745098, 1, 0.3372549)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.6627451)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_26oqi"]
+font_color = Color(1, 1, 1, 0.40784314)
+
+[sub_resource type="Animation" id="Animation_wd5la"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullscreenTitle/Title:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullscreenTitle/Title:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullscreenTitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FullscreenTitle:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FullscreenTitle:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_t7fky"]
+resource_name = "intro"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullscreenTitle/Title:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 0.71, -0.022222241, 0.06666669, 0.033333343, -0.09999998, 0, -0.06666667, -0.033333343, 0, 0),
+"times": PackedFloat32Array(0, 0.10641521, 0.43333334, 0.5, 0.8333333, 0.9397485, 1.2666667, 1.3333333, 1.6333333, 1.7397485, 2.1333334, 2.2, 2.5, 2.6064153, 3.0666666, 3.2, 3.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullscreenTitle/Title:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.06666667, -0.033333343, 0, 0, 1, -0.016666666, 0.033333343, 0, 0, 0.525, -0.038888894, 0.11666663, 0.016666692, -0.050000053, 0, -0.06666667, -0.033333343, 0, 0),
+"times": PackedFloat32Array(0, 0.10641521, 0.43333334, 0.5, 0.8333333, 0.9397485, 1.2666667, 1.3333333, 1.6333333, 1.7397485, 2.1333334, 2.2, 2.5, 2.6064153, 3.0666666, 3.3, 3.4)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullscreenTitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.4333334, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FullscreenTitle:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.4, 3.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 2]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"IntroContinueSong"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FullscreenTitle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wd5la"]
+_data = {
+&"RESET": SubResource("Animation_wd5la"),
+&"intro": SubResource("Animation_t7fky")
+}
+
+[node name="MainMenu" type="Control" unique_id=612633532 node_paths=PackedStringArray("BeatTimer", "ThemeSongPlayer", "AnimationPlayer", "ViewportCamera", "Bots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wd5la")
+BeatTimer = NodePath("BeatTimer")
+ThemeSongPlayer = NodePath("SongPlayer")
+AnimationPlayer = NodePath("AnimationPlayer")
+ViewportCamera = NodePath("Scene/SubViewport/Camera3D")
+Bots = [NodePath("Scene/SubViewport/BeachBear"), NodePath("Scene/SubViewport/Rolfe")]
+
+[node name="BeatTimer" type="Node" parent="." unique_id=371356066]
+script = ExtResource("2_26oqi")
+Stream = ExtResource("3_qey2a")
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="." unique_id=1656446963]
+stream = ExtResource("3_qey2a")
+volume_db = -4.0
+autoplay = true
+
+[node name="Background" type="Control" parent="." unique_id=1133644232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Background" unique_id=177087003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ywry")
+
+[node name="Grid" type="TextureRect" parent="Background" unique_id=907923787]
+modulate = Color(1, 1, 1, 0.03529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeu1g")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Scene" type="SubViewportContainer" parent="." unique_id=323298498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Scene" unique_id=1807121325]
+own_world_3d = true
+world_3d = SubResource("World3D_2ywry")
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 1
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene/SubViewport" unique_id=443957599]
+transform = Transform3D(0.90581334, -0.205894, 0.37028363, -0.36284947, -0.8282006, 0.42711136, 0.21872945, -0.5212403, -0.82490367, 0, 1.6619701, 0)
+light_color = Color(0.7814316, 0.56712574, 0.68931574, 1)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="Scene/SubViewport" unique_id=545919382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Scene/SubViewport/Camera3D" unique_id=76449850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.33326626)
+light_color = Color(0.4888, 0.76703995, 0.94, 1)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="BeachBear" parent="Scene/SubViewport" unique_id=652430986 instance=ExtResource("3_2ywry")]
+transform = Transform3D(0.46759045, 0, 0.8839453, 0, 1, 0, -0.8839453, 0, 0.46759045, -1.138, 0, -1.144)
+
+[node name="Rolfe" parent="Scene/SubViewport" unique_id=814945630 instance=ExtResource("4_t7fky")]
+transform = Transform3D(0.35208666, 0, -0.9359673, 0, 1, 0, 0.9359673, 0, 0.35208666, 1.3095052, 0, -1.2919964)
+
+[node name="MiddleMenu" type="Control" parent="." unique_id=841935055 node_paths=PackedStringArray("StartPlaytest", "JoinByIP", "UsernameEdit")]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_right = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_qey2a")
+GameScene = ExtResource("8_ljyev")
+StartPlaytest = NodePath("VBoxContainer/StartPlaytest")
+JoinByIP = NodePath("VBoxContainer/IpJoin")
+UsernameEdit = NodePath("VBoxContainer/UsernameEdit")
+
+[node name="Background" type="Control" parent="MiddleMenu" unique_id=1181423831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MiddleMenu/Background" unique_id=543029845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ros5a")
+
+[node name="Grid" type="TextureRect" parent="MiddleMenu/Background" unique_id=994841381]
+modulate = Color(1, 1, 1, 0.03529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeu1g")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MiddleMenu" unique_id=375814652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 25.0
+offset_right = -36.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" parent="MiddleMenu/VBoxContainer" unique_id=999393964 node_paths=PackedStringArray("BeatTimer") instance=ExtResource("8_4s7fn")]
+layout_mode = 2
+BeatTimer = NodePath("../../../BeatTimer")
+
+[node name="Separator" type="Control" parent="MiddleMenu/VBoxContainer" unique_id=1448991311]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="StartPlaytest" type="Button" parent="MiddleMenu/VBoxContainer" unique_id=618781965]
+layout_mode = 2
+text = "Start playtest"
+
+[node name="Label" type="Label" parent="MiddleMenu/VBoxContainer" unique_id=378718769]
+layout_mode = 2
+text = "or"
+horizontal_alignment = 1
+
+[node name="IpJoin" type="LineEdit" parent="MiddleMenu/VBoxContainer" unique_id=672594170]
+layout_mode = 2
+placeholder_text = "Write an IP here and press enter"
+alignment = 1
+clear_button_enabled = true
+
+[node name="Separator2" type="Control" parent="MiddleMenu/VBoxContainer" unique_id=478794436]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UsernameEdit" type="LineEdit" parent="MiddleMenu/VBoxContainer" unique_id=343748912]
+layout_mode = 2
+placeholder_text = "Username"
+
+[node name="SettingsWidget" parent="MiddleMenu/VBoxContainer" unique_id=114646099 instance=ExtResource("11_66ocq")]
+layout_mode = 2
+
+[node name="FullscreenTitle" type="Control" parent="." unique_id=2066367137]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="FullscreenTitle" unique_id=1726126968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t7fky")
+
+[node name="Grid" type="TextureRect" parent="FullscreenTitle" unique_id=438489597]
+modulate = Color(1, 1, 1, 0.03529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeu1g")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Title" type="PanelContainer" parent="FullscreenTitle" unique_id=588365466]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -43.0
+offset_right = 169.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(169.5, 43)
+theme_override_styles/panel = SubResource("StyleBoxFlat_wd5la")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FullscreenTitle/Title" unique_id=359806556]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="FullscreenTitle/Title/HBoxContainer" unique_id=1766382903]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_jnmcb")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="FullscreenTitle/Title/HBoxContainer" unique_id=2118300610]
+layout_mode = 2
+text = "Blubuild"
+label_settings = SubResource("LabelSettings_t7fky")
+
+[node name="LoadStatus" type="Label" parent="FullscreenTitle" unique_id=366933211]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.5
+offset_top = 65.0
+offset_right = 104.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Loading/compiling shaders"
+label_settings = SubResource("LabelSettings_26oqi")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=116946378]
+libraries/ = SubResource("AnimationLibrary_wd5la")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b18m8fk47llkd"]
+
+[ext_resource type="Script" uid="uid://dig5rhbk4g1qy" path="res://components/better_audio_player/BetterAudioPlayer3D.cs" id="1_yt6sd"]
+
+[node name="BetterAudioPlayer3D" type="Node3D" unique_id=153939727 node_paths=PackedStringArray("AudioPlayer", "ListenRay")]
+script = ExtResource("1_yt6sd")
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+ListenRay = NodePath("ListenRay")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=550834002]
+
+[node name="ListenRay" type="RayCast3D" parent="." unique_id=1964077467]
+target_position = Vector3(0, 0, -1)
+collision_mask = 3
+hit_from_inside = true

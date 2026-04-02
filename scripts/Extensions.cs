@@ -4,6 +4,7 @@ using Godot;
 namespace Project;
 
 public static class Extensions {
+    /// Returns true if it's a client OR an integrated server
     public static bool IsClient(this MultiplayerApi multiplayer) => !multiplayer.IsServer() || NetworkManager.IsIntegratedServer;
 
     /// Returns true if the current client is controlling this object. <br/>

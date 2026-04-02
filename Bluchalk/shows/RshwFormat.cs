@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿extern alias NewBinaryFormatter;
+
+using System.Collections;
 using System.Formats.Nrbf;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
+using NewBinaryFormatter::System.Runtime.Serialization.Formatters.Binary;
 using GodotUtils;
 
 namespace Bluchalk.shows;
@@ -52,18 +55,47 @@ public class RshwFormat : ShowFormat<RshwFormat.RshwData> {
         return Result<RshwData>.Ok(result);
     }
 
-    #region Safe API
-    [StructLayout(LayoutKind.Sequential)]
-    public struct RshwData {
+    #pragma warning disable SYSLIB0011
+    static Result<Unit> _Write(Stream stream, RshwData data) {
+        AppContext.SetSwitch("System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization", true);
+        var formatter = new BinaryFormatter { Binder = new RshwBinder() };
+        formatter.Serialize(stream, data);
+        AppContext.SetSwitch("System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization", false);
+        return Result<Unit>.Ok(Unit.Instance);
+    }
+    #pragma warning restore SYSLIB0011
+
+    [Serializable]
+    public struct RshwData : ISerializable {
         public int[] signal = [];
         public byte[] audio = [];
         public byte[] video = [];
+
         public RshwData() {}
+
+        // ReSharper disable once UnusedMember.Local
+        RshwData(SerializationInfo info, StreamingContext context) {
+            audio = (byte[])info.GetValue(AudioField, typeof(byte[]))!;
+            signal = (int[])info.GetValue(SignalField, typeof(int[]))!;
+            video = (byte[]) (info.GetValue(VideoField, typeof(byte[])) ?? Array.Empty<byte>());
+        }
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context) {
+            info.AddValue(AudioField, audio);
+            info.AddValue(SignalField, signal);
+            info.AddValue(VideoField, video);
+        }
+    }
+
+    // ReSharper disable once RedundantNameQualifier
+    class RshwBinder : NewBinaryFormatter::System.Runtime.Serialization.SerializationBinder {
+        public override Type BindToType(string assemblyName, string typeName) => typeof(RshwData);
+        public override void BindToName(Type serializedType, out string? assemblyName, out string? typeName) {
+            assemblyName = "Assembly-CSharp";
+            typeName = "rshwFormat";
+        }
     }
 
     protected override Result<RshwData> Read(Stream stream) => _Read(stream);
-    protected override Result<Unit> Write(Stream stream) {
-        throw new NotImplementedException("Writing Rshw files not implemented yet");
-    }
-    #endregion
+    protected override Result<Unit> Write(Stream stream, RshwData data) => _Write(stream, data);
 }

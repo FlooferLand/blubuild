@@ -15,6 +15,9 @@ Blubuild lets you create and animate shows without investing hundreds of dollars
 ### `⚠️ This project is in VERY early development ⚠️`
 View the [social](#Social) section if you want to get news about development or further info about this project
 
+You'll probably get errors about missing files while building. <br/>
+I'm currently using Remina's models as placeholders _(with permission of-course)_ and cannot include those in the repo.
+
 ## Planned features
 - Create and watch shows
 - Create mechs/figures using Blender or any other modeling software.

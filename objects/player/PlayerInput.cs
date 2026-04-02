@@ -32,8 +32,6 @@ public partial class PlayerInput : MultiplayerSynchronizer {
 			Input.MouseMode = Input.MouseMode == Input.MouseModeEnum.Visible
 				? Input.MouseModeEnum.Captured
 				: Input.MouseModeEnum.Visible;
-		} else if (Input.IsActionJustPressed("pause")) {
-			GetTree().Quit();
 		}
 	}
 

@@ -18,26 +18,33 @@ public partial class Player : CharacterBody3D {
 	[Export] public required RayCast3D InteractRay;
 	[Export] public required Node3D BodyPivot;
 	[Export] public required PlayerInput PlayerInput;
-	
+	[Export] public required Label3D Nameplate;
+	[Export] public required MeshInstance3D Model;
+
 	// Variables
 	[ExportGroup("Variables")]
 	float gravity = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
 	bool jumping = false;
 	float speed = Speed;
 	[Export] public int PlayerId = -1;
-	
+	[Export] public string PlayerUsername = "";
+
 	public void SetNetworkPlayerId(int id) {
 		PlayerId = id;
-		BlubuildClient.LocalPlayer = this;
+		if (Multiplayer.GetUniqueId() == id) BlubuildClient.LocalPlayer = this;
 		PlayerInput.SetMultiplayerAuthority(id);
 	}
 	
 	public override void _Ready() {
-		if (GetTree().ClientOwns(this)) {
+		if (this == BlubuildClient.LocalPlayer) {
 			if (!Debugger.IsAttached) Input.MouseMode = Input.MouseModeEnum.Captured;
 			Camera.MakeCurrent();
+			Nameplate.Visible = false;
+			Model.Visible = false;
 		} else {
 			Camera.ClearCurrent();
+			Nameplate.Visible = true;
+			Model.Visible = true;
 		}
 	}
 

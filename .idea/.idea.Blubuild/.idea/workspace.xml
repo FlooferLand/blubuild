@@ -8,257 +8,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blutest/.gdignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blutest/src/RshwPerformance.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Unit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/player/PlayerInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/SystemAutoload.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/BlubuildClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/IPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/NetworkTransport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/packets/PlayerInputPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/packets/PlayerInputPacket.cs.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/PackedFloat.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/PackedVec2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/PackedVec3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bluchalk/WavHeader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/AudioBuses.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/base/AbstractScreen.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/networking/TransferChannels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/.gdignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/Bluchalk.Tests.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk.Tests/UnitTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/IBaseTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/SignalContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/transformers/BluTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/transformers/RawMidiTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/transformers/RshowTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/types/ShowData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/types/SignalChannel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/types/SignalEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/source/types/SignalEvents.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/ArgumentParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/ArgumentParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GodotUtils/source/AudioMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/AudioMixer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/Log.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/Log.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Option.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Option.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/Bonnie.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/booper.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/bowtie.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/eye.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/fur.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/glasses_glass.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/glasses_metal.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/materials/teeth.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie-BACKUP.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie-BACKUP.blend.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/models/Bonnie.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/refs/bonnieref_fullbody.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/refs/bonnieref_fullbody.jpg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Bowtie_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Bowtie_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Bowtie_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Bowtie_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Bowtie_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Bowtie_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Height.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Height.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Metallic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Metallic.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Mixed_AO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Mixed_AO.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Normal.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyelids_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyes_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyes_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyes_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyes_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyes_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Eyes_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Fur_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Fur_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Fur_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Fur_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Fur_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Fur_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Opacity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Opacity.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glass_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Metallic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Metallic.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Glasses_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Nose_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Nose_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Nose_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Nose_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Nose_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Nose_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Teeth_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Teeth_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Teeth_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Teeth_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Teeth_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Teeth_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Tongue_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Tongue_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Tongue_Normal_OpenGL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Tongue_Normal_OpenGL.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Tongue_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Tongue_Roughness.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Whiskers_Base_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animatronics/Bonnie/textures/Whiskers_Base_color.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/audio_bus.tres" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/music/Blubuild Title (crooked smiles).mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/music/Blubuild Title (crooked smiles).mp3.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/flashlight_switch.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/flashlight_switch.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/slip_0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/slip_0.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/slip_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/slip_1.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/slip_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/slip_2.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_0.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_1.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_10.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_11.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_11.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_2.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_3.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_4.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_5.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_6.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_7.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_8.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/footsteps/porcelain/step_9.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/mechanical/pneumatic_fire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/mechanical/pneumatic_fire.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/mechanical/pneumatic_release.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/sfx/mechanical/pneumatic_release.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builds/.gdignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BotControllerComp.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BotInfoComp.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MechanicalAnimationPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_presets.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/game.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/init.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/materials/test/test.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/network_spawner/LocalPeer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/network_spawner/NetworkManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/network_spawner/NetworkManager.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/DebugPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/MultiplayerInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles.mp3.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.mp3.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/init/Init.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/init/Init.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/init/init.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/init/init.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objects/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/debug_player.tscn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/PlayerInput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objects/player/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/player.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/show_player/ShowPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/show_player/ShowPlayer.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/.gdignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/.obsidian/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/.obsidian/appearance.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/.obsidian/core-plugins-migration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/.obsidian/core-plugins.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/.obsidian/workspace.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/Blubuild.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/Components/Signal Manager.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/Freddy Fazbear's Pizza Palace.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsidian/The Editor/Editor.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_templates/Node/component.cs" beforeDir="false" afterPath="$PROJECT_DIR$/script_templates/Node/component.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_templates/Node/empty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/script_templates/Node/empty.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/autoload/GlobalStorage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/autoload/SystemAutoload.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/bash/godot_path.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/bash/run-singleplayer.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/bash/run-twoplayer.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/interfaces/IBaseInteractable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/interfaces/ILookDetector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/levels/Init.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/levels/MainMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/alpha_map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/alpha_map.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/base.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/base.jpg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/base_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/base_n.jpg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/fur_test.gdshader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/fur_test.material" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/fur_test.material.depren" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/fur_testing.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/new.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_alpha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_alpha.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_rgb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_rgb.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_rgba.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_rgba.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_rgba_n.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/fur/old/quads_rgba_n.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/showtapes/test.zshw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/showtapes/test_raw/audio.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/showtapes/test_raw/audio.mp3.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/showtapes/test_raw/signal.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluIcon.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/ui/BluIcon.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/editor/Editor.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/godot.svg.import" beforeDir="false" afterPath="$PROJECT_DIR$/ui/godot.svg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/grid.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/ui/grid.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui.theme" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.theme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world_env.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/networking/BlubuildClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/BlubuildClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/networking/packets/PlayerInputPacket.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/networking/packets/PlayerInputPacket.cs.uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/BluIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/BluIcon.png.import" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,27 +58,63 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;FlooferLand&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FlooferLand/blubuild.git&quot;,
+    &quot;accountId&quot;: &quot;e359c696-8abf-4891-b28d-140daa385ac6&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0ce8305c3861435dbb60368d95359d6f14928/94/2f9344f0/MemoryMappedFile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/7e/69b793b5/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/9d/0b00bf5d/Action`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4881db23b1834147bd6855274699690d580800/0d/30f39b3b/StringExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/afe5b50ba83346d6842dc277b732d0d6580800/d6/34071b7c/RpcAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/228bff957d5b9f32cfbedd8bf82a5d3e862ec3e051593a67913b95ae288287/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/243a037ca7a04510a506adfdd94befbac90930/_5d0bc/IReadOnlyDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/261ea83c988816e3d8fe76b15b7ac6c10af64b8f9e739854f83c137c8ba9/SafeFileHandle.Windows.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/341ad57b399efe213bea779238f90af24d9936a67a0df19b9bcb16b6a36ae8/NrbfDecoder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4315e118db18cc24415b7ec439e413a60c969c71375e5cd8bcca4f7e9c69f7/SerializationBinder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67ebf210a4bac0747df5febc8332ccaba90acb21287798fde37a06d8eb942b/Encoding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/766d8dbfea1985463a3c5cb519ef8fbd442d8af1f7c76e69d5b9f66febbf2ac/CollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a850dfb59fc045d5d9c48c2cbc344e59cecf4a96e691c88b3321cf408cc83/Window.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c2225fe053e38b55e07d8ce74c88896ffb33ea3a48fb3a4a44134858a6bbd81/MultiplayerPeer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Bluchalk/WavHeader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blutest/src/Blutest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blutest/src/RshwPerformance.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GodotUtils/source/safety/Unit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bots/Bot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/better_audio_player/BetterAudioPlayer3d.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/init/Init.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/levels/main_menu/MultiplayerStarter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/objects/greybox/Greybox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/player/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/objects/reel_to_reel/ReelToReel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/objects/speaker/Speaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/objects/speaker/SpeakerVisual.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/AudioBuses.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/IPacket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/networking/TransferChannels.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/resources/BotMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/screens/select_show/SelectShowScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -306,29 +129,30 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET File.Bluchalk Test.executor": "Run",
-    ".NET Project.Blutest.executor": "dotTrace Profiler",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Executable.Player.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET File.Bluchalk Test.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.Blutest.executor&quot;: &quot;dotTrace Profiler&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "C#"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;C#&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Executable.Player">
     <configuration name="Blutest (Benchmark)" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Blutest/bin/Release/net8.0/Blutest.exe" />
@@ -413,7 +237,7 @@
     <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
       <option name="EXE_PATH" value="E:/Software/Godot/Versions/godot_mono.exe" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\FlooferLand\Documents\GameDev\Godot\blubuild" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -429,7 +253,7 @@
     <configuration name="Player" type="RunExe" factoryName=".NET Executable">
       <option name="EXE_PATH" value="E:/Software/Godot/Versions/godot_mono.exe" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot;" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\FlooferLand\Documents\GameDev\Godot\blubuild" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -473,8 +297,35 @@
       <workItem from="1774054180385" duration="1034000" />
       <workItem from="1774055679510" duration="5691000" />
       <workItem from="1774061428369" duration="130000" />
-      <workItem from="1774061590119" duration="9206000" />
+      <workItem from="1774061590119" duration="14631000" />
+      <workItem from="1774076638029" duration="15505000" />
+      <workItem from="1774126512800" duration="155000" />
+      <workItem from="1774126682627" duration="186000" />
+      <workItem from="1774152563915" duration="2230000" />
+      <workItem from="1774155614552" duration="769000" />
+      <workItem from="1774157417703" duration="423000" />
+      <workItem from="1774158034435" duration="4733000" />
+      <workItem from="1774424411197" duration="25559000" />
+      <workItem from="1774537296241" duration="122000" />
+      <workItem from="1774537614607" duration="112000" />
+      <workItem from="1774538446443" duration="9000" />
+      <workItem from="1774538470595" duration="3576000" />
+      <workItem from="1774732350531" duration="61000" />
+      <workItem from="1774732435929" duration="1308000" />
+      <workItem from="1774733764229" duration="9683000" />
+      <workItem from="1775074558797" duration="7596000" />
+      <workItem from="1775128231259" duration="12585000" />
+      <workItem from="1775151397353" duration="6464000" />
     </task>
+    <task id="LOCAL-00001" summary="Reboot the project!">
+      <option name="closed" value="true" />
+      <created>1774071127922</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774071127922</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,6 +335,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Reboot the project!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reboot the project!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

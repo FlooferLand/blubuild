@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dooujtvr7jt8g"]
+
+[ext_resource type="Script" uid="uid://c1fgd7p7ixue" path="res://components/bot_animation/BotAnimationComp.cs" id="1_4muo5"]
+[ext_resource type="AudioStream" uid="uid://d13gjwcpdqc4w" path="res://assets/sfx/mechanical/pneumatic_fire.wav" id="2_4muo5"]
+[ext_resource type="AudioStream" uid="uid://brxqhq22oyuab" path="res://assets/sfx/mechanical/pneumatic_release.wav" id="3_dlt5u"]
+
+[node name="BotAnimationComp" type="Node3D" unique_id=374059477 node_paths=PackedStringArray("PneumaticFire", "PneumaticRelease")]
+script = ExtResource("1_4muo5")
+PneumaticFire = NodePath("PneumaticFireSFX")
+PneumaticRelease = NodePath("PneumaticReleaseSFX")
+
+[node name="PneumaticFireSFX" type="AudioStreamPlayer3D" parent="." unique_id=753357209]
+stream = ExtResource("2_4muo5")
+volume_db = -8.0
+max_polyphony = 6
+
+[node name="PneumaticReleaseSFX" type="AudioStreamPlayer3D" parent="." unique_id=277102734]
+stream = ExtResource("3_dlt5u")
+volume_db = -8.0
+max_polyphony = 6

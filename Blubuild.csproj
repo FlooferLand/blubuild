@@ -1,25 +1,33 @@
-<Project Sdk="Godot.NET.Sdk/4.6.2-rc.2">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
-    <Nullable>enable</Nullable>
-    <Configurations>Debug;ExportDebug;ExportRelease;Release;Benchmark</Configurations>
-    <Platforms>AnyCPU</Platforms>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="GodotUtils\**" />
-    <Compile Remove="script_templates\**" />
-    <Compile Remove="Bluchalk\**" />
-    <Compile Remove="Blutest\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="GodotUtils\**" />
-    <EmbeddedResource Remove="script_templates\**" />
-    <EmbeddedResource Remove="Bluchalk\**" />
-    <EmbeddedResource Remove="Blutest\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="GodotUtils\GodotUtils.csproj" />
-  </ItemGroup>
+<Project Sdk="Godot.NET.Sdk/4.6.2">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+        <Nullable>enable</Nullable>
+        <Configurations>Debug;ExportDebug;ExportRelease;Release;Benchmark</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+    <ItemGroup>
+        <RuntimeHostConfigurationOption Include="System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization" Value="true" Trim="true" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="GodotUtils\**" />
+        <Compile Remove="script_templates\**" />
+        <Compile Remove="Bluchalk\**" />
+        <Compile Remove="Blutest\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Remove="GodotUtils\**" />
+        <EmbeddedResource Remove="script_templates\**" />
+        <EmbeddedResource Remove="Bluchalk\**" />
+        <EmbeddedResource Remove="Blutest\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="Bluchalk\Bluchalk.csproj" />
+        <ProjectReference Include="GodotUtils\GodotUtils.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="scripts\interfaces\" />
+        <Folder Include="scripts\networking\packets\" />
+    </ItemGroup>
 </Project>

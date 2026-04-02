@@ -23,16 +23,16 @@ properties/1/spawn = true
 properties/1/replication_mode = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwjv4"]
-radius = 0.3
+radius = 0.25
 height = 1.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7ett"]
-albedo_color = Color(0.39765668, 0.12765601, 0.09311793, 1)
+albedo_color = Color(0.2567749, 0.4212321, 0.8856033, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u7nur"]
 lightmap_size_hint = Vector2i(11, 12)
 material = SubResource("StandardMaterial3D_g7ett")
-radius = 0.3
+radius = 0.25
 height = 1.8
 radial_segments = 16
 rings = 4
@@ -40,15 +40,17 @@ rings = 4
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssrue"]
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_jnjyq"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_g7ett"]
 material = SubResource("StandardMaterial3D_ssrue")
-radius = 0.15
-height = 0.3
+top_radius = 0.13
+bottom_radius = 0.13
+height = 0.025
 
-[sub_resource type="PrismMesh" id="PrismMesh_vrx8j"]
-size = Vector3(1, 1, 0.01)
+[sub_resource type="QuadMesh" id="QuadMesh_g7ett"]
+material = SubResource("StandardMaterial3D_ssrue")
+size = Vector2(0.1, 0.055)
 
-[node name="Player" type="CharacterBody3D" unique_id=1693905901 node_paths=PackedStringArray("Head", "Camera", "InteractRay", "BodyPivot", "PlayerInput")]
+[node name="Player" type="CharacterBody3D" unique_id=1693905901 node_paths=PackedStringArray("Head", "Camera", "InteractRay", "BodyPivot", "PlayerInput", "Nameplate", "Model")]
 collision_layer = 2
 wall_min_slide_angle = 0.0872665
 script = ExtResource("1_57cuq")
@@ -57,6 +59,8 @@ Camera = NodePath("Pivot/Head/Camera")
 InteractRay = NodePath("Pivot/Head/InteractRay")
 BodyPivot = NodePath("Pivot")
 PlayerInput = NodePath("InputSynchronizer")
+Nameplate = NodePath("Nameplate")
+Model = NodePath("Pivot/Model")
 
 [node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=697153966]
 replication_config = SubResource("SceneReplicationConfig_wfy3h")
@@ -69,6 +73,16 @@ script = ExtResource("2_b8yme")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_fwjv4")
 
+[node name="Nameplate" type="Label3D" parent="." unique_id=783743424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+pixel_size = 0.001
+billboard = 1
+double_sided = false
+modulate = Color(0.36908692, 0.5050264, 0.6915641, 1)
+text = "CoolGuy123"
+font_size = 96
+outline_size = 48
+
 [node name="Pivot" type="Node3D" parent="." unique_id=319943196]
 
 [node name="Model" type="MeshInstance3D" parent="Pivot" unique_id=2084603454]
@@ -76,16 +90,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 mesh = SubResource("CapsuleMesh_u7nur")
 skeleton = NodePath("../..")
 
-[node name="EyeR" type="MeshInstance3D" parent="Pivot/Model" unique_id=159067622]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.562, -0.202)
-visibility_range_begin = 0.5
-mesh = SubResource("SphereMesh_jnjyq")
+[node name="GlassR" type="MeshInstance3D" parent="Pivot/Model" unique_id=159067622]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.15, 0.5619999, -0.24442643)
+mesh = SubResource("CylinderMesh_g7ett")
 skeleton = NodePath("../../..")
 
-[node name="EyeL" type="MeshInstance3D" parent="Pivot/Model" unique_id=281358514]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.562, -0.202)
-visibility_range_begin = 0.5
-mesh = SubResource("SphereMesh_jnjyq")
+[node name="GlassL" type="MeshInstance3D" parent="Pivot/Model" unique_id=930704265]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.15, 0.5619999, -0.24451181)
+mesh = SubResource("CylinderMesh_g7ett")
+skeleton = NodePath("../../..")
+
+[node name="GlassM" type="MeshInstance3D" parent="Pivot/Model" unique_id=1988441425]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0.58699846, -0.26706842)
+mesh = SubResource("QuadMesh_g7ett")
 skeleton = NodePath("../../..")
 
 [node name="Head" type="Node3D" parent="Pivot" unique_id=1452173429]
@@ -98,9 +115,5 @@ fov = 80.0
 [node name="InteractRay" type="RayCast3D" parent="Pivot/Head" unique_id=1701467710]
 target_position = Vector3(0, 0, -2)
 hit_from_inside = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=1713490160]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0597637, -0.124905)
-mesh = SubResource("PrismMesh_vrx8j")
 
 [node name="FootstepManager" type="Node" parent="." unique_id=411544777]

@@ -3,20 +3,30 @@
 [ext_resource type="Script" uid="uid://b4aylrhxu2msc" path="res://scripts/networking/NetworkManager.cs" id="1_sg147"]
 [ext_resource type="PackedScene" uid="uid://de2k8uj3pffye" path="res://objects/player/player.tscn" id="2_71jyj"]
 [ext_resource type="Material" uid="uid://6ntkjjlg1fm4" path="res://assets/materials/carpet/carpet.tres" id="3_71jyj"]
-[ext_resource type="PackedScene" uid="uid://tfkspr1kkdh1" path="res://assets/blender/remina/beach_bear/BeachBear.blend" id="4_6ojey"]
+[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/world_env.tres" id="3_ee62o"]
+[ext_resource type="PackedScene" uid="uid://brpm3ba25tof" path="res://bots/beach_bear/beach_bear.tscn" id="4_6ojey"]
+[ext_resource type="PackedScene" uid="uid://ficl248gk3iw" path="res://objects/reel_to_reel/reel_to_reel.tscn" id="5_0axs7"]
+[ext_resource type="Texture2D" uid="uid://d1570xge3n413" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_Color.jpg" id="5_wsbxy"]
+[ext_resource type="Texture2D" uid="uid://dntxtqfgli1q" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_NormalGL.jpg" id="6_81lwq"]
+[ext_resource type="PackedScene" uid="uid://buj2upqoj2vmx" path="res://objects/greybox/greybox.tscn" id="6_mkwu1"]
+[ext_resource type="PackedScene" uid="uid://culddebwgo2fp" path="res://objects/speaker/speaker.tscn" id="7_6mtqr"]
+[ext_resource type="Texture2D" uid="uid://dhaws16p7alkj" path="res://assets/images/logo.svg" id="8_fni8k"]
+[ext_resource type="PackedScene" uid="uid://d0vu8xcwxc2wc" path="res://ui/screens/pause/pause_screen.tscn" id="9_ge5v2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oeyt"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mluw"]
+albedo_color = Color(0.30937046, 0.5060367, 0.47547495, 1)
+albedo_texture = ExtResource("5_wsbxy")
+roughness_texture = ExtResource("5_wsbxy")
+normal_enabled = true
+normal_texture = ExtResource("6_81lwq")
+uv1_triplanar = true
 
-[sub_resource type="Sky" id="Sky_71jyj"]
-sky_material = SubResource("ProceduralSkyMaterial_2oeyt")
-
-[sub_resource type="Environment" id="Environment_6ojey"]
-background_mode = 2
-sky = SubResource("Sky_71jyj")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="LabelSettings" id="LabelSettings_fni8k"]
+font_color = Color(7.123351e-06, 0.5843603, 0.7921197, 1)
+outline_size = 4
+outline_color = Color(0.78431374, 1, 1, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 0.6627451)
 
 [node name="Game" type="Node3D" unique_id=361021312]
 
@@ -25,35 +35,128 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 current = true
 
 [node name="NetworkManager" type="Node" parent="." unique_id=1146013533 node_paths=PackedStringArray("PlayerContainer")]
+process_mode = 3
 script = ExtResource("1_sg147")
 PlayerScene = ExtResource("2_71jyj")
 PlayerContainer = NodePath("../Players")
 
 [node name="Players" type="Node3D" parent="." unique_id=1155536668]
 
-[node name="Environment" type="Node3D" parent="." unique_id=1070789087]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=299933618]
+environment = ExtResource("3_ee62o")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=299933618]
-environment = SubResource("Environment_6ojey")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=282406396]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=282406396]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_energy = 0.445
+light_angular_distance = 1.0
 shadow_enabled = true
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Environment" unique_id=168153153]
+[node name="Map" type="Node3D" parent="." unique_id=1070789087]
+
+[node name="Area" type="CSGCombiner3D" parent="Map" unique_id=168153153]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment/CSGCombiner3D" unique_id=1961013492]
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/Area" unique_id=1961013492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 size = Vector3(25, 4, 25)
 material = ExtResource("3_71jyj")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/CSGCombiner3D" unique_id=1946051757]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map/Area" unique_id=1946051757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 operation = 2
 size = Vector3(23, 3, 23)
 material = ExtResource("3_71jyj")
 
-[node name="BeachBear" parent="Environment" unique_id=601836506 instance=ExtResource("4_6ojey")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1238985, -0.14222598, -0.024494648)
+[node name="InteriorBuilding" type="CSGCombiner3D" parent="Map" unique_id=1419035619]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/InteriorBuilding" unique_id=722245252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9713492, 1.5, 0)
+size = Vector3(0.4, 3, 6)
+material = SubResource("StandardMaterial3D_2mluw")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map/InteriorBuilding" unique_id=1806776367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3713492, 1.5, 0)
+size = Vector3(0.4, 3, 6)
+material = SubResource("StandardMaterial3D_2mluw")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map/InteriorBuilding" unique_id=1220052154]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.171349, 1.5, -2.8)
+size = Vector3(0.4, 3, 6)
+material = SubResource("StandardMaterial3D_2mluw")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map/InteriorBuilding" unique_id=823488519]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.171349, 1.5, 2.8)
+size = Vector3(0.4, 3, 6)
+material = SubResource("StandardMaterial3D_2mluw")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Map/InteriorBuilding" unique_id=1848358759]
+transform = Transform3D(-4.371139e-08, 0, 1, -1, -4.371139e-08, -4.371139e-08, 4.371139e-08, -1, 1.9106855e-15, -4.171349, 3.2, -5.9604645e-08)
+size = Vector3(0.4, 6, 6)
+material = SubResource("StandardMaterial3D_2mluw")
+
+[node name="DoorHole" type="CSGBox3D" parent="Map/InteriorBuilding" unique_id=1092141587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3713492, 1.0500001, 1.4901161e-08)
+operation = 2
+size = Vector3(0.4, 2.1000001, 1.2)
+material = SubResource("StandardMaterial3D_2mluw")
+
+[node name="ReelToReel" parent="Map" unique_id=1048385554 node_paths=PackedStringArray("Greybox") instance=ExtResource("5_0axs7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.059177, 4.7683716e-07, 1.4759786)
+ShowDir = "D:\\Animatronics\\Creative Engineering\\Show tapes (RR)"
+ShowFile = "Revolution - Rockafire Explosion.rshw"
+Greybox = NodePath("../Greybox")
+
+[node name="Greybox" parent="Map" unique_id=1612911414 node_paths=PackedStringArray("ReelToReel") instance=ExtResource("6_mkwu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2292, 0.0031065792, 1.4681324)
+ReelToReel = NodePath("../ReelToReel")
+
+[node name="Speaker" parent="Map" unique_id=202403579 node_paths=PackedStringArray("Greybox") instance=ExtResource("7_6mtqr")]
+transform = Transform3D(-0.3862763, 0, -0.9223831, 0, 1, 0, 0.9223831, 0, -0.3862763, -6.1403747, 0.002177596, -0.9424628)
+Greybox = NodePath("../Greybox")
+
+[node name="BeachBear" parent="Map" unique_id=1191031499 node_paths=PackedStringArray("Greybox") instance=ExtResource("4_6ojey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1317167, 0, 0)
+Greybox = NodePath("../Greybox")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Map" unique_id=901095487]
+transform = Transform3D(-4.2221966e-08, -0.25881904, 0.9659258, -1.1313341e-08, 0.9659258, 0.25881904, -1, 3.0767398e-15, -4.3711392e-08, -1.9511514, 2.4600892, 0)
+light_energy = 4.0
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Map" unique_id=1877294731]
+transform = Transform3D(6.20808e-09, -0.9898632, -0.14202428, -4.32683e-08, -0.14202428, 0.9898632, -1, -4.440892e-16, -4.37114e-08, -5.9511514, 2.560089, 0)
+shadow_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1293338324]
+
+[node name="Control" type="Control" parent="UI" unique_id=1800280408]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseScreen" parent="UI/Control" unique_id=434654798 instance=ExtResource("9_ge5v2")]
+layout_mode = 1
+
+[node name="Blubuild dev notice" type="HBoxContainer" parent="UI/Control" unique_id=262892671]
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 202.0
+offset_bottom = 48.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/Blubuild dev notice" unique_id=1774459512]
+layout_mode = 2
+texture = ExtResource("8_fni8k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/Control/Blubuild dev notice" unique_id=478071683]
+layout_mode = 2
+text = "Blubuild early access build"
+label_settings = SubResource("LabelSettings_fni8k")
