@@ -8,44 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bluchalk/WavHeader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/AudioBuses.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/base/AbstractScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/networking/TransferChannels.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/AudioMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/AudioMixer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles.mp3.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.mp3.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.svg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/init/Init.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/init/Init.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/init/init.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/init/init.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/PlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/player/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/player.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/networking/BlubuildClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/BlubuildClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/networking/packets/PlayerInputPacket.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/networking/packets/PlayerInputPacket.cs.uid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluBuildLogoUnroll.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/BluIcon.png.import" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,7 +280,11 @@
       <workItem from="1774733764229" duration="9683000" />
       <workItem from="1775074558797" duration="7596000" />
       <workItem from="1775128231259" duration="12585000" />
-      <workItem from="1775151397353" duration="6464000" />
+      <workItem from="1775151397353" duration="7006000" />
+      <workItem from="1775254802904" duration="11000" />
+      <workItem from="1775559605472" duration="798000" />
+      <workItem from="1775735400755" duration="5582000" />
+      <workItem from="1776099738921" duration="104000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -325,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774071127922</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BUNCH OF CHANGES !!">
+      <option name="closed" value="true" />
+      <created>1775158148022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1775158148022</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +313,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Reboot the project!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reboot the project!" />
+    <MESSAGE value="BUNCH OF CHANGES !!" />
+    <option name="LAST_COMMIT_MESSAGE" value="BUNCH OF CHANGES !!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

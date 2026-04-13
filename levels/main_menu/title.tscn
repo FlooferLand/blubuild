@@ -363,6 +363,7 @@ horizontal_alignment = 1
 
 [node name="IpJoin" type="LineEdit" parent="MiddleMenu/VBoxContainer" unique_id=672594170]
 layout_mode = 2
+text = "127.0.0.1"
 placeholder_text = "Write an IP here and press enter"
 alignment = 1
 clear_button_enabled = true

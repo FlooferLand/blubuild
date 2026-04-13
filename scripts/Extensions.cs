@@ -11,7 +11,7 @@ public static class Extensions {
     /// False if running on the server
     public static bool ClientOwns(this SceneTree tree, Node node) {
         return tree.GetMultiplayer().IsClient()
-               && tree.GetMultiplayer().GetUniqueId() == node.Multiplayer.MultiplayerPeer.GetUniqueId();
+               && node.IsMultiplayerAuthority();
     }
 
     // Methods because C# sucks balls

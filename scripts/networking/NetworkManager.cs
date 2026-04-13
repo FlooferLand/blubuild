@@ -130,7 +130,7 @@ public partial class NetworkManager : Node {
 	}
 
 	public void AddPlayer(long id) {
-		if (id == 1 && !IsIntegratedServer)  // Don't add the server as a player
+		if (id == 1 && IsDedicatedServer)  // Don't add the server as a player
 			return;
 		
 		var player = PlayerScene.Instantiate<Player>();
