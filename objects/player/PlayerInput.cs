@@ -8,7 +8,7 @@ public partial class PlayerInput : MultiplayerSynchronizer {
 
 	public override void _Ready() {
 		// Stop processing in this class from running on the server
-		if (!GetTree().ClientOwns(this) || !Multiplayer.IsClient()) {
+		if (!GetTree().ClientOwns(this) || !Multiplayer.IsClientOrIntegrated()) {
 			SetProcess(false);
 			SetProcessInput(false);
 			SetPhysicsProcess(false);

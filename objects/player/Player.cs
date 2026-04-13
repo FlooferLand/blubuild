@@ -27,7 +27,16 @@ public partial class Player : CharacterBody3D {
 	bool jumping = false;
 	float speed = Speed;
 	[Export] public int PlayerId = -1;
-	[Export] public string PlayerUsername = "";
+	[Export] public string PlayerUsername {
+		get {
+			if (!IsInsideTree()) return "";
+			return Nameplate.Text ?? "";
+		}
+		set {
+			if (!IsInsideTree()) return;
+			Nameplate.Text = value;
+		}
+	}
 
 	public void SetNetworkPlayerId(int id) {
 		PlayerId = id;

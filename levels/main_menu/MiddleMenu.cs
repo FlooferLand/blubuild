@@ -15,10 +15,14 @@ public partial class MiddleMenu : Control {
         defaultUsername = "User" + GD.RandRange(0, 999);
         UsernameEdit.PlaceholderText = $"Username (default: {defaultUsername})";
 
-        StartPlaytest.Pressed += () => GetTree().ChangeSceneToPacked(GameScene);
+        StartPlaytest.Pressed += () => {
+            NetworkManager.Username = (UsernameEdit.Text.Length > 0) ? UsernameEdit.Text : defaultUsername;
+            GetTree().ChangeSceneToPacked(GameScene);
+        };
         JoinByIP.TextSubmitted += text => {
             if (IPAddress.TryParse(text, out var ip)) {
-                NetworkManager.RemoteJoinAddress = ip.ToString();
+                NetworkManager.Username = (UsernameEdit.Text.Length > 0) ? UsernameEdit.Text : defaultUsername;
+                NetworkManager.JoinAddress = ip.ToString();
                 GetTree().ChangeSceneToPacked(GameScene);
                 return;
             }

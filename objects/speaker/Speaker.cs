@@ -38,7 +38,7 @@ public partial class Speaker : Node3D {
 		}
 
 		// Client playback
-		if (Multiplayer.IsClient()) {
+		if (Multiplayer.IsClientOrIntegrated()) {
 			AudioFrame += frame => {
 				if (streamPlayback == null) return;
 

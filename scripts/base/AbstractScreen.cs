@@ -9,7 +9,7 @@ public abstract partial class AbstractScreen : Control {
     protected abstract void OnScreenRemove();
 
     public override void _EnterTree() {
-        if (!Multiplayer.IsClient()) {
+        if (!Multiplayer.IsClientOrIntegrated()) {
             SetProcess(false);
             SetPhysicsProcess(false);
             SetProcessInput(false);

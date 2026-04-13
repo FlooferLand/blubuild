@@ -15,8 +15,8 @@ public partial class MainMenu : Control {
 
     public override void _Ready() {
         initialCamY = ViewportCamera.Position.Y;
-        AnimationPlayer.Play("intro");
-        ThemeSongPlayer.VolumeDb = -6;
+        AnimationPlayer.Play(OS.IsDebugBuild() ? "RESET" : "intro");
+        ThemeSongPlayer.VolumeDb = OS.IsDebugBuild() ? -32 : -6;
         BeatTimer.Beat += _ => PlayRandomAnimation();
     }
 

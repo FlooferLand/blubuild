@@ -39,7 +39,7 @@ public partial class MechanicalAnimationPlayer : Node {
 	}
 
 	public override void _Ready() {
-		if (!Multiplayer.IsClient()) {
+		if (!Multiplayer.IsClientOrIntegrated()) {
 			QueueFree();
 			return;
 		}

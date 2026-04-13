@@ -11,7 +11,7 @@ public partial class Bot : Node3D {
 	[Export] public required BotAnimationComp AnimationPlayer;
 
 	public override void _Ready() {
-		if (Multiplayer.IsClient()) {
+		if (Multiplayer.IsClientOrIntegrated()) {
 			Greybox.SignalFrame += frame => {
 				foreach ((int bit, BotMovement movement) in BotData.BitMapping) {
 					AnimationPlayer.SetBit(bit, frame.Contains(bit));

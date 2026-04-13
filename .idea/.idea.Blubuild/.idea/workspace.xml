@@ -9,8 +9,18 @@
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/bots/Bot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/bot_animation/MechanicalAnimationPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/bot_animation/MechanicalAnimationPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/speaker/Speaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/speaker/Speaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/base/AbstractScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/base/AbstractScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/networking/TransferChannels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/TransferChannels.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +53,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/afe5b50ba83346d6842dc277b732d0d6580800/d6/34071b7c/RpcAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/228bff957d5b9f32cfbedd8bf82a5d3e862ec3e051593a67913b95ae288287/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/243a037ca7a04510a506adfdd94befbac90930/_5d0bc/IReadOnlyDictionary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2494bab6957f1633fcbe177e39b2f3d2f8d9925119d6e83b8577dab63632ade0/MultiplayerApi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/261ea83c988816e3d8fe76b15b7ac6c10af64b8f9e739854f83c137c8ba9/SafeFileHandle.Windows.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/341ad57b399efe213bea779238f90af24d9936a67a0df19b9bcb16b6a36ae8/NrbfDecoder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4315e118db18cc24415b7ec439e413a60c969c71375e5cd8bcca4f7e9c69f7/SerializationBinder.cs" root0="FORCE_HIGHLIGHTING" />
@@ -285,6 +296,7 @@
       <workItem from="1775559605472" duration="798000" />
       <workItem from="1775735400755" duration="5582000" />
       <workItem from="1776099738921" duration="104000" />
+      <workItem from="1776099959585" duration="10792000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -302,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775158148022</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Networking fixes">
+      <option name="closed" value="true" />
+      <created>1776100140563</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776100140563</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +334,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Reboot the project!" />
     <MESSAGE value="BUNCH OF CHANGES !!" />
-    <option name="LAST_COMMIT_MESSAGE" value="BUNCH OF CHANGES !!" />
+    <MESSAGE value="Networking fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Networking fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
