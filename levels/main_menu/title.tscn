@@ -10,7 +10,9 @@
 [ext_resource type="Script" uid="uid://bgdrwqhoq2u3" path="res://levels/main_menu/MiddleMenu.cs" id="7_qey2a"]
 [ext_resource type="PackedScene" uid="uid://c1wx1iw8q0gv3" path="res://ui/widgets/title_widget/title_widget.tscn" id="8_4s7fn"]
 [ext_resource type="PackedScene" uid="uid://c2crtmvgpbe1v" path="res://levels/game/game.tscn" id="8_ljyev"]
+[ext_resource type="PackedScene" uid="uid://cbkhoe4b788jh" path="res://levels/character_editor/character_editor.tscn" id="9_66ocq"]
 [ext_resource type="PackedScene" uid="uid://d01qolvrxvvi" path="res://ui/widgets/settings_widget/settings_widget.tscn" id="11_66ocq"]
+[ext_resource type="PackedScene" uid="uid://do3mwonfrjypa" path="res://ui/widgets/transitions/pull_transition.tscn" id="13_3tl3s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ywry"]
 bg_color = Color(0.05625219, 0.07301488, 0.1065472, 1)
@@ -189,6 +191,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PullTransition")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"FadeIn"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wd5la"]
 _data = {
@@ -216,8 +232,8 @@ Stream = ExtResource("3_qey2a")
 
 [node name="SongPlayer" type="AudioStreamPlayer" parent="." unique_id=1656446963]
 stream = ExtResource("3_qey2a")
-volume_db = -4.0
 autoplay = true
+bus = &"Music"
 
 [node name="Background" type="Control" parent="." unique_id=1133644232]
 layout_mode = 1
@@ -287,7 +303,7 @@ transform = Transform3D(0.46759045, 0, 0.8839453, 0, 1, 0, -0.8839453, 0, 0.4675
 [node name="Rolfe" parent="Scene/SubViewport" unique_id=814945630 instance=ExtResource("4_t7fky")]
 transform = Transform3D(0.35208666, 0, -0.9359673, 0, 1, 0, 0.9359673, 0, 0.35208666, 1.3095052, 0, -1.2919964)
 
-[node name="MiddleMenu" type="Control" parent="." unique_id=841935055 node_paths=PackedStringArray("StartPlaytest", "JoinByIP", "UsernameEdit")]
+[node name="MiddleMenu" type="Control" parent="." unique_id=841935055 node_paths=PackedStringArray("StartPlaytest", "CharacterEditor", "JoinByIP", "UsernameEdit", "SceneTransition")]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -299,9 +315,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_qey2a")
 GameScene = ExtResource("8_ljyev")
+CharacterEditorScene = ExtResource("9_66ocq")
 StartPlaytest = NodePath("VBoxContainer/StartPlaytest")
+CharacterEditor = NodePath("VBoxContainer/CharacterEditor")
 JoinByIP = NodePath("VBoxContainer/IpJoin")
 UsernameEdit = NodePath("VBoxContainer/UsernameEdit")
+SceneTransition = NodePath("../PullTransition")
 
 [node name="Background" type="Control" parent="MiddleMenu" unique_id=1181423831]
 layout_mode = 1
@@ -367,6 +386,15 @@ text = "127.0.0.1"
 placeholder_text = "Write an IP here and press enter"
 alignment = 1
 clear_button_enabled = true
+
+[node name="Separator3" type="Control" parent="MiddleMenu/VBoxContainer" unique_id=847464664]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterEditor" type="Button" parent="MiddleMenu/VBoxContainer" unique_id=995987698]
+layout_mode = 2
+text = "Character editor"
 
 [node name="Separator2" type="Control" parent="MiddleMenu/VBoxContainer" unique_id=478794436]
 custom_minimum_size = Vector2(0, 128)
@@ -461,3 +489,5 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=116946378]
 libraries/ = SubResource("AnimationLibrary_wd5la")
+
+[node name="PullTransition" parent="." unique_id=392894667 instance=ExtResource("13_3tl3s")]

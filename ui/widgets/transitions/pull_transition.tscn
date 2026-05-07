@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://do3mwonfrjypa"]
+
+[ext_resource type="Script" uid="uid://kmr8ejtpruxi" path="res://ui/widgets/transitions/Transition.cs" id="1_682is"]
+[ext_resource type="Material" uid="uid://d4i07wx23v71q" path="res://ui/materials/pull_up_transition.tres" id="1_kg11b"]
+
+[node name="PullTransition" type="CanvasLayer" unique_id=392894667 node_paths=PackedStringArray("Rect")]
+layer = 100
+script = ExtResource("1_682is")
+Rect = NodePath("Transition")
+
+[node name="Transition" type="ColorRect" parent="." unique_id=1241207564]
+material = ExtResource("1_kg11b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

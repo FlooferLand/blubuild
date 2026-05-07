@@ -8,6 +8,7 @@ namespace Project;
 public partial class SystemAutoload : Node {
 	public static SystemAutoload Instance { get; private set; } = null!;
 	public static readonly ArgumentParser Args = new(OS.GetCmdlineArgs());
+	public bool IsFileSystemSandboxed;
 	public bool IsCommandlineOnly {
 		private set {
 			RenderingServer.Singleton?.SetRenderLoopEnabled(!value);
@@ -44,6 +45,15 @@ public partial class SystemAutoload : Node {
 		if (OS.IsDebugBuild()) {
 			DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
 			Engine.MaxFps = 100;
+		}
+
+		// Detecting OS stuff
+		IsFileSystemSandboxed = OS.IsSandboxed();
+		if (OS.GetName() == "Android") {
+			OS.RequestPermission("android.permission.READ_EXTERNAL_STORAGE");
+			OS.RequestPermission("android.permission.WRITE_EXTERNAL_STORAGE");
+			IsFileSystemSandboxed = OS.RequestPermission("android.permission.READ_EXTERNAL_STORAGE")
+				&& OS.RequestPermission("android.permission.WRITE_EXTERNAL_STORAGE");
 		}
 	}
 

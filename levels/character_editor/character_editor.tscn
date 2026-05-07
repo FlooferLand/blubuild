@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://cbkhoe4b788jh"]
+
+[ext_resource type="AudioStream" uid="uid://dg5ng0exyqom3" path="res://assets/music/character_editor.ogg" id="1_5wso5"]
+[ext_resource type="Script" uid="uid://d4v6o8wn01xp" path="res://levels/character_editor/CharacterEditor.cs" id="1_skgct"]
+[ext_resource type="Script" uid="uid://cr33ht8m35sdq" path="res://levels/character_editor/InitCanvas.cs" id="3_y2rf3"]
+[ext_resource type="Script" uid="uid://b4olfaef2n4jd" path="res://levels/character_editor/EditCanvas.cs" id="4_7edw4"]
+[ext_resource type="PackedScene" uid="uid://do3mwonfrjypa" path="res://ui/widgets/transitions/pull_transition.tscn" id="4_y2rf3"]
+
+[sub_resource type="Environment" id="Environment_nbema"]
+background_mode = 2
+ambient_light_sky_contribution = 0.1
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dwy1c"]
+size = Vector2(50, 50)
+
+[node name="CharacterEditor" type="Node3D" unique_id=1733658327 node_paths=PackedStringArray("SceneTransition", "InitCanvas", "EditCanvas")]
+script = ExtResource("1_skgct")
+SceneTransition = NodePath("PullTransition")
+InitCanvas = NodePath("InitCanvas")
+EditCanvas = NodePath("EditCanvas")
+
+[node name="Environment" type="Node3D" parent="." unique_id=1527935625]
+metadata/_edit_group_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=221383445]
+environment = SubResource("Environment_nbema")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=66393643]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+light_energy = 0.0
+light_angular_distance = 1.0
+directional_shadow_mode = 0
+
+[node name="Ground" type="MeshInstance3D" parent="Environment" unique_id=396591189]
+mesh = SubResource("PlaneMesh_dwy1c")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Environment" unique_id=1941136497]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.5688653, 0)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 7.8977904
+spot_angle = 60.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment" unique_id=1298691724]
+transform = Transform3D(-2.53131e-08, 1, 8.075276e-09, -0.8152592, -2.53131e-08, 0.5790962, 0.5790962, 8.075276e-09, 0.8152592, 0.08804369, 2.1546216, 5)
+light_energy = 2.17
+shadow_enabled = true
+spot_range = 7.8977904
+spot_angle = 60.0
+
+[node name="Music" type="AudioStreamPlayer" parent="Environment" unique_id=457461586]
+stream = ExtResource("1_5wso5")
+autoplay = true
+bus = &"Music"
+
+[node name="BotHolder" type="Node3D" parent="." unique_id=1991537209]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=570667170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+far = 300.0
+
+[node name="InitCanvas" type="CanvasLayer" parent="." unique_id=241228267 node_paths=PackedStringArray("Parent", "NewButton", "LoadButton", "Progress", "Error")]
+layer = 100
+visible = false
+script = ExtResource("3_y2rf3")
+Parent = NodePath("..")
+NewButton = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/New")
+LoadButton = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Load")
+Progress = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ProgressBar")
+Error = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Error")
+
+[node name="PanelContainer" type="PanelContainer" parent="InitCanvas" unique_id=350522290]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="InitCanvas/PanelContainer" unique_id=144662854]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="InitCanvas/PanelContainer/CenterContainer" unique_id=1017176414]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer" unique_id=134696245]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer" unique_id=391419669]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=492740041]
+layout_mode = 2
+text = "Character Editor"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1889189944]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="New" type="Button" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2061130801]
+layout_mode = 2
+text = "New character"
+
+[node name="Load" type="Button" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1463362702]
+layout_mode = 2
+text = "Load existing"
+
+[node name="ProgressBar" type="ProgressBar" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1171674922]
+layout_mode = 2
+max_value = 1.0
+
+[node name="Error" type="Label" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1944224175]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.37, 0.37, 1)
+text = "Error"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "SaveButton", "AutosaveCheckButton", "SaveProgressBar", "SaveError")]
+script = ExtResource("4_7edw4")
+Parent = NodePath("..")
+DisplayName = NodePath("SidePanel/MarginContainer/VBoxContainer/Name/LineEdit")
+Authors = NodePath("SidePanel/MarginContainer/VBoxContainer/Authors/LineEdit")
+SaveButton = NodePath("CornerPanel/MarginContainer/VBoxContainer/Save")
+AutosaveCheckButton = NodePath("CornerPanel/MarginContainer/VBoxContainer/AutoSave")
+SaveProgressBar = NodePath("CornerPanel/MarginContainer/VBoxContainer/SaveProgress")
+SaveError = NodePath("CornerPanel/MarginContainer/VBoxContainer/Error")
+
+[node name="SidePanel" type="PanelContainer" parent="EditCanvas" unique_id=1342952534]
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EditCanvas/SidePanel" unique_id=1897937165]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/SidePanel/MarginContainer" unique_id=95068143]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=1369443867]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Name" unique_id=1606087070]
+layout_mode = 2
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Name" unique_id=1895529700]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Authors" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=1127729183]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Authors" unique_id=1589418173]
+layout_mode = 2
+text = "Author(s)"
+
+[node name="LineEdit" type="LineEdit" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Authors" unique_id=432419054]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Model" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=771838624]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Model" unique_id=1426437824]
+layout_mode = 2
+text = "Model"
+
+[node name="Pick" type="Button" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Model" unique_id=1951694298]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pick"
+
+[node name="Animations" type="Tree" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=894752536]
+layout_mode = 2
+
+[node name="CornerPanel" type="PanelContainer" parent="EditCanvas" unique_id=51356662]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -109.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="EditCanvas/CornerPanel" unique_id=760698683]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/CornerPanel/MarginContainer" unique_id=2097333621]
+layout_mode = 2
+
+[node name="AutoSave" type="CheckButton" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=989917199]
+layout_mode = 2
+button_pressed = true
+text = "Auto save"
+
+[node name="Save" type="Button" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=223594842]
+layout_mode = 2
+text = "Save"
+
+[node name="SaveProgress" type="ProgressBar" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=1585948090]
+layout_mode = 2
+
+[node name="Error" type="Label" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=1787551261]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.37, 0.37, 1)
+text = "Error"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PullTransition" parent="." unique_id=392894667 instance=ExtResource("4_y2rf3")]

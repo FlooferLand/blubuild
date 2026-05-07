@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q1s0sv1r30o5"
-path="res://.godot/imported/grid.png-5fbd7ea91249f12cd4c2cb884284e4f1.ctex"
+uid="uid://csi6ue8t1gy25"
+path="res://.godot/imported/transition.svg-b711b9cec082698184957e879900c66e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/grid.png"
-dest_files=["res://.godot/imported/grid.png-5fbd7ea91249f12cd4c2cb884284e4f1.ctex"]
+source_file="res://ui/textures/transition.svg"
+dest_files=["res://.godot/imported/transition.svg-b711b9cec082698184957e879900c66e.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -24,6 +24,14 @@ public static class Log {
 		GD.PushWarning(message);
 	}
 
+	public static void Error(string message, Exception exception) {
+		Error($"{message}: {exception}");
+	}
+
+	public static void Error(Exception exception) {
+		Error($"Exception: {exception}");
+	}
+
 	public static void Error(Error error) {
 		Error($"Internal name: {error.ToString()}");
 	}

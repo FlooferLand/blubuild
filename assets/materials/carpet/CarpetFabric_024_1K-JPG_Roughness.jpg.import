@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtm1grbx0xui5"
 path.s3tc="res://.godot/imported/CarpetFabric_024_1K-JPG_Roughness.jpg-0a7b0e052228b4ae11ee7e6720096c55.s3tc.ctex"
+path.etc2="res://.godot/imported/CarpetFabric_024_1K-JPG_Roughness.jpg-0a7b0e052228b4ae11ee7e6720096c55.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_Roughness.jpg"
-dest_files=["res://.godot/imported/CarpetFabric_024_1K-JPG_Roughness.jpg-0a7b0e052228b4ae11ee7e6720096c55.s3tc.ctex"]
+dest_files=["res://.godot/imported/CarpetFabric_024_1K-JPG_Roughness.jpg-0a7b0e052228b4ae11ee7e6720096c55.s3tc.ctex", "res://.godot/imported/CarpetFabric_024_1K-JPG_Roughness.jpg-0a7b0e052228b4ae11ee7e6720096c55.etc2.ctex"]
 
 [params]
 

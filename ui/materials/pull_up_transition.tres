@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d4i07wx23v71q"]
+
+[ext_resource type="Shader" uid="uid://dhpedonbb00rp" path="res://ui/shaders/mask_transition.gdshader" id="1_060tn"]
+[ext_resource type="Texture2D" uid="uid://csi6ue8t1gy25" path="res://ui/textures/transition.svg" id="2_3gckb"]
+
+[sub_resource type="Gradient" id="Gradient_558g1"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3vyub"]
+gradient = SubResource("Gradient_558g1")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[resource]
+shader = ExtResource("1_060tn")
+shader_parameter/cutoff = 1.0
+shader_parameter/pull = 0.0
+shader_parameter/blend = 0.50000002375
+shader_parameter/blend_frames = 0
+shader_parameter/invert = false
+shader_parameter/mask_texture = ExtResource("2_3gckb")
+shader_parameter/display_texture = SubResource("GradientTexture2D_3vyub")

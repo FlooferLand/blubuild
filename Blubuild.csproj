@@ -30,4 +30,7 @@
         <Folder Include="scripts\interfaces\" />
         <Folder Include="scripts\networking\packets\" />
     </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="SharpCompress" Version="0.48.0" />
+    </ItemGroup>
 </Project>

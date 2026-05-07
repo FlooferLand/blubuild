@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace GodotUtils;
@@ -9,7 +8,7 @@ namespace GodotUtils;
 /// </summary>
 /// <typeparam name="TOk">The value that might be held inside the type</typeparam>
 [SuppressMessage("ReSharper", "UnusedType.Global")]
-public class Result<TOk> : Result<TOk, String> {
+public record Result<TOk> : Result<TOk, String> {
     protected Result(TOk value, String error, Boolean isOk) : base(value, error, isOk) { }
     
     /** Stores a value */
@@ -29,7 +28,7 @@ public class Result<TOk> : Result<TOk, String> {
 /// <typeparam name="TOk">The value that might be held inside the type</typeparam>
 /// <typeparam name="TErr">The error that might be held inside the type</typeparam>
 [SuppressMessage("ReSharper", "UnusedType.Global")]
-public class Result<TOk, TErr> {
+public record Result<TOk, TErr> {
     readonly TOk value;
     readonly TErr error;
     readonly bool isOk;
