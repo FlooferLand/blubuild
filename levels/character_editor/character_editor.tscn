@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cr33ht8m35sdq" path="res://levels/character_editor/InitCanvas.cs" id="3_y2rf3"]
 [ext_resource type="Script" uid="uid://b4olfaef2n4jd" path="res://levels/character_editor/EditCanvas.cs" id="4_7edw4"]
 [ext_resource type="PackedScene" uid="uid://do3mwonfrjypa" path="res://ui/widgets/transitions/pull_transition.tscn" id="4_y2rf3"]
+[ext_resource type="PackedScene" uid="uid://cjiy4neb0rqp4" path="res://ui/widgets/file_picker/file_picker_button.tscn" id="5_8qviq"]
 
 [sub_resource type="Environment" id="Environment_nbema"]
 background_mode = 2
@@ -17,8 +18,21 @@ glow_enabled = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_dwy1c"]
 size = Vector2(50, 50)
 
-[node name="CharacterEditor" type="Node3D" unique_id=1733658327 node_paths=PackedStringArray("SceneTransition", "InitCanvas", "EditCanvas")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qviq"]
+albedo_color = Color(4.813075e-07, 0.48071384, 0.6416302, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_uxla0"]
+material = SubResource("StandardMaterial3D_8qviq")
+text = "Forward"
+depth = 0.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_8qviq"]
+material = SubResource("StandardMaterial3D_8qviq")
+size = Vector3(0.3, 0.3, 0)
+
+[node name="CharacterEditor" type="Node3D" unique_id=1733658327 node_paths=PackedStringArray("BotHolder", "SceneTransition", "InitCanvas", "EditCanvas")]
 script = ExtResource("1_skgct")
+BotHolder = NodePath("BotHolder")
 SceneTransition = NodePath("PullTransition")
 InitCanvas = NodePath("InitCanvas")
 EditCanvas = NodePath("EditCanvas")
@@ -57,6 +71,19 @@ spot_angle = 60.0
 stream = ExtResource("1_5wso5")
 autoplay = true
 bus = &"Music"
+
+[node name="Forward" type="Node3D" parent="." unique_id=1415163026]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="Text" type="MeshInstance3D" parent="Forward" unique_id=412571341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5743971, 0.005364018)
+mesh = SubResource("TextMesh_uxla0")
+skeleton = NodePath("../../BotHolder")
+
+[node name="Arrow" type="MeshInstance3D" parent="Forward" unique_id=1592939881]
+transform = Transform3D(-1, 8.742278e-08, -2.6054018e-15, -8.742278e-08, -1, 5.9604645e-08, 2.6054018e-15, 5.9604645e-08, 1, 0, -0.88394445, 0.0042239693)
+mesh = SubResource("PrismMesh_8qviq")
+skeleton = NodePath("../../BotHolder")
 
 [node name="BotHolder" type="Node3D" parent="." unique_id=1991537209]
 
@@ -126,13 +153,14 @@ text = "Error"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "SaveButton", "AutosaveCheckButton", "SaveProgressBar", "SaveError")]
+[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "ModelPicker", "Error", "SaveButton", "SaveProgressBar", "SaveError")]
 script = ExtResource("4_7edw4")
 Parent = NodePath("..")
 DisplayName = NodePath("SidePanel/MarginContainer/VBoxContainer/Name/LineEdit")
 Authors = NodePath("SidePanel/MarginContainer/VBoxContainer/Authors/LineEdit")
+ModelPicker = NodePath("SidePanel/MarginContainer/VBoxContainer/Model/FilePickerButton")
+Error = NodePath("SidePanel/MarginContainer/VBoxContainer/Error")
 SaveButton = NodePath("CornerPanel/MarginContainer/VBoxContainer/Save")
-AutosaveCheckButton = NodePath("CornerPanel/MarginContainer/VBoxContainer/AutoSave")
 SaveProgressBar = NodePath("CornerPanel/MarginContainer/VBoxContainer/SaveProgress")
 SaveError = NodePath("CornerPanel/MarginContainer/VBoxContainer/Error")
 
@@ -182,13 +210,21 @@ layout_mode = 2
 layout_mode = 2
 text = "Model"
 
-[node name="Pick" type="Button" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Model" unique_id=1951694298]
+[node name="FilePickerButton" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer/Model" unique_id=2029266648 instance=ExtResource("5_8qviq")]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Pick"
 
 [node name="Animations" type="Tree" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=894752536]
 layout_mode = 2
+
+[node name="Error" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=100725715]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.37, 0.37, 1)
+text = "Error"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="CornerPanel" type="PanelContainer" parent="EditCanvas" unique_id=51356662]
 anchors_preset = 3
@@ -210,11 +246,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/CornerPanel/MarginContainer" unique_id=2097333621]
 layout_mode = 2
-
-[node name="AutoSave" type="CheckButton" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=989917199]
-layout_mode = 2
-button_pressed = true
-text = "Auto save"
 
 [node name="Save" type="Button" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=223594842]
 layout_mode = 2

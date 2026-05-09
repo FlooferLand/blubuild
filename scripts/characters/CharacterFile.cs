@@ -4,9 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Godot;
 using GodotUtils;
-using SharpCompress;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Common;
 using SharpCompress.Readers;
@@ -19,11 +17,11 @@ public class CharacterFile {
     public string Id = "";
     public string DisplayName = "";
     public string[] Authors = Array.Empty<string>();
-    public GltfMesh? Model = null;
+    public Model? Model = null;
 
     public required string FilePath;
 
-    const int Version = 0;
+    const int CurrentVersion = 1;
 
     /// Returns an error if there is one
     [Pure]
@@ -44,17 +42,22 @@ public class CharacterFile {
         await using var writer = await WriterFactory.OpenAsyncWriter(stream, ArchiveType.SevenZip, options);
 
         // Writing stuff
-        await using var nameStream = new MemoryStream(Encoding.UTF8.GetBytes(DisplayName));
-        await writer.WriteAsync("name.txt", nameStream);
-        await using var authorStream = new MemoryStream(Encoding.UTF8.GetBytes(Authors.Join(",")));
-        await writer.WriteAsync("authors.txt", authorStream);
+        await using var versionStream = new MemoryStream(Encoding.UTF8.GetBytes(CurrentVersion.ToString()));
+        await writer.WriteAsync("version", versionStream);
+        if (Model is {} model) {
+            await using var modelStream = new MemoryStream();
+            if (await model.Save(modelStream) is { } error) return error;
+            modelStream.Seek(0, SeekOrigin.Begin);
+            await writer.WriteDirectoryAsync("models");
+            await writer.WriteAsync($"models/main.{model.Extension}", modelStream);
+        }
         return null;
     }
 
     [Pure]
     public static async Task<Result<CharacterFile>> Read(string path, Action<ProgressReport>? progress = null) {
         var result = FileUtils.OpenReadStream(path);
-        if (result.LetErr(out string err)) return Result<CharacterFile>.Err(err);
+        if (result.LetErr(out string err)) return Result.Err(err);
         await using var stream = result.Unwrap();
 
         // Reading the archive
@@ -69,29 +72,17 @@ public class CharacterFile {
 
         // Reading stuff
         var character = new CharacterFile { FilePath = path };
-
-        string? version = await GetStringFast("version");
-        if (int.TryParse(version, out int versionInt)) {
-            if (versionInt != Version)
-                throw new NotImplementedException($"Version conversion not implemented ({versionInt} to {Version})");
-        }
-
-        string? name = await GetStringFast("name.txt");
-        if (name != null) character.DisplayName = name;
-
-        string? authors = await GetStringFast("authors.txt");
-        if (authors != null) character.Authors = authors.Split(',', StringSplitOptions.TrimEntries);
-
-        return Result<CharacterFile>.Ok(character);
-
-        async Task<BinaryReader?> GetFast(string key) {
-            if (!entries.TryGetValue(key, out var entry)) return null;
-            await using var file = await entry.OpenEntryStreamAsync();
-            return new BinaryReader(file);
-        }
-        async Task<string?> GetStringFast(string key) {
-            using var reader = await GetFast(key);
-            return reader?.ReadString();
-        }
+        string? version = await CharacterFileVersion.GetFileAsUtf(entries, "version");
+        if (!int.TryParse(version, out int versionInt)) return Result.Err("Failed to get the format version");
+        CharacterFileVersion? script = versionInt switch {
+            1 => new CharacterFileV1(),
+            _ => null
+        };
+        if (script == null) return Result.Err($"Version conversion not implemented ({versionInt} to {CurrentVersion})");
+        if (script.Version != versionInt) return Result.Err($"Mismatched script version ({script.Version}, {versionInt})");
+        script.Entries = entries;
+        (var file, string? error) = await script.Run(character);
+        if (error != null) return Result.Err(error);
+        return Result.Ok(file!);
     }
 }

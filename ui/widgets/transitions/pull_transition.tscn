@@ -3,16 +3,40 @@
 [ext_resource type="Script" uid="uid://kmr8ejtpruxi" path="res://ui/widgets/transitions/Transition.cs" id="1_682is"]
 [ext_resource type="Material" uid="uid://d4i07wx23v71q" path="res://ui/materials/pull_up_transition.tres" id="1_kg11b"]
 
-[node name="PullTransition" type="CanvasLayer" unique_id=392894667 node_paths=PackedStringArray("Rect")]
+[node name="PullTransition" type="CanvasLayer" unique_id=392894667 node_paths=PackedStringArray("Rect", "Info")]
 layer = 100
 script = ExtResource("1_682is")
-Rect = NodePath("Transition")
+Rect = NodePath("Control/Transition")
+Info = NodePath("Control/Info")
 
-[node name="Transition" type="ColorRect" parent="." unique_id=1241207564]
-material = ExtResource("1_kg11b")
+[node name="Control" type="Control" parent="." unique_id=1611931747]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Transition" type="ColorRect" parent="Control" unique_id=1241207564]
+material = ExtResource("1_kg11b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Info" type="Label" parent="Control" unique_id=1385222709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.49019608)
+theme_override_font_sizes/font_size = 48
+text = "Loading.."
+horizontal_alignment = 1
+vertical_alignment = 1

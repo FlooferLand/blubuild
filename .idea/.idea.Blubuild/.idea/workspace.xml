@@ -8,35 +8,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bluchalk/FileExts.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/FileAccessStream.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/utils/FileUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileVersion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/FileFormat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/FileFormatPack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/Model.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/Log.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/Log.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/FileExts.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blutest/Blutest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blutest/Blutest.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/audio_bus.tres" beforeDir="false" afterPath="$PROJECT_DIR$/assets/audio_bus.tres" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/logo.svg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo.svg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/carpet/CarpetFabric_024_1K-JPG_Color.jpg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/carpet/CarpetFabric_024_1K-JPG_Color.jpg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/carpet/CarpetFabric_024_1K-JPG_NormalGL.jpg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/carpet/CarpetFabric_024_1K-JPG_NormalGL.jpg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/carpet/CarpetFabric_024_1K-JPG_Roughness.jpg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/carpet/CarpetFabric_024_1K-JPG_Roughness.jpg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/concrete/concrete_diff_1k.jpg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/concrete/concrete_diff_1k.jpg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/concrete/concrete_nor_gl_1k.jpg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/concrete/concrete_nor_gl_1k.jpg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/concrete/concrete_rough_1k.jpg.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/concrete/concrete_rough_1k.jpg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/SystemAutoload.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/SystemAutoload.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/godot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/godot.svg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/grid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/grid.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/shader/grid.gdshader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/shader/grid.gdshader.uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/character_editor.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/character_editor.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/shaders/mask_transition.gdshader" beforeDir="false" afterPath="$PROJECT_DIR$/ui/shaders/mask_transition.gdshader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/pull_transition.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/pull_transition.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0ce8305c3861435dbb60368d95359d6f14928/94/2f9344f0/MemoryMappedFile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/7e/69b793b5/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/9d/0b00bf5d/Action`2.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4881db23b1834147bd6855274699690d580800/0d/30f39b3b/StringExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4881db23b1834147bd6855274699690d580800/0d/30f39b3b/StringExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/1a/f1eacdfb/ReadOnlyStream.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/59/c9caaddc/ReadOnlySubStream.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/fe/6e645dfa/IArchiveEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/afe5b50ba83346d6842dc277b732d0d6580800/d6/34071b7c/RpcAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db0ff8f5f8234629839bf9988df65c7f231000/95/6028b615/IAsyncArchiveExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db0ff8f5f8234629839bf9988df65c7f231000/b2/4943fdb4/SevenZipWriterOptions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -89,8 +85,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c2225fe053e38b55e07d8ce74c88896ffb33ea3a48fb3a4a44134858a6bbd81/MultiplayerPeer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cfcfa3591cfe8e7d99db20c818f3316e394a8bffff43622336f3662fe8971e/Stream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6a5900c23694563a395d0edcee9eca7c90908/_41dba/IProgress.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e23dedd93ae6d269e79141175e2335183e215e2c7d8593663cef57ff7d7/FbxDocument.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f0d5842055c33862fb8e733d61c64dd5fe95a1f13d5a45db2e3b17b9ef0ac/MemoryStream.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Bluchalk/FileExts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fc9b4057645c555bd3f9ca699e9098181b8ae84117f797ae1e7535b26571ab/GltfDocument.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/WavHeader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" root0="FORCE_HIGHLIGHTING" />
@@ -114,11 +111,14 @@
     <setting file="file://$PROJECT_DIR$/objects/speaker/SpeakerVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/AudioBuses.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/IPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/TransferChannels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/resources/BotMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/types/Model.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/utils/FileUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/screens/select_show/SelectShowScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/widgets/file_picker/FilePickerButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -339,7 +339,10 @@
       <workItem from="1777392630879" duration="15000" />
       <workItem from="1777392787954" duration="10000" />
       <workItem from="1778083207466" duration="556000" />
-      <workItem from="1778163168253" duration="22501000" />
+      <workItem from="1778163168253" duration="22711000" />
+      <workItem from="1778195446578" duration="1000" />
+      <workItem from="1778250600967" duration="9789000" />
+      <workItem from="1778272775134" duration="21387000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -373,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776117342719</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add a work in progress character editor">
+      <option name="closed" value="true" />
+      <created>1778195188422</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778195188422</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +398,8 @@
     <MESSAGE value="BUNCH OF CHANGES !!" />
     <MESSAGE value="Networking fixes" />
     <MESSAGE value="Messy username networking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messy username networking" />
+    <MESSAGE value="Add a work in progress character editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a work in progress character editor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

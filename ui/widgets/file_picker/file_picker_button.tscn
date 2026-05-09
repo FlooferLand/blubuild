@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cjiy4neb0rqp4"]
+
+[ext_resource type="Script" uid="uid://c22s7tqb4axu6" path="res://ui/widgets/file_picker/FilePickerButton.cs" id="1_8iwuj"]
+
+[node name="FilePickerButton" type="Control" unique_id=2029266648 node_paths=PackedStringArray("Button", "Dialog")]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 171.0
+offset_bottom = 33.0
+script = ExtResource("1_8iwuj")
+Button = NodePath("Button")
+Dialog = NodePath("FileDialog")
+
+[node name="Button" type="Button" parent="." unique_id=564605427]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pick a file"
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=946683035]
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+access = 2
+use_native_dialog = true

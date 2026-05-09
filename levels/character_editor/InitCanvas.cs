@@ -19,12 +19,7 @@ public partial class InitCanvas : CanvasLayer {
 			var dialog = MakeDialog();
 			dialog.FileMode = FileDialog.FileModeEnum.SaveFile;
 			dialog.DialogText = "Save your character";
-			dialog.FileSelected += async path => {
-				var file = new CharacterFile { FilePath = path };
-				string? error = await file.Write(progress: HandleProgress);
-				SetError(error);
-				if (error == null) LoadCharacter(file);
-			};
+			dialog.FileSelected += async path => await Parent.NewCharacter(path);
 			AddChild(dialog);
 			dialog.PopupFileDialog();
 		};
@@ -32,34 +27,25 @@ public partial class InitCanvas : CanvasLayer {
 			var dialog = MakeDialog();
 			dialog.FileMode = FileDialog.FileModeEnum.OpenFile;
 			dialog.DialogText = "Load a character";
-			dialog.FileSelected += async path => {
-				var result = await CharacterFile.Read(path, progress: HandleProgress);
-				if (result.LetErr(out string err)) SetError(err);
-				if (result.LetOk(out var file)) LoadCharacter(file);
-			};
+			dialog.FileSelected += async path => await Parent.LoadCharacter(path);
 			AddChild(dialog);
 			dialog.PopupFileDialog();
 		};
 	}
 
-	void LoadCharacter(CharacterFile file) {
-		SetError();
-		Parent.LoadCharacter(file);
-	}
-
-	void SetError(string? error = null) {
+	public void SetError(string? error = null) {
 		Error.Text = error ?? "";
 		Error.Visible = error != null;
 	}
 
-	void HandleProgress(ProgressReport report) {
+	public void HandleProgress(ProgressReport report) {
 		Progress.Value = (float)(report.PercentComplete ?? 0.0);
 		Progress.Visible = report is { TotalBytes: not null, PercentComplete: not null };
 	}
 
 	static FileDialog MakeDialog() => new() {
 		Access = FileDialog.AccessEnum.Filesystem,
-		Filters = new []{ "*." + FileExts.Character },
+		Filters = new []{ FileFormat.Character.Filter },
 		UseNativeDialog = true
 	};
 }
