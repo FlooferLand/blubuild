@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d0vu8xcwxc2wc"]
 
 [ext_resource type="Script" uid="uid://b48wmh2lgc5rx" path="res://ui/screens/pause/PauseScreen.cs" id="1_yfpbd"]
-[ext_resource type="AudioStream" uid="uid://bt4qjj6kmnjqq" path="res://assets/music/smiles.ogg" id="2_bupvi"]
+[ext_resource type="AudioStream" uid="uid://bt4qjj6kmnjqq" path="res://assets/audio/music/smiles.ogg" id="2_bupvi"]
 [ext_resource type="Script" uid="uid://d328lre4wicsq" path="res://levels/main_menu/BeatTimer.cs" id="2_t4jpt"]
 [ext_resource type="PackedScene" uid="uid://c1wx1iw8q0gv3" path="res://ui/widgets/title_widget/title_widget.tscn" id="3_hsda3"]
 [ext_resource type="Script" uid="uid://csoshe1hsmt81" path="res://levels/main_menu/MultiplayerStarter.cs" id="5_g5gtg"]
-[ext_resource type="AudioStream" uid="uid://bw7jjc0tgak60" path="res://assets/sfx/pause_in.wav" id="6_ecykq"]
+[ext_resource type="AudioStream" uid="uid://bw7jjc0tgak60" path="res://assets/audio/sfx/pause_in.wav" id="6_ecykq"]
 [ext_resource type="PackedScene" uid="uid://d01qolvrxvvi" path="res://ui/widgets/settings_widget/settings_widget.tscn" id="7_hvjax"]
-[ext_resource type="AudioStream" uid="uid://b6211htofbyo1" path="res://assets/sfx/pause_out.wav" id="7_t2ogi"]
+[ext_resource type="AudioStream" uid="uid://b6211htofbyo1" path="res://assets/audio/sfx/pause_out.wav" id="7_t2ogi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4jpt"]
 bg_color = Color(0.12, 0.12, 0.12, 0.8862745)

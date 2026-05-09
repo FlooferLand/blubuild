@@ -8,28 +8,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileVersion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/FileFormat.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/FileFormatPack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/Model.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/FileExts.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blutest/Blutest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blutest/Blutest.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/character_editor.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/character_editor.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/character_editor.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/character_editor.ogg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/editor.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/editor.ogg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/runtime.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/runtime.ogg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles.ogg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.ogg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/flashlight_switch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/flashlight_switch.wav.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_fire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_fire.wav.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_release.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_release.wav.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_in.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_in.wav.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_out.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_out.wav.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/bot_animation/bot_animation_comp.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/components/bot_animation/bot_animation_comp.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/shaders/mask_transition.gdshader" beforeDir="false" afterPath="$PROJECT_DIR$/ui/shaders/mask_transition.gdshader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/pull_transition.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/pull_transition.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/BeatTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/BeatTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,9 +109,11 @@
     <setting file="file://$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/levels/game/Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/init/Init.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/main_menu/MultiplayerStarter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/objects/autoloads/music/MusicGlobal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/greybox/Greybox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/player/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
@@ -342,7 +353,8 @@
       <workItem from="1778163168253" duration="22711000" />
       <workItem from="1778195446578" duration="1000" />
       <workItem from="1778250600967" duration="9789000" />
-      <workItem from="1778272775134" duration="21387000" />
+      <workItem from="1778272775134" duration="21696000" />
+      <workItem from="1778337208737" duration="5981000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -384,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778195188422</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add model loading">
+      <option name="closed" value="true" />
+      <created>1778294977560</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778294977560</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +419,8 @@
     <MESSAGE value="Networking fixes" />
     <MESSAGE value="Messy username networking" />
     <MESSAGE value="Add a work in progress character editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a work in progress character editor" />
+    <MESSAGE value="Add model loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add model loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

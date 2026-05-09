@@ -23,6 +23,14 @@ public static class Extensions {
         }
     }
 
+    extension(AudioStream stream) {
+        public double RealBpm => stream switch {
+            AudioStreamOggVorbis s => s.Bpm,
+            AudioStreamSynchronized s => s.GetSyncStream(0).RealBpm,
+            _ => stream._GetBpm()
+        };
+    }
+
     // Methods because C# sucks balls
     public static V? GetValueOrNullC<K, V>(this IReadOnlyDictionary<K, V> self, K key) where V: class =>
         self.TryGetValue(key, out var value) ? value : null;

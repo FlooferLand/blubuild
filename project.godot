@@ -31,6 +31,7 @@ general/default_playback_type.web=0
 
 SystemAutoload="*uid://bfff471ngoyrl"
 NetworkTransport="*uid://dlatxubn1cnsa"
+MusicGlobal="*uid://cp7micybvv6dd"
 
 [debug]
 

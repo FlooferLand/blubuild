@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://d328lre4wicsq" path="res://levels/main_menu/BeatTimer.cs" id="2_26oqi"]
 [ext_resource type="PackedScene" uid="uid://tfkspr1kkdh1" path="res://assets/blender/remina/beach_bear/BeachBear.blend" id="3_2ywry"]
 [ext_resource type="Texture2D" uid="uid://dhaws16p7alkj" path="res://assets/images/logo.svg" id="3_jnmcb"]
-[ext_resource type="AudioStream" uid="uid://bt4qjj6kmnjqq" path="res://assets/music/smiles.ogg" id="3_qey2a"]
 [ext_resource type="PackedScene" uid="uid://b7oxqiayxwtcn" path="res://assets/blender/remina/rolfe_dewolfe/Rolfe.blend" id="4_t7fky"]
 [ext_resource type="Script" uid="uid://bgdrwqhoq2u3" path="res://levels/main_menu/MiddleMenu.cs" id="7_qey2a"]
 [ext_resource type="PackedScene" uid="uid://c1wx1iw8q0gv3" path="res://ui/widgets/title_widget/title_widget.tscn" id="8_4s7fn"]
@@ -165,39 +164,25 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 0, 2]
 }
-tracks/4/type = "method"
+tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".")
+tracks/4/path = NodePath("FullscreenTitle:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"IntroContinueSong"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("FullscreenTitle:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 3.8333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PullTransition")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PullTransition")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -212,7 +197,7 @@ _data = {
 &"intro": SubResource("Animation_t7fky")
 }
 
-[node name="MainMenu" type="Control" unique_id=612633532 node_paths=PackedStringArray("BeatTimer", "ThemeSongPlayer", "AnimationPlayer", "ViewportCamera", "Bots")]
+[node name="MainMenu" type="Control" unique_id=612633532 node_paths=PackedStringArray("BeatTimer", "AnimationPlayer", "ViewportCamera", "Bots")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,19 +206,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wd5la")
 BeatTimer = NodePath("BeatTimer")
-ThemeSongPlayer = NodePath("SongPlayer")
 AnimationPlayer = NodePath("AnimationPlayer")
 ViewportCamera = NodePath("Scene/SubViewport/Camera3D")
 Bots = [NodePath("Scene/SubViewport/BeachBear"), NodePath("Scene/SubViewport/Rolfe")]
 
 [node name="BeatTimer" type="Node" parent="." unique_id=371356066]
 script = ExtResource("2_26oqi")
-Stream = ExtResource("3_qey2a")
-
-[node name="SongPlayer" type="AudioStreamPlayer" parent="." unique_id=1656446963]
-stream = ExtResource("3_qey2a")
-autoplay = true
-bus = &"Music"
 
 [node name="Background" type="Control" parent="." unique_id=1133644232]
 layout_mode = 1

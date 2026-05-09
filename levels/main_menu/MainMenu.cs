@@ -6,7 +6,6 @@ namespace Project;
 
 public partial class MainMenu : Control {
     [Export] public required BeatTimer BeatTimer;
-    [Export] public required AudioStreamPlayer ThemeSongPlayer;
     [Export] public required AnimationPlayer AnimationPlayer;
     [Export] public required Camera3D ViewportCamera;
     [Export] public required Array<Node3D> Bots { get; set; }
@@ -17,6 +16,7 @@ public partial class MainMenu : Control {
         initialCamY = ViewportCamera.Position.Y;
         AnimationPlayer.Play(OS.IsDebugBuild() ? "RESET" : "intro");
         BeatTimer.Beat += _ => PlayRandomAnimation();
+        MusicGlobal.Play(MusicGlobal.Track.TitleTheme);
     }
 
     public override void _Process(double delta) {
@@ -32,11 +32,5 @@ public partial class MainMenu : Control {
             string anim = anims[GD.RandRange(0, anims.Length - 1)];
             animPlayer.Play(anim, 0.5);
         }
-    }
-
-    // Called by the animation
-    public void IntroContinueSong() {
-        ThemeSongPlayer.VolumeDb = 0;
-        ThemeSongPlayer.Play((float)AnimationPlayer.CurrentAnimationPosition);
     }
 }

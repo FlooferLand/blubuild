@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cp7micybvv6dd"]
+
+[ext_resource type="Script" uid="uid://c5itq6xg0yxtr" path="res://objects/autoloads/music/MusicGlobal.cs" id="1_w8nji"]
+[ext_resource type="AudioStream" uid="uid://cx0n4qjiwpeus" path="res://assets/audio/music/track_list.tres" id="2_5a60m"]
+
+[node name="MusicGlobal" type="Node" unique_id=1158452588 node_paths=PackedStringArray("SongPlayer")]
+script = ExtResource("1_w8nji")
+SongPlayer = NodePath("SongPlayer")
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="." unique_id=255462840]
+stream = ExtResource("2_5a60m")
+autoplay = true
+bus = &"Music"

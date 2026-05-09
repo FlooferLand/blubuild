@@ -1,0 +1,45 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://cx0n4qjiwpeus"]
+
+[ext_resource type="AudioStream" uid="uid://b5bx34wc3vqma" path="res://assets/audio/silence_1s.ogg" id="1_b7as7"]
+[ext_resource type="AudioStream" uid="uid://d1qxjuwghnnm1" path="res://assets/audio/music/smiles_combined.tres" id="2_ch6k8"]
+[ext_resource type="AudioStream" uid="uid://bdrjaco1mmh2q" path="res://assets/audio/music/runtime.ogg" id="3_yxmfv"]
+[ext_resource type="AudioStream" uid="uid://dg5ng0exyqom3" path="res://assets/audio/music/character_editor.ogg" id="4_bkp81"]
+[ext_resource type="AudioStream" uid="uid://cfmdv5121nj48" path="res://assets/audio/music/editor.ogg" id="5_evpnb"]
+
+[resource]
+clip_count = 5
+clip_0/name = &"empty"
+clip_0/stream = ExtResource("1_b7as7")
+clip_0/auto_advance = 0
+clip_1/name = &"title_theme"
+clip_1/stream = ExtResource("2_ch6k8")
+clip_1/auto_advance = 0
+clip_2/name = &"runtime"
+clip_2/stream = ExtResource("3_yxmfv")
+clip_2/auto_advance = 0
+clip_3/name = &"character_editor"
+clip_3/stream = ExtResource("4_bkp81")
+clip_3/auto_advance = 0
+clip_4/name = &"editor"
+clip_4/stream = ExtResource("5_evpnb")
+clip_4/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 1
+},
+Vector2i(-1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 1,
+"to_time": 1
+},
+Vector2i(0, -1): {
+"fade_beats": 1.0,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 1
+}
+}

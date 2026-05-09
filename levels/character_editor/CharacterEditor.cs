@@ -17,6 +17,7 @@ public partial class CharacterEditor : Node3D {
 		InitCanvas.Visible = true;
 		EditCanvas.Visible = false;
 		SceneTransition.FadeOut();
+		MusicGlobal.Play(MusicGlobal.Track.CharacterEditor);
 	}
 
 	public void SetError(string? error) {

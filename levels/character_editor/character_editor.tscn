@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cbkhoe4b788jh"]
 
-[ext_resource type="AudioStream" uid="uid://dg5ng0exyqom3" path="res://assets/music/character_editor.ogg" id="1_5wso5"]
 [ext_resource type="Script" uid="uid://d4v6o8wn01xp" path="res://levels/character_editor/CharacterEditor.cs" id="1_skgct"]
 [ext_resource type="Script" uid="uid://cr33ht8m35sdq" path="res://levels/character_editor/InitCanvas.cs" id="3_y2rf3"]
 [ext_resource type="Script" uid="uid://b4olfaef2n4jd" path="res://levels/character_editor/EditCanvas.cs" id="4_7edw4"]
@@ -66,11 +65,6 @@ light_energy = 2.17
 shadow_enabled = true
 spot_range = 7.8977904
 spot_angle = 60.0
-
-[node name="Music" type="AudioStreamPlayer" parent="Environment" unique_id=457461586]
-stream = ExtResource("1_5wso5")
-autoplay = true
-bus = &"Music"
 
 [node name="Forward" type="Node3D" parent="." unique_id=1415163026]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)

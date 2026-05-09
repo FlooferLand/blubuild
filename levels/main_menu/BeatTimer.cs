@@ -1,12 +1,13 @@
 using Godot;
+using GodotUtils;
 
 namespace Project;
+
+// TODO: Automatically recalculate the BPM when the stream changes
 
 public partial class BeatTimer : Node {
 	[Signal] public delegate void StepEventHandler(int step);
 	[Signal] public delegate void BeatEventHandler(int beat);
-
-	[Export] public required AudioStreamOggVorbis Stream;
 
 	double bpm = -1;
 	double timeBegin = 0f;
@@ -15,7 +16,8 @@ public partial class BeatTimer : Node {
 
 	public override void _Ready() {
 		timeBegin = Time.GetTicksUsec();
-		bpm = Stream.Bpm;
+		bpm = MusicGlobal.CurrentStream?.RealBpm ?? 0;
+		Log.Debug($"BPM for '{MusicGlobal.CurrentStream?.ToString() ?? "null"}' is {bpm}");
 		if (bpm < 1) GD.PushWarning($"{nameof(BeatTimer)} bpm < 1 ({bpm})");
 	}
 

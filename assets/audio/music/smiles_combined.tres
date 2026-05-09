@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamSynchronized" format=3 uid="uid://d1qxjuwghnnm1"]
+
+[ext_resource type="AudioStream" uid="uid://bt4qjj6kmnjqq" path="res://assets/audio/music/smiles.ogg" id="1_6ful4"]
+[ext_resource type="AudioStream" uid="uid://b4oa3tmo6qbmt" path="res://assets/audio/music/smiles_intro.ogg" id="2_tw6kd"]
+
+[resource]
+stream_count = 2
+stream_0/stream = ExtResource("1_6ful4")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_tw6kd")
+stream_1/volume = -60.0

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d13gjwcpdqc4w"
-path="res://.godot/imported/pneumatic_fire.wav-0fd1e479869d02fe40c13a3be01f8599.sample"
+path="res://.godot/imported/pneumatic_fire.wav-8d1a9ed9cc1579f13e77effbbb5219c5.sample"
 
 [deps]
 
-source_file="res://assets/sfx/mechanical/pneumatic_fire.wav"
-dest_files=["res://.godot/imported/pneumatic_fire.wav-0fd1e479869d02fe40c13a3be01f8599.sample"]
+source_file="res://assets/audio/sfx/mechanical/pneumatic_fire.wav"
+dest_files=["res://.godot/imported/pneumatic_fire.wav-8d1a9ed9cc1579f13e77effbbb5219c5.sample"]
 
 [params]
 

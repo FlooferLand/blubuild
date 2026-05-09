@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c2crtmvgpbe1v"]
 
+[ext_resource type="Script" uid="uid://d2inyyrn2lbcw" path="res://levels/game/Game.cs" id="1_81lwq"]
 [ext_resource type="Script" uid="uid://b4aylrhxu2msc" path="res://scripts/networking/NetworkManager.cs" id="1_sg147"]
 [ext_resource type="PackedScene" uid="uid://de2k8uj3pffye" path="res://objects/player/player.tscn" id="2_71jyj"]
 [ext_resource type="Material" uid="uid://6ntkjjlg1fm4" path="res://assets/materials/carpet/carpet.tres" id="3_71jyj"]
@@ -29,6 +30,7 @@ shadow_size = 7
 shadow_color = Color(0, 0, 0, 0.6627451)
 
 [node name="Game" type="Node3D" unique_id=361021312]
+script = ExtResource("1_81lwq")
 
 [node name="ServerDebugCam" type="Camera3D" parent="." unique_id=112379445]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 19.410845, 0)

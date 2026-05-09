@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://brxqhq22oyuab"
-path="res://.godot/imported/pneumatic_release.wav-171ebafa10f59cbcd3f9689b526d0686.sample"
+path="res://.godot/imported/pneumatic_release.wav-a865319fb1f38017e39504332b99fdf8.sample"
 
 [deps]
 
-source_file="res://assets/sfx/mechanical/pneumatic_release.wav"
-dest_files=["res://.godot/imported/pneumatic_release.wav-171ebafa10f59cbcd3f9689b526d0686.sample"]
+source_file="res://assets/audio/sfx/mechanical/pneumatic_release.wav"
+dest_files=["res://.godot/imported/pneumatic_release.wav-a865319fb1f38017e39504332b99fdf8.sample"]
 
 [params]
 
