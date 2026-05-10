@@ -9,36 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/character_editor.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/character_editor.ogg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/editor.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/editor.ogg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/runtime.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/runtime.ogg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles.ogg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/smiles_intro.ogg.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/flashlight_switch.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/flashlight_switch.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_fire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_fire.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_release.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/mechanical/pneumatic_release.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_in.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_in.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_out.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sfx/pause_out.wav.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/bot_animation/bot_animation_comp.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/components/bot_animation/bot_animation_comp.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/main_menu/BeatTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/BeatTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/autoloads/music/MusicGlobal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/autoloads/music/MusicGlobal.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,7 +326,7 @@
       <workItem from="1778195446578" duration="1000" />
       <workItem from="1778250600967" duration="9789000" />
       <workItem from="1778272775134" duration="21696000" />
-      <workItem from="1778337208737" duration="5981000" />
+      <workItem from="1778337208737" duration="9405000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -404,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778294977560</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Move music to dedicated autoload">
+      <option name="closed" value="true" />
+      <created>1778348804283</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778348804283</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +400,8 @@
     <MESSAGE value="Messy username networking" />
     <MESSAGE value="Add a work in progress character editor" />
     <MESSAGE value="Add model loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add model loading" />
+    <MESSAGE value="Move music to dedicated autoload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move music to dedicated autoload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

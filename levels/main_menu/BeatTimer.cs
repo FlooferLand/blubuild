@@ -15,9 +15,13 @@ public partial class BeatTimer : Node {
 	int lastStep = -1;
 
 	public override void _Ready() {
+		UpdateBpm(MusicGlobal.CurrentStream);
+		MusicGlobal.Instance?.TrackChanged += UpdateBpm;
+	}
+
+	void UpdateBpm(AudioStream? stream) {
 		timeBegin = Time.GetTicksUsec();
-		bpm = MusicGlobal.CurrentStream?.RealBpm ?? 0;
-		Log.Debug($"BPM for '{MusicGlobal.CurrentStream?.ToString() ?? "null"}' is {bpm}");
+		bpm = stream?.RealBpm ?? 0;
 		if (bpm < 1) GD.PushWarning($"{nameof(BeatTimer)} bpm < 1 ({bpm})");
 	}
 
