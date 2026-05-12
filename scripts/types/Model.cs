@@ -1,7 +1,11 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using Godot;
+using Godot.Collections;
 using GodotUtils;
+using FileAccess = Godot.FileAccess;
 
 namespace Project;
 
@@ -9,45 +13,44 @@ namespace Project;
 /// All model types inherit from <see cref="GltfState"/> and <see cref="GltfDocument"/>, even FBX models.
 public readonly record struct Model(GltfDocument Document, GltfState State) {
     public readonly string Extension = "gltf";
+    public long Size => State.GlbData.Length;
 
     /// Returns an error, if there's any
-    public async Task<string?> Save(string path) {
-        if (State == null) return "State is null";
-        var state = State;
-        var document = new GltfDocument();
-        var error = await Task.Run(() => document.WriteToFilesystem(state, path));
-        return error != Error.Ok ? error.ToString() : null;
-    }
-
-    /// Returns an error, if there's any
-    public async Task<string?> Save(Stream stream) {
+    public async Task<string?> Save(Stream stream, ProgressHolder progress) {
         if (!stream.CanWrite) return "Stream can't be written to";
         if (State == null) return "State is null";
-        var state = State;
-        byte[] bytes = await Task.Run(() => {
-            var document = new GltfDocument();
-            return document.GenerateBuffer(state);
-        });
+        var (document, state) = (Document, State);
+
+        progress.Set("Generating buffer (will take a while)", indeterminate:true);
+        byte[] bytes = await Task.Run(() => document.GenerateBuffer(state));
         await stream.WriteAsync(bytes);
         return null;
     }
 
-    public static async Task<Result<Model>> Load(string path) {
+    /// Loads a model from the filesystem along with any textures in its folder
+    public static async Task<Result<Model>> Load(string path, ProgressHolder progress) {
         var document = new GltfDocument();
         var state = new GltfState();
-        var error = await Task.Run(() => document.AppendFromFile(path, state));
+        progress.Set("Reading the model file");
+        var error = await Task.Run(() => document.AppendFromFile(path, state, basePath:path.GetBaseDir()));
         if (error != Error.Ok) return Result.Err(error.ToString());
         return Result.Ok(new Model(document, state));
     }
 
-    public static async Task<Result<Model>> Load(Stream stream, string basePath = "") {
+    /// Loads a model from a stream. Requires the textures and other data since there's no other way to get them
+    public static async Task<Result<Model>> Load(Stream stream, Dictionary<string, Image> textures, ProgressHolder progress) {
         var document = new GltfDocument();
         var state = new GltfState();
-        var error = await Task.Run(async () => {
-            byte[] bytes = new byte[stream.Length];
-            int i = await stream.ReadAsync(bytes);
-            return document.AppendFromBuffer(bytes, basePath, state);
-        });
+
+        progress.Set("Reading the model stream");
+        byte[] bytes = new byte[stream.Length];
+        int _ = await stream.ReadAsync(bytes);
+
+        bool isGlb = bytes.AsSpan(0, 4).SequenceEqual("glTF"u8);
+        if (!isGlb) return Result.Err("Only glb models are supported");
+
+        progress.Set("Parsing the model");
+        var error = await Task.Run(() => document.AppendFromBuffer(bytes, "", state));
         if (error != Error.Ok) return Result.Err(error.ToString());
         return Result.Ok(new Model(document, state));
     }

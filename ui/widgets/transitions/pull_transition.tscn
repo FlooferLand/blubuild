@@ -29,6 +29,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Info" type="Label" parent="Control" unique_id=1385222709]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

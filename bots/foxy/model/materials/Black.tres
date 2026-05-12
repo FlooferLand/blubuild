@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bktypf6bsqsrm"]
+
+[resource]
+resource_name = "Black"
+albedo_color = Color(0, 0, 0, 1)
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

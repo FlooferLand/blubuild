@@ -27,10 +27,14 @@ public partial class Transition : CanvasLayer {
 
     public void FadeIn(Action? finished = null, bool loading = false) =>
         Fade(TransitionType.FadeIn, finished, loading);
-    public void FadeInAsync(Func<Task>? finished = null, bool loading = false) =>
-        Fade(TransitionType.FadeIn, () => { if (finished != null) Task.Run(finished); }, loading);
     public void FadeOut(Action? finished = null) =>
         Fade(TransitionType.FadeOut, finished);
+
+    public Task FadeInAsync(Func<Task>? finished = null, bool loading = false) {
+        var source = new TaskCompletionSource();
+        Fade(TransitionType.FadeIn, () => { source.SetResult(); finished?.Invoke(); }, loading);
+        return source.Task;
+    }
 
     void Fade(TransitionType type, Action? finished = null, bool loading = false) {
         float finalCutoff = type switch {

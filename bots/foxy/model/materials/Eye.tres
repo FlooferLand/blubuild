@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dwph5w2acl6r3"]
+
+[ext_resource type="Texture2D" uid="uid://y3cciss11woa" path="res://bots/foxy/model/textures/eye_emission.png" id="1_7v5oh"]
+[ext_resource type="Texture2D" uid="uid://cnj1ibc2bfyo8" path="res://bots/foxy/model/textures/eye.png" id="1_loai5"]
+[ext_resource type="Texture2D" uid="uid://b3ipn2kop8sc3" path="res://bots/foxy/model/textures/envmapfnaf.png" id="3_yddvf"]
+
+[resource]
+resource_name = "Eye"
+albedo_texture = ExtResource("1_loai5")
+roughness_texture = ExtResource("3_yddvf")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("1_7v5oh")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

@@ -1,0 +1,100 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cyvrlujru6gse"
+path="res://.godot/imported/Foxy.gltf-7f0044972030daff434164593197711f.scn"
+
+[deps]
+
+source_file="res://bots/foxy/model/Foxy.gltf"
+dest_files=["res://.godot/imported/Foxy.gltf-7f0044972030daff434164593197711f.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Black": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Black.tres",
+"use_external/path": "uid://bktypf6bsqsrm"
+},
+"Body": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Body.tres",
+"use_external/path": "uid://ceyi0tqsbe4oo"
+},
+"Bow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Bow.tres",
+"use_external/path": "uid://cwkj1rusiok3"
+},
+"Eye": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Eye.tres",
+"use_external/path": "uid://dwph5w2acl6r3"
+},
+"Hair": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Hair.tres",
+"use_external/path": "uid://vdu5ogf1fkse"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Metal.tres",
+"use_external/path": "uid://c2n1qudhotnja"
+},
+"Mouth": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Mouth.tres",
+"use_external/path": "uid://d32itu3oumidb"
+},
+"Pants": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Pants.tres",
+"use_external/path": "uid://om6px0mqpkb6"
+},
+"Patch": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Patch.tres",
+"use_external/path": "uid://c5qjnkhfi2vun"
+},
+"Teeth": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Teeth.tres",
+"use_external/path": "uid://bxrbjce3wylnw"
+},
+"Teeth yellow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bots/foxy/model/materials/Teeth yellow.tres",
+"use_external/path": "uid://dt1okpjvfpv8a"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

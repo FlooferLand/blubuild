@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Godot;
 
@@ -22,6 +23,16 @@ public static class Extensions {
             node.RpcId(id, method, args);
         }
     }
+
+    public static Error LoadFromBuffer(this Image image, byte[] buffer, string fileExtension) => fileExtension switch {
+        "png" => image.LoadPngFromBuffer(buffer),
+        "jpg" or "jpeg" => image.LoadJpgFromBuffer(buffer),
+        "webp" => image.LoadWebpFromBuffer(buffer),
+        "exr" => image.LoadExrFromBuffer(buffer),
+        "svg" => image.LoadSvgFromBuffer(buffer),
+        "bmp" => image.LoadBmpFromBuffer(buffer),
+        _ => Error.FileUnrecognized
+    };
 
     extension(AudioStream stream) {
         public double RealBpm => stream switch {

@@ -9,10 +9,12 @@ public partial class InitCanvas : CanvasLayer {
 	[Export] public required Button NewButton;
 	[Export] public required Button LoadButton;
 	[Export] public required ProgressBar Progress;
+	[Export] public required Label Info;
 	[Export] public required Label Error;
 
 	public override void _Ready() {
 		Progress.Visible = false;
+		Info.Visible = false;
 		Error.Visible = false;
 
 		NewButton.Pressed += () => {
@@ -38,9 +40,10 @@ public partial class InitCanvas : CanvasLayer {
 		Error.Visible = error != null;
 	}
 
-	public void HandleProgress(ProgressReport report) {
-		Progress.Value = (float)(report.PercentComplete ?? 0.0);
-		Progress.Visible = report is { TotalBytes: not null, PercentComplete: not null };
+	public void SetInfo(string? info = null) {
+		Info.Text = info ?? "";
+		Info.Visible = info != null;
+		SetError();
 	}
 
 	static FileDialog MakeDialog() => new() {

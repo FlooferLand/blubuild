@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2n1qudhotnja"]
+
+[ext_resource type="Texture2D" uid="uid://b3ipn2kop8sc3" path="res://bots/foxy/model/textures/envmapfnaf.png" id="1_cjr31"]
+
+[resource]
+resource_name = "Metal"
+albedo_color = Color(0.3723943, 0.41058818, 0.5103588, 1)
+metallic = 1.0
+roughness = 0.91
+roughness_texture = ExtResource("1_cjr31")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

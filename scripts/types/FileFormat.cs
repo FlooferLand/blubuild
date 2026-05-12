@@ -19,6 +19,15 @@ public readonly record struct FileFormat(string[] Extensions, string Description
         ObjModel = new("obj", "OBJ Model", "model/obj"),
         #endregion
 
+        #region Images
+        PngImage = new("png", "PNG Image", "image/png"),
+        WebpImage = new("webp", "WEBP Image", "image/webp"),
+        JpegImage = new(new string[] { "jpeg", "jpg" }, "JPEG Image", "image/jpg"),
+        SvgImage = new("svg", "SVG Image", "image/svg"),
+        ExrImage = new("exr", "EXR Image", "image/exr"),
+        BmpImage = new("bmp", "BMP Image", "image/bmp"),
+        #endregion
+
         #region Audio
         WavAudio = new("wav", "WAV Audio", "audio/wave")
         #endregion

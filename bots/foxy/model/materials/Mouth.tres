@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d32itu3oumidb"]
+
+[resource]
+resource_name = "Mouth"
+cull_mode = 2
+albedo_color = Color(0.670512, 0.19943117, 0.1984169, 1)
+roughness = 0.60232556
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ceyi0tqsbe4oo"]
+
+[ext_resource type="Texture2D" uid="uid://biayaoudsk2ci" path="res://bots/foxy/model/textures/Body Color.png" id="1_f1tas"]
+
+[resource]
+resource_name = "Body"
+albedo_texture = ExtResource("1_f1tas")
+roughness = 0.80352694
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

@@ -10,17 +10,22 @@ public partial class EditCanvas : CanvasLayer {
 	[Export] public required LineEdit Authors;
 	[Export] public required FilePickerButton ModelPicker;
 	[Export] public required Label Error;
+	[Export] public required Label Info;
 
 	[Export] public required Button SaveButton;
 	[Export] public required ProgressBar SaveProgressBar;
 	[Export] public required Label SaveError;
+	[Export] public required Label SaveInfo;
 
 	// TODO: Add a file watcher and reload everything when the character file changes externally
 
 	public override void _EnterTree() {
 		Error.Visible = false;
+		Info.Visible = false;
 		SaveError.Visible = false;
-		SaveButton.Pressed += Parent.SaveCharacter;
+		SaveInfo.Visible = false;
+		SaveButton.Pressed += async () => await Parent.SaveCharacter();
+		SaveProgressBar.Value = 0;
 		ModelPicker.AddFilter(FileFormat.GltfModel);
 
 		Parent.CharacterLoaded += () => {
@@ -36,6 +41,12 @@ public partial class EditCanvas : CanvasLayer {
 	public void SetError(string? error = null) {
 		Error.Text = error ?? "";
 		Error.Visible = error != null;
+	}
+
+	public void SetInfo(string? info = null) {
+		Info.Text = info ?? "";
+		Info.Visible = info != null;
+		SetError();
 	}
 
 	async void Commit(Func<CharacterFile, Task> action) {

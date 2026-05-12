@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cwkj1rusiok3"]
+
+[ext_resource type="Texture2D" uid="uid://b3ipn2kop8sc3" path="res://bots/foxy/model/textures/envmapfnaf.png" id="1_n1l20"]
+
+[resource]
+resource_name = "Bow"
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.8
+roughness_texture = ExtResource("1_n1l20")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

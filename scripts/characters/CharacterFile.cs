@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Godot;
 using GodotUtils;
-using SharpCompress.Archives.SevenZip;
+using SharpCompress.Archives;
+using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
 using SharpCompress.Readers;
 using SharpCompress.Writers;
-using SharpCompress.Writers.SevenZip;
+using SharpCompress.Writers.Zip;
 
 namespace Project;
 
@@ -25,29 +28,33 @@ public class CharacterFile {
 
     /// Returns an error if there is one
     [Pure]
-    public async Task<string?> Write(Action<ProgressReport>? progress = null) =>
+    public async Task<string?> Write(ProgressHolder? progress = null) =>
         await Write(FilePath, progress);
 
+    // TODO: Write files to memory, and only then write it to a file. In case the file fails to write, it doesn't actually corrupt the physical file.
     /// Returns an error if there is one
     [Pure]
-    public async Task<string?> Write(string path, Action<ProgressReport>? progress = null) {
+    public async Task<string?> Write(string path, ProgressHolder progress) {
         var result = FileUtils.OpenWriteStream(path);
         if (result.LetErr(out string err)) return err;
         await using var stream = result.Unwrap();
 
         // Creating the archive
-        var options = new SevenZipWriterOptions {
-            Progress = new Progress<ProgressReport>(p => progress?.Invoke(p))
+        var options = new ZipWriterOptions(CompressionType.Deflate) {
+            Progress = progress.CreateProgressReport()
         };
-        await using var writer = await WriterFactory.OpenAsyncWriter(stream, ArchiveType.SevenZip, options);
+        await using var writer = await WriterFactory.OpenAsyncWriter(stream, ArchiveType.Zip, options);
 
         // Writing stuff
         await using var versionStream = new MemoryStream(Encoding.UTF8.GetBytes(CurrentVersion.ToString()));
         await writer.WriteAsync("version", versionStream);
         if (Model is {} model) {
+            progress.Set("Saving the model");
             await using var modelStream = new MemoryStream();
-            if (await model.Save(modelStream) is { } error) return error;
+            if (await model.Save(modelStream, progress) is { } error) return error;
             modelStream.Seek(0, SeekOrigin.Begin);
+
+            progress.Set("Writing the model");
             await writer.WriteDirectoryAsync("models");
             await writer.WriteAsync($"models/main.{model.Extension}", modelStream);
         }
@@ -55,20 +62,30 @@ public class CharacterFile {
     }
 
     [Pure]
-    public static async Task<Result<CharacterFile>> Read(string path, Action<ProgressReport>? progress = null) {
+    public static async Task<Result<CharacterFile>> Read(string path, ProgressHolder progress) {
         var result = FileUtils.OpenReadStream(path);
         if (result.LetErr(out string err)) return Result.Err(err);
         await using var stream = result.Unwrap();
 
         // Reading the archive
         var options = new ReaderOptions {
-            Progress = new Progress<ProgressReport>(p => progress?.Invoke(p))
+            Progress = progress.CreateProgressReport()
         };
-        await using var archive = await SevenZipArchive.OpenAsyncArchive(stream, options);
 
-        var entries = (await archive.EntriesAsync.ToListAsync())
-            .Where(e => !e.IsDirectory && e.Key != null)
-            .ToDictionary(e => e.Key!);
+        Dictionary<string, IArchiveEntry> entries;
+        try {
+            await using var archive = await ZipArchive.OpenAsyncArchive(stream, options);
+            entries = (await archive.EntriesAsync.ToListAsync())
+                .Where(e => e is { IsDirectory: false, Key: not null })
+                .ToDictionary(e => e.Key!);
+        } catch (IncompleteArchiveException e) {
+            stream.Position = 0;
+            return Result.Err($"Archive is incomplete ({stream.Length} bytes)");
+        } catch (Exception e) {
+            return Result.Err($"Failed to load the character: {e}");
+        }
+        if (entries.Count == 0)
+            return Result.Err("Failed to load the character. Archive is empty.");
 
         // Reading stuff
         var character = new CharacterFile { FilePath = path };
@@ -81,7 +98,8 @@ public class CharacterFile {
         if (script == null) return Result.Err($"Version conversion not implemented ({versionInt} to {CurrentVersion})");
         if (script.Version != versionInt) return Result.Err($"Mismatched script version ({script.Version}, {versionInt})");
         script.Entries = entries;
-        (var file, string? error) = await script.Run(character);
+        progress.Set($"Running reader v{script.Version}");
+        (var file, string? error) = await script.Run(character, progress);
         if (error != null) return Result.Err(error);
         return Result.Ok(file!);
     }

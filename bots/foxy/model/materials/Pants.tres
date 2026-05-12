@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://om6px0mqpkb6"]
+
+[ext_resource type="Texture2D" uid="uid://biayaoudsk2ci" path="res://bots/foxy/model/textures/Body Color.png" id="1_xrjod"]
+
+[resource]
+resource_name = "Pants"
+cull_mode = 2
+albedo_texture = ExtResource("1_xrjod")
+roughness = 0.87344396
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

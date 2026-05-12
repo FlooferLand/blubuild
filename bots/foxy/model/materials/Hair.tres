@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vdu5ogf1fkse"]
+
+[ext_resource type="Texture2D" uid="uid://biayaoudsk2ci" path="res://bots/foxy/model/textures/Body Color.png" id="1_rhq77"]
+
+[resource]
+resource_name = "Hair"
+albedo_color = Color(0.5689727, 0.56897277, 0.5689727, 1)
+albedo_texture = ExtResource("1_rhq77")
+roughness = 0.80352694
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

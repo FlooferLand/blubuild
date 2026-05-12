@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxrbjce3wylnw"]
+
+[ext_resource type="Texture2D" uid="uid://b3ipn2kop8sc3" path="res://bots/foxy/model/textures/envmapfnaf.png" id="1_hfnyy"]
+
+[resource]
+resource_name = "Teeth"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness_texture = ExtResource("1_hfnyy")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

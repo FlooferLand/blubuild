@@ -17,6 +17,13 @@ glow_enabled = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_dwy1c"]
 size = Vector2(50, 50)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7edw4"]
+albedo_color = Color(0.60787475, 0.79803246, 0.8266827, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_uxla0"]
+material = SubResource("StandardMaterial3D_7edw4")
+size = Vector3(3, 3, 0)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qviq"]
 albedo_color = Color(4.813075e-07, 0.48071384, 0.6416302, 1)
 
@@ -69,6 +76,11 @@ spot_angle = 60.0
 [node name="Forward" type="Node3D" parent="." unique_id=1415163026]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
+[node name="ArrowPlatform" type="MeshInstance3D" parent="Forward" unique_id=807917103]
+transform = Transform3D(-1, 8.742278e-08, -2.6054018e-15, -8.742278e-08, -1, 5.9604645e-08, 2.6054018e-15, 5.9604645e-08, 1, 0, 0, 0.003)
+mesh = SubResource("PrismMesh_uxla0")
+skeleton = NodePath("../../BotHolder")
+
 [node name="Text" type="MeshInstance3D" parent="Forward" unique_id=412571341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5743971, 0.005364018)
 mesh = SubResource("TextMesh_uxla0")
@@ -85,14 +97,14 @@ skeleton = NodePath("../../BotHolder")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
 far = 300.0
 
-[node name="InitCanvas" type="CanvasLayer" parent="." unique_id=241228267 node_paths=PackedStringArray("Parent", "NewButton", "LoadButton", "Progress", "Error")]
+[node name="InitCanvas" type="CanvasLayer" parent="." unique_id=241228267 node_paths=PackedStringArray("Parent", "NewButton", "LoadButton", "Progress", "Info", "Error")]
 layer = 100
-visible = false
 script = ExtResource("3_y2rf3")
 Parent = NodePath("..")
 NewButton = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/New")
 LoadButton = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Load")
 Progress = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ProgressBar")
+Info = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Info")
 Error = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Error")
 
 [node name="PanelContainer" type="PanelContainer" parent="InitCanvas" unique_id=350522290]
@@ -129,15 +141,25 @@ theme_override_constants/separation = 12
 
 [node name="New" type="Button" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2061130801]
 layout_mode = 2
+action_mode = 0
 text = "New character"
 
 [node name="Load" type="Button" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1463362702]
 layout_mode = 2
+action_mode = 0
 text = "Load existing"
 
 [node name="ProgressBar" type="ProgressBar" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1171674922]
 layout_mode = 2
 max_value = 1.0
+
+[node name="Info" type="Label" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=365722867]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.646029, 0.646029, 0.646029, 1)
+text = "Info"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Error" type="Label" parent="InitCanvas/PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1944224175]
 custom_minimum_size = Vector2(128, 0)
@@ -147,16 +169,18 @@ text = "Error"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "ModelPicker", "Error", "SaveButton", "SaveProgressBar", "SaveError")]
+[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "ModelPicker", "Error", "Info", "SaveButton", "SaveProgressBar", "SaveError", "SaveInfo")]
 script = ExtResource("4_7edw4")
 Parent = NodePath("..")
 DisplayName = NodePath("SidePanel/MarginContainer/VBoxContainer/Name/LineEdit")
 Authors = NodePath("SidePanel/MarginContainer/VBoxContainer/Authors/LineEdit")
 ModelPicker = NodePath("SidePanel/MarginContainer/VBoxContainer/Model/FilePickerButton")
 Error = NodePath("SidePanel/MarginContainer/VBoxContainer/Error")
+Info = NodePath("SidePanel/MarginContainer/VBoxContainer/Info")
 SaveButton = NodePath("CornerPanel/MarginContainer/VBoxContainer/Save")
 SaveProgressBar = NodePath("CornerPanel/MarginContainer/VBoxContainer/SaveProgress")
 SaveError = NodePath("CornerPanel/MarginContainer/VBoxContainer/Error")
+SaveInfo = NodePath("SidePanel/MarginContainer/VBoxContainer/Info")
 
 [node name="SidePanel" type="PanelContainer" parent="EditCanvas" unique_id=1342952534]
 anchors_preset = -1
@@ -210,6 +234,14 @@ size_flags_horizontal = 3
 
 [node name="Animations" type="Tree" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=894752536]
 layout_mode = 2
+
+[node name="Info" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=1588241373]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.646029, 0.646029, 0.646029, 1)
+text = "Info"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Error" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=100725715]
 custom_minimum_size = Vector2(128, 0)

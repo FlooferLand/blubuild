@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://0m1o3uel8sfs" path="res://levels/main_menu/MainMenu.cs" id="1_wd5la"]
 [ext_resource type="Texture2D" uid="uid://cy7hh1rrsx2rv" path="res://assets/images/grid.png" id="1_xeu1g"]
 [ext_resource type="Script" uid="uid://d328lre4wicsq" path="res://levels/main_menu/BeatTimer.cs" id="2_26oqi"]
-[ext_resource type="PackedScene" uid="uid://tfkspr1kkdh1" path="res://assets/blender/remina/beach_bear/BeachBear.blend" id="3_2ywry"]
 [ext_resource type="Texture2D" uid="uid://dhaws16p7alkj" path="res://assets/images/logo.svg" id="3_jnmcb"]
-[ext_resource type="PackedScene" uid="uid://b7oxqiayxwtcn" path="res://assets/blender/remina/rolfe_dewolfe/Rolfe.blend" id="4_t7fky"]
+[ext_resource type="PackedScene" uid="uid://cyvrlujru6gse" path="res://bots/foxy/model/Foxy.gltf" id="4_wu0v4"]
 [ext_resource type="Script" uid="uid://bgdrwqhoq2u3" path="res://levels/main_menu/MiddleMenu.cs" id="7_qey2a"]
 [ext_resource type="PackedScene" uid="uid://c1wx1iw8q0gv3" path="res://ui/widgets/title_widget/title_widget.tscn" id="8_4s7fn"]
 [ext_resource type="PackedScene" uid="uid://c2crtmvgpbe1v" path="res://levels/game/game.tscn" id="8_ljyev"]
@@ -208,7 +207,7 @@ script = ExtResource("1_wd5la")
 BeatTimer = NodePath("BeatTimer")
 AnimationPlayer = NodePath("AnimationPlayer")
 ViewportCamera = NodePath("Scene/SubViewport/Camera3D")
-Bots = [NodePath("Scene/SubViewport/BeachBear"), NodePath("Scene/SubViewport/Rolfe")]
+Bots = [NodePath("Scene/SubViewport/Foxy")]
 
 [node name="BeatTimer" type="Node" parent="." unique_id=371356066]
 script = ExtResource("2_26oqi")
@@ -267,19 +266,16 @@ light_energy = 1.5
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Scene/SubViewport" unique_id=545919382]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.9935719, -0.11320321, 0, 0.109345905, 0.95971674, 0.25881904, -0.029299147, -0.25715533, 0.9659258, -0.085, 1.24, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scene/SubViewport/Camera3D" unique_id=76449850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.33326626)
 light_color = Color(0.4888, 0.76703995, 0.94, 1)
-light_energy = 0.1
+light_energy = 0.185
 shadow_enabled = true
 
-[node name="BeachBear" parent="Scene/SubViewport" unique_id=652430986 instance=ExtResource("3_2ywry")]
-transform = Transform3D(0.46759045, 0, 0.8839453, 0, 1, 0, -0.8839453, 0, 0.46759045, -1.138, 0, -1.144)
-
-[node name="Rolfe" parent="Scene/SubViewport" unique_id=814945630 instance=ExtResource("4_t7fky")]
-transform = Transform3D(0.35208666, 0, -0.9359673, 0, 1, 0, 0.9359673, 0, 0.35208666, 1.3095052, 0, -1.2919964)
+[node name="Foxy" parent="Scene/SubViewport" unique_id=2078506636 instance=ExtResource("4_wu0v4")]
+transform = Transform3D(0.39073107, 0, 0.92050487, 0, 1, 0, -0.92050487, 0, 0.39073107, -0.935, -0.415, -1.04)
 
 [node name="MiddleMenu" type="Control" parent="." unique_id=841935055 node_paths=PackedStringArray("StartPlaytest", "CharacterEditor", "JoinByIP", "UsernameEdit", "SceneTransition")]
 layout_mode = 1

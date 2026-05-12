@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5qjnkhfi2vun"]
+
+[ext_resource type="Texture2D" uid="uid://b3ipn2kop8sc3" path="res://bots/foxy/model/textures/envmapfnaf.png" id="1_m44ha"]
+
+[resource]
+resource_name = "Patch"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.7
+roughness_texture = ExtResource("1_m44ha")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}

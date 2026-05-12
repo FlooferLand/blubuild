@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GodotUtils;
@@ -14,10 +16,18 @@ public abstract record CharacterFileVersion {
     public abstract int Version { get; }
 
     /** Returns an error, if any */
-    public abstract Task<Result<CharacterFile>> Run(CharacterFile file);
+    public abstract Task<Result<CharacterFile>> Run(CharacterFile file, ProgressHolder progress);
 
-    public async Task<Stream?> OpenFile(string key) => await OpenFile(Entries, key);
+    public bool HasFile(string key) => Entries.ContainsKey(key);
+    public async Task<MemoryStream?> OpenFile(string key) => await OpenFile(Entries, key);
     public async Task<string?> GetFileAsUtf(string key) => await GetFileAsUtf(Entries, key);
+    public IEnumerable<string> ListFolder(string key) {
+        string folder = key.EndsWith('/') ? key : key + '/';
+        return Entries
+            .AsParallel()
+            .Where(e => e.Key.StartsWith(folder, StringComparison.Ordinal))
+            .Select(e => e.Key);
+    }
 
     // NOTE: Having to copy mem here because SharpCompress hauls ass and doesn't implement `Length`
     public static async Task<MemoryStream?> OpenFile(Dictionary<string, IArchiveEntry> entries, string key) {

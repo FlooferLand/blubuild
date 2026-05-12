@@ -21,25 +21,41 @@ public partial class CharacterEditor : Node3D {
 	}
 
 	public void SetError(string? error) {
-		if (InitCanvas.Visible) InitCanvas.SetError(error);
-		if (EditCanvas.Visible) EditCanvas.SetError(error);
+		Callable.From(() => {
+			if (InitCanvas.Visible) InitCanvas.SetError(error);
+			if (EditCanvas.Visible) EditCanvas.SetError(error);
+		}).CallDeferred();
 	}
 
-	public void HandleProgress(ProgressReport report) {
-		EditCanvas.SaveProgressBar.Value = (float)(report.PercentComplete ?? 0.0);
-		if (InitCanvas.Visible) InitCanvas.HandleProgress(report);
+	// TODO: Make the progress add up over time. Currently it changes per item.
+	public void HandleSaveProgress(ProgressHolder holder) => HandleProgress(holder, useSaveInfo:true);
+	public void HandleProgress(ProgressHolder holder) => HandleProgress(holder, useSaveInfo:false);
+	public void HandleProgress(ProgressHolder holder, bool useSaveInfo) {
+		Callable.From(() => {
+			holder.UpdateUi(EditCanvas.SaveProgressBar);
+			holder.UpdateUi(!useSaveInfo ? EditCanvas.Info : EditCanvas.SaveInfo, makeInvis:true);
+			if (InitCanvas.Visible) {
+				holder.UpdateUi(InitCanvas.Progress, makeInvis:true);
+				holder.UpdateUi(InitCanvas.Info, makeInvis:true);
+			}
+		}).CallDeferred();
 	}
 
-	public async void SaveCharacter() {
+	public async Task SaveCharacter() {
 		if (File == null || EditCanvas.SaveButton.Disabled) return;
 		EditCanvas.SaveButton.Disabled = true;
-		string? error = await File.Write(progress: HandleProgress);
+		EditCanvas.SaveProgressBar.Value = 0;
+		await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+
+		using var progress = new ProgressHolder("Saving the character", HandleSaveProgress);
+		string? error = await File.Write(progress);
 		if (error != null) EditCanvas.SaveError.Text = error;
 		EditCanvas.SaveButton.Disabled = false;
 	}
 
 	public async Task LoadCharacter(string path) {
-		var result = await CharacterFile.Read(path, progress: HandleProgress);
+		using var progress = new ProgressHolder("Loading the character", HandleProgress);
+		var result = await CharacterFile.Read(path, progress);
 		if (result.LetErr(out string err)) SetError(err);
 		if (!result.LetOk(out var file)) return;
 		File = file;
@@ -53,21 +69,24 @@ public partial class CharacterEditor : Node3D {
 	}
 
 	public async Task NewCharacter(string path) {
-		SceneTransition.FadeInAsync(loading: true, finished: async () => {
+		await SceneTransition.FadeInAsync(loading: true, finished: async () => {
+			using var progress = new ProgressHolder("Creating the character", HandleProgress);
 			File = new CharacterFile { FilePath = path };
-			string? error = await File.Write(progress: HandleProgress);
-			SetError(error);
-
-			InitCanvas.Visible = false;
-			EditCanvas.Visible = true;
-			LoadModel(File.Model);
-			SceneTransition.FadeOut();
+			string? error = await File.Write(progress);
+			Callable.From(() => {
+				SetError(error);
+				InitCanvas.Visible = false;
+				EditCanvas.Visible = true;
+				LoadModel(File.Model);
+				SceneTransition.FadeOut();
+			}).CallDeferred();
 		});
 	}
 
 	public async Task LoadModel(string path) {
+		using var progress = new ProgressHolder("Loading the model", HandleProgress);
 		if (File == null) return;
-		var result = await Model.Load(path);
+		var result = await Model.Load(path, progress);
 		if (result.IsErr) {
 			SetError(result.Error!);
 			return;
@@ -76,6 +95,8 @@ public partial class CharacterEditor : Node3D {
 	}
 
 	public void LoadModel(Model? model) {
+		using var progress = new ProgressHolder("Creating a scene", HandleProgress);
+
 		File?.Model = model;
 		if (!model.HasValue) return;
 		var document = model.Value.Document;
