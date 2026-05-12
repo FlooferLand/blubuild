@@ -1,23 +1,69 @@
 using System.Threading.Tasks;
 using Godot;
-using SharpCompress.Common;
 
 namespace Project.CharacterEditing;
 
 public partial class CharacterEditor : Node3D {
 	[Signal] public delegate void CharacterLoadedEventHandler();
 	[Export] public required Node3D BotHolder;
+	[Export] public required SpringArm3D CameraHolder;
+	[Export] public required Camera3D Camera;
 	[Export] public required Transition SceneTransition;
 	[Export] public required InitCanvas InitCanvas;
 	[Export] public required EditCanvas EditCanvas;
 
+	const float maxDistance = 2.0f;
+
 	public CharacterFile? File = null;
+	Vector3 rotationTarget = Vector3.Zero;
+	Vector3 positionTarget = Vector3.Zero;
+	bool panning = false;
+	bool moving = false;
+	float zoom = 1.0f;
 
 	public override void _Ready() {
 		InitCanvas.Visible = true;
 		EditCanvas.Visible = false;
 		SceneTransition.FadeOut();
 		MusicGlobal.Play(MusicGlobal.Track.CharacterEditor);
+		rotationTarget = CameraHolder.Rotation;
+		positionTarget = CameraHolder.Position;
+	}
+
+	public override void _Input(InputEvent @event) {
+		switch (@event) {
+			case InputEventMouseButton button:
+				panning = button is { Pressed: true, ButtonIndex: MouseButton.Right };
+				moving = button is { Pressed: true, ButtonIndex: MouseButton.Middle };
+				switch (button) {
+					case { Pressed: true, ButtonIndex: MouseButton.WheelUp }:
+						zoom -= 0.1f;
+						break;
+					case { Pressed: true, ButtonIndex: MouseButton.WheelDown }:
+						zoom += 0.1f;
+						break;
+				}
+				zoom = Mathf.Clamp(zoom, 0.4f, 1.5f);
+				break;
+			case InputEventMouseMotion motion:
+				if (panning) {
+					rotationTarget -= new Vector3(motion.Relative.Y, motion.Relative.X, 0f) * 0.01f;
+				} else if (moving) {var basis = Camera.GlobalTransform.Basis;
+					var center = Vector3.Up * 1.0f;
+					positionTarget += (basis.X * -motion.Relative.X + basis.Y * motion.Relative.Y) * 0.005f * zoom;
+					var offset = positionTarget - center;
+					positionTarget = center + offset.LimitLength(maxDistance);
+					positionTarget.Y = Mathf.Max(positionTarget.Y, 0.1f);
+				}
+				break;
+		}
+	}
+
+	public override void _Process(double delta) {
+		float weight = 14f * (float) delta;
+		CameraHolder.Rotation = CameraHolder.Rotation.Slerp(rotationTarget, weight);
+		CameraHolder.Position = CameraHolder.Position.Lerp(positionTarget, weight);
+		CameraHolder.SpringLength = Mathf.Lerp(CameraHolder.SpringLength, 2f * zoom, 6f * (float) delta);
 	}
 
 	public void SetError(string? error) {

@@ -10,9 +10,7 @@
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/ProgressHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/ProgressHolder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +333,7 @@
       <workItem from="1778337208737" duration="21971000" />
       <workItem from="1778425206397" duration="7034000" />
       <workItem from="1778514921857" duration="21895000" />
-      <workItem from="1778598801516" duration="2671000" />
+      <workItem from="1778598801516" duration="6905000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -409,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778547024008</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fix progress holder not reporting information properly">
+      <option name="closed" value="true" />
+      <created>1778603587884</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1778603587884</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +445,8 @@
     <MESSAGE value="Move music to dedicated autoload" />
     <MESSAGE value="Fix BeatTimer and MusicGlobal being broken" />
     <MESSAGE value="A bunch of filesystem things" />
-    <option name="LAST_COMMIT_MESSAGE" value="A bunch of filesystem things" />
+    <MESSAGE value="Fix progress holder not reporting information properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix progress holder not reporting information properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -17,6 +17,8 @@ glow_enabled = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_dwy1c"]
 size = Vector2(50, 50)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7edw4"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7edw4"]
 albedo_color = Color(0.60787475, 0.79803246, 0.8266827, 1)
 
@@ -36,9 +38,14 @@ depth = 0.0
 material = SubResource("StandardMaterial3D_8qviq")
 size = Vector3(0.3, 0.3, 0)
 
-[node name="CharacterEditor" type="Node3D" unique_id=1733658327 node_paths=PackedStringArray("BotHolder", "SceneTransition", "InitCanvas", "EditCanvas")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_8qviq"]
+radius = 0.29
+
+[node name="CharacterEditor" type="Node3D" unique_id=1733658327 node_paths=PackedStringArray("BotHolder", "CameraHolder", "Camera", "SceneTransition", "InitCanvas", "EditCanvas")]
 script = ExtResource("1_skgct")
 BotHolder = NodePath("BotHolder")
+CameraHolder = NodePath("CameraHolder")
+Camera = NodePath("CameraHolder/Camera3D")
 SceneTransition = NodePath("PullTransition")
 InitCanvas = NodePath("InitCanvas")
 EditCanvas = NodePath("EditCanvas")
@@ -56,8 +63,15 @@ light_energy = 0.0
 light_angular_distance = 1.0
 directional_shadow_mode = 0
 
-[node name="Ground" type="MeshInstance3D" parent="Environment" unique_id=396591189]
+[node name="Ground" type="StaticBody3D" parent="Environment" unique_id=542432164]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=396591189]
 mesh = SubResource("PlaneMesh_dwy1c")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=1758023988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+shape = SubResource("WorldBoundaryShape3D_7edw4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Environment" unique_id=1941136497]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.5688653, 0)
@@ -93,12 +107,19 @@ skeleton = NodePath("../../BotHolder")
 
 [node name="BotHolder" type="Node3D" parent="." unique_id=1991537209]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=570667170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+[node name="CameraHolder" type="SpringArm3D" parent="." unique_id=576793902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_8qviq")
+spring_length = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraHolder" unique_id=570667170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+current = true
 far = 300.0
 
 [node name="InitCanvas" type="CanvasLayer" parent="." unique_id=241228267 node_paths=PackedStringArray("Parent", "NewButton", "LoadButton", "Progress", "Info", "Error")]
 layer = 100
+visible = false
 script = ExtResource("3_y2rf3")
 Parent = NodePath("..")
 NewButton = NodePath("PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/New")
