@@ -28,12 +28,10 @@ public partial class CharacterEditor : Node3D {
 	}
 
 	// TODO: Make the progress add up over time. Currently it changes per item.
-	public void HandleSaveProgress(ProgressHolder holder) => HandleProgress(holder, useSaveInfo:true);
-	public void HandleProgress(ProgressHolder holder) => HandleProgress(holder, useSaveInfo:false);
-	public void HandleProgress(ProgressHolder holder, bool useSaveInfo) {
+	public void HandleProgress(ProgressHolder holder) {
 		Callable.From(() => {
 			holder.UpdateUi(EditCanvas.SaveProgressBar);
-			holder.UpdateUi(!useSaveInfo ? EditCanvas.Info : EditCanvas.SaveInfo, makeInvis:true);
+			holder.UpdateUi(EditCanvas.Info, makeInvis:true);
 			if (InitCanvas.Visible) {
 				holder.UpdateUi(InitCanvas.Progress, makeInvis:true);
 				holder.UpdateUi(InitCanvas.Info, makeInvis:true);
@@ -47,9 +45,9 @@ public partial class CharacterEditor : Node3D {
 		EditCanvas.SaveProgressBar.Value = 0;
 		await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 
-		using var progress = new ProgressHolder("Saving the character", HandleSaveProgress);
+		using var progress = new ProgressHolder("Saving the character", HandleProgress);
 		string? error = await File.Write(progress);
-		if (error != null) EditCanvas.SaveError.Text = error;
+		if (error != null) EditCanvas.Error.Text = error;
 		EditCanvas.SaveButton.Disabled = false;
 	}
 

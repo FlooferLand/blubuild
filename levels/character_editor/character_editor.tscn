@@ -169,18 +169,16 @@ text = "Error"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "ModelPicker", "Error", "Info", "SaveButton", "SaveProgressBar", "SaveError", "SaveInfo")]
+[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "DisplayName", "Authors", "ModelPicker", "Error", "Info", "SaveButton", "SaveProgressBar")]
 script = ExtResource("4_7edw4")
 Parent = NodePath("..")
 DisplayName = NodePath("SidePanel/MarginContainer/VBoxContainer/Name/LineEdit")
 Authors = NodePath("SidePanel/MarginContainer/VBoxContainer/Authors/LineEdit")
 ModelPicker = NodePath("SidePanel/MarginContainer/VBoxContainer/Model/FilePickerButton")
-Error = NodePath("SidePanel/MarginContainer/VBoxContainer/Error")
-Info = NodePath("SidePanel/MarginContainer/VBoxContainer/Info")
-SaveButton = NodePath("CornerPanel/MarginContainer/VBoxContainer/Save")
-SaveProgressBar = NodePath("CornerPanel/MarginContainer/VBoxContainer/SaveProgress")
-SaveError = NodePath("CornerPanel/MarginContainer/VBoxContainer/Error")
-SaveInfo = NodePath("SidePanel/MarginContainer/VBoxContainer/Info")
+Error = NodePath("MarginContainer/CornerPanel/MarginContainer/VBoxContainer/Error")
+Info = NodePath("MarginContainer/CornerPanel/MarginContainer/VBoxContainer/Info")
+SaveButton = NodePath("MarginContainer/CornerPanel/MarginContainer/VBoxContainer/Save")
+SaveProgressBar = NodePath("MarginContainer/CornerPanel/MarginContainer/VBoxContainer/SaveProgress")
 
 [node name="SidePanel" type="PanelContainer" parent="EditCanvas" unique_id=1342952534]
 anchors_preset = -1
@@ -235,7 +233,46 @@ size_flags_horizontal = 3
 [node name="Animations" type="Tree" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=894752536]
 layout_mode = 2
 
-[node name="Info" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=1588241373]
+[node name="MarginContainer" type="MarginContainer" parent="EditCanvas" unique_id=760698683]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -297.0
+offset_top = -146.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CornerPanel" type="PanelContainer" parent="EditCanvas/MarginContainer" unique_id=51356662]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="EditCanvas/MarginContainer/CornerPanel" unique_id=541549039]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/MarginContainer/CornerPanel/MarginContainer" unique_id=2097333621]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Save" type="Button" parent="EditCanvas/MarginContainer/CornerPanel/MarginContainer/VBoxContainer" unique_id=223594842]
+layout_mode = 2
+text = "Save"
+
+[node name="SaveProgress" type="ProgressBar" parent="EditCanvas/MarginContainer/CornerPanel/MarginContainer/VBoxContainer" unique_id=1585948090]
+layout_mode = 2
+
+[node name="Info" type="Label" parent="EditCanvas/MarginContainer/CornerPanel/MarginContainer/VBoxContainer" unique_id=230085351]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.646029, 0.646029, 0.646029, 1)
@@ -243,44 +280,7 @@ text = "Info"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Error" type="Label" parent="EditCanvas/SidePanel/MarginContainer/VBoxContainer" unique_id=100725715]
-custom_minimum_size = Vector2(128, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.37, 0.37, 1)
-text = "Error"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="CornerPanel" type="PanelContainer" parent="EditCanvas" unique_id=51356662]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -211.0
-offset_top = -109.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="EditCanvas/CornerPanel" unique_id=760698683]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/CornerPanel/MarginContainer" unique_id=2097333621]
-layout_mode = 2
-
-[node name="Save" type="Button" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=223594842]
-layout_mode = 2
-text = "Save"
-
-[node name="SaveProgress" type="ProgressBar" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=1585948090]
-layout_mode = 2
-
-[node name="Error" type="Label" parent="EditCanvas/CornerPanel/MarginContainer/VBoxContainer" unique_id=1787551261]
+[node name="Error" type="Label" parent="EditCanvas/MarginContainer/CornerPanel/MarginContainer/VBoxContainer" unique_id=1787551261]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.37, 0.37, 1)

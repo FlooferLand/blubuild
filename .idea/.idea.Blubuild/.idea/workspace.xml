@@ -8,26 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/types/ProgressHolder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/beach_bear/beach_bear.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/beach_bear/beach_bear_data.tres" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFileVersion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileVersion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/FileFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/FileFormat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/FileFormatPack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/FileFormatPack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/Model.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/Model.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/pull_transition.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/pull_transition.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/ProgressHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/ProgressHolder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,7 +334,8 @@
       <workItem from="1778272775134" duration="21696000" />
       <workItem from="1778337208737" duration="21971000" />
       <workItem from="1778425206397" duration="7034000" />
-      <workItem from="1778514921857" duration="21742000" />
+      <workItem from="1778514921857" duration="21895000" />
+      <workItem from="1778598801516" duration="2671000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -415,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778379170998</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="A bunch of filesystem things">
+      <option name="closed" value="true" />
+      <created>1778547024008</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1778547024008</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +438,8 @@
     <MESSAGE value="Add model loading" />
     <MESSAGE value="Move music to dedicated autoload" />
     <MESSAGE value="Fix BeatTimer and MusicGlobal being broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix BeatTimer and MusicGlobal being broken" />
+    <MESSAGE value="A bunch of filesystem things" />
+    <option name="LAST_COMMIT_MESSAGE" value="A bunch of filesystem things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
