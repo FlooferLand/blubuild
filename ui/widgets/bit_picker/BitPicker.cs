@@ -1,22 +1,25 @@
+using System.Collections.Generic;
 using Godot;
 
 namespace Project;
 
 public partial class BitPicker : PopupPanel {
-	[Signal] public delegate void SelectedEventHandler(short bitId);
+	[Signal] public delegate void SelectedEventHandler();
 
 	[ExportGroup("Local")]
 	[Export] public required Tree Tree;
+
+	public MappedBit SelectedBit = new();
+	readonly Dictionary<TreeItem, MappedBit> Data = new();
 
 	public override void _EnterTree() {
 		Visible = false;
 		Tree.ItemSelected += () => {
 			var selected = Tree.GetSelected();
-			if (selected == null) return;
-			if (short.TryParse(selected.GetText(1), out short result)) {
-				EmitSignalSelected(result);
-				Close();
-			}
+			if (!Data.TryGetValue(selected, out var bit)) return;
+			SelectedBit = bit;
+			EmitSignalSelected();
+			Close();
 		};
 	}
 
@@ -27,8 +30,16 @@ public partial class BitPicker : PopupPanel {
 	}
 
 	public void PopupBitPicker() {
+		Data.Clear();
+
 		Tree.Clear();
-		Tree.SetColumns(2);
+		Tree.SetColumns(3);
+		Tree.SetColumnTitle(0, "Name");
+		Tree.SetColumnTitle(1, "Drawered Bit");
+		Tree.SetColumnTitle(2, "Global Bit");
+		Tree.SetColumnExpand(0, true);
+		Tree.SetColumnExpand(1, false);
+		Tree.SetColumnExpand(2, false);
 
 		var rootItem = Tree.CreateItem();
 
@@ -37,11 +48,13 @@ public partial class BitPicker : PopupPanel {
 			chartItem.SetText(0, chartId);
 			foreach ((string fixtureId, var fixture) in chart.Fixtures) {
 				var fixtureItem = Tree.CreateItem(chartItem);
-				fixtureItem.SetText(0, fixtureId);
-				foreach ((int id, string action) in fixture.ActionNames) {
+				fixtureItem.SetText(0, (fixtureId.Length != 0) ? fixtureId : "Unused");
+				foreach ((Bit bitId, string bitAction) in fixture.ActionNames) {
 					var item = Tree.CreateItem(fixtureItem);
-					item.SetText(0, action);
-					item.SetText(1, id.ToString());
+					item.SetText(0, (bitAction.Length != 0) ? bitAction : "Unused");
+					item.SetText(1, bitId.FormatDrawered());
+					item.SetText(2, bitId.ToString());
+					Data[item] = new MappedBit(chartId, bitId);
 				}
 			}
 		}
@@ -53,6 +66,6 @@ public partial class BitPicker : PopupPanel {
 
 	public void Close() {
 		Hide();
-		QueueFree();
+		Data.Clear();
 	}
 }

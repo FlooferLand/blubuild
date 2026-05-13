@@ -9,8 +9,9 @@ bg_color = Color(0.06, 0.06, 0.06, 0.8784314)
 oversampling_override = 1.0
 title = "Bit picker"
 initial_position = 2
-size = Vector2i(600, 600)
+size = Vector2i(600, 500)
 visible = true
+unresizable = false
 borderless = false
 theme_override_styles/panel = SubResource("StyleBoxFlat_w4aft")
 script = ExtResource("1_jsstp")
@@ -18,17 +19,12 @@ Tree = NodePath("VBoxContainer/Tree")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1908526561]
 offset_right = 600.0
-offset_bottom = 600.0
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1451354504]
-layout_mode = 2
-text = "Bit Picker"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_bottom = 500.0
 
 [node name="Tree" type="Tree" parent="VBoxContainer" unique_id=1043564181]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
+columns = 3
+column_titles_visible = true
 hide_root = true
 select_mode = 1

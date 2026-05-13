@@ -6,7 +6,7 @@ using GodotUtils;
 namespace Project;
 
 public readonly record struct BitChart(Dictionary<string, BitChart.Fixture> Fixtures) {
-    public readonly record struct Fixture(Dictionary<int, string> ActionNames);
+    public readonly record struct Fixture(Dictionary<Bit, string> ActionNames);
 
     public static Result<BitChart> Load(string path) {
         using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
@@ -26,14 +26,13 @@ public readonly record struct BitChart(Dictionary<string, BitChart.Fixture> Fixt
         // Processing
         var fixtures = new Dictionary<string, Fixture>();
         foreach (string[] entry in csv.Entries) {
-            if (entry.Length < 3) continue;
-            if (!int.TryParse(entry[bitIndex], out int bitId)) continue;
+            if (!short.TryParse(entry[bitIndex], out short bitId)) continue;
 
-            string fixtureName = entry[fixtureIndex];
-            string actionName = entry[actionIndex];
+            string fixtureName = entry.Length > fixtureIndex ? entry[fixtureIndex] : "";
+            string actionName = entry.Length > actionIndex ? entry[actionIndex] : "";
 
             if (!fixtures.TryGetValue(fixtureName, out var fixture)) {
-                fixture = new Fixture(new Dictionary<int, string>());
+                fixture = new Fixture(new Dictionary<Bit, string>());
                 fixtures[fixtureName] = fixture;
             }
             fixture.ActionNames[bitId] = actionName;

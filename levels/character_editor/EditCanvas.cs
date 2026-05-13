@@ -53,8 +53,8 @@ public partial class EditCanvas : CanvasLayer {
 					AnimationNameContainer.AddChild(nameButton);
 
 					var bitButton = BitPickerButtonScene.Instantiate<BitPickerButton>();
-					bitButton.Picker.Selected += bitId => {
-						GD.Print($"Bit id '{bitId}' was selected!");
+					bitButton.Picker.Selected += () => {
+						GD.Print($"Bit id '{bitButton.Picker.SelectedBit}' was selected!");
 					};
 					AnimationBitContainer.AddChild(bitButton);
 				}

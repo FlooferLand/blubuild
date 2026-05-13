@@ -8,17 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/types/BitChart.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/CsvData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/utils/BitChartRegistry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/bits/Bit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/bits/Drawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/bits/MappedBit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blutest/Blutest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blutest/Blutest.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/Model.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/Model.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/BitChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/BitChart.cs.uid" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs.uid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPickerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPickerButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +113,8 @@
     <setting file="file://$PROJECT_DIR$/scripts/networking/IPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/TransferChannels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/resources/BotMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/scripts/types/BitChart.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/types/Model.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/types/bits/Drawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/utils/FileUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/screens/select_show/SelectShowScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/widgets/file_picker/FilePickerButton.cs" root0="FORCE_HIGHLIGHTING" />
@@ -344,7 +347,8 @@
       <workItem from="1778514921857" duration="21895000" />
       <workItem from="1778598801516" duration="20061000" />
       <workItem from="1778627555232" duration="8000" />
-      <workItem from="1778627657591" duration="7961000" />
+      <workItem from="1778627657591" duration="8061000" />
+      <workItem from="1778679286803" duration="5964000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -434,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778608402460</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add basic W.I.P bit picker">
+      <option name="closed" value="true" />
+      <created>1778635869048</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1778635869048</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +478,8 @@
     <MESSAGE value="A bunch of filesystem things" />
     <MESSAGE value="Fix progress holder not reporting information properly" />
     <MESSAGE value="Add camera movement to character editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add camera movement to character editor" />
+    <MESSAGE value="Add basic W.I.P bit picker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic W.I.P bit picker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

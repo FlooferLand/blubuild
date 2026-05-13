@@ -26,12 +26,18 @@
         <ProjectReference Include="GodotUtils\GodotUtils.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="addons\main\importers\" />
-        <Folder Include="addons\main\inspectors\" />
         <Folder Include="scripts\interfaces\" />
         <Folder Include="scripts\networking\packets\" />
     </ItemGroup>
     <ItemGroup>
+      <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.8.2-beta.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="ErrorProne.NET.Structs" Version="0.6.1-beta.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="SharpCompress" Version="0.48.0" />
     </ItemGroup>
 </Project>
