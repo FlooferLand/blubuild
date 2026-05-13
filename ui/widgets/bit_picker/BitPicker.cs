@@ -35,8 +35,8 @@ public partial class BitPicker : PopupPanel {
 		Tree.Clear();
 		Tree.SetColumns(3);
 		Tree.SetColumnTitle(0, "Name");
-		Tree.SetColumnTitle(1, "Drawered Bit");
-		Tree.SetColumnTitle(2, "Global Bit");
+		Tree.SetColumnTitle(1, "Global Bit");
+		Tree.SetColumnTitle(2, "Drawered Bit");
 		Tree.SetColumnExpand(0, true);
 		Tree.SetColumnExpand(1, false);
 		Tree.SetColumnExpand(2, false);
@@ -52,8 +52,8 @@ public partial class BitPicker : PopupPanel {
 				foreach ((Bit bitId, string bitAction) in fixture.ActionNames) {
 					var item = Tree.CreateItem(fixtureItem);
 					item.SetText(0, (bitAction.Length != 0) ? bitAction : "Unused");
-					item.SetText(1, bitId.FormatDrawered());
-					item.SetText(2, bitId.ToString());
+					item.SetText(1, bitId.ToString());
+					item.SetText(2, bitId.FormatDrawered());
 					Data[item] = new MappedBit(chartId, bitId);
 				}
 			}
