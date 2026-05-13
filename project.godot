@@ -32,9 +32,15 @@ general/default_playback_type.web=0
 SystemAutoload="*uid://bfff471ngoyrl"
 NetworkTransport="*uid://dlatxubn1cnsa"
 MusicGlobal="*uid://cp7micybvv6dd"
+BitChartRegistry="*uid://dtrkyxila6tbr"
 
 [debug]
 
+gdscript/warnings/directory_rules={
+"res://addons": 0,
+"res://addons/blubuild": 1
+}
+gdscript/warnings/unused_parameter=0
 gdscript/warnings/untyped_declaration=1
 gdscript/warnings/unsafe_property_access=1
 gdscript/warnings/unsafe_method_access=1

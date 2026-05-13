@@ -8,9 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/types/BitChart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/CsvData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/utils/BitChartRegistry.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/Model.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/Model.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +110,7 @@
     <setting file="file://$PROJECT_DIR$/scripts/networking/IPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/TransferChannels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/resources/BotMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/types/BitChart.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/types/Model.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/utils/FileUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/screens/select_show/SelectShowScreen.cs" root0="FORCE_HIGHLIGHTING" />
@@ -333,7 +342,9 @@
       <workItem from="1778337208737" duration="21971000" />
       <workItem from="1778425206397" duration="7034000" />
       <workItem from="1778514921857" duration="21895000" />
-      <workItem from="1778598801516" duration="6905000" />
+      <workItem from="1778598801516" duration="20061000" />
+      <workItem from="1778627555232" duration="8000" />
+      <workItem from="1778627657591" duration="7961000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -415,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778603587884</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add camera movement to character editor">
+      <option name="closed" value="true" />
+      <created>1778608402460</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1778608402460</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +465,8 @@
     <MESSAGE value="Fix BeatTimer and MusicGlobal being broken" />
     <MESSAGE value="A bunch of filesystem things" />
     <MESSAGE value="Fix progress holder not reporting information properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix progress holder not reporting information properly" />
+    <MESSAGE value="Add camera movement to character editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add camera movement to character editor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

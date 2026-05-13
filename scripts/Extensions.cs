@@ -24,6 +24,13 @@ public static class Extensions {
         }
     }
 
+    public static IEnumerable<StringName> GetAllAnimations(this AnimationPlayer animPlayer) {
+        return animPlayer.GetAnimationLibraryList().SelectMany(library => animPlayer.GetAnimationLibrary(library).GetAnimationList());
+    }
+    public static void QueueFreeChildren(this Node node) {
+        foreach (var child in node.GetChildren()) child?.QueueFree();
+    }
+
     public static Error LoadFromBuffer(this Image image, byte[] buffer, string fileExtension) => fileExtension switch {
         "png" => image.LoadPngFromBuffer(buffer),
         "jpg" or "jpeg" => image.LoadJpgFromBuffer(buffer),

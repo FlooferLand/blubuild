@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bdmqhuh8l2wou"]
+
+[ext_resource type="Script" uid="uid://ccxiuy25xb5tw" path="res://ui/widgets/bit_picker/BitPickerButton.cs" id="1_i4p0e"]
+[ext_resource type="PackedScene" uid="uid://b8y0jksgwvc7k" path="res://ui/widgets/bit_picker/bit_picker.tscn" id="2_8uf6j"]
+
+[node name="BitPickerButton" type="Button" unique_id=1879374016 node_paths=PackedStringArray("Picker")]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 95.0
+offset_bottom = 40.0
+text = "Pick a bit"
+script = ExtResource("1_i4p0e")
+Picker = NodePath("BitPicker")
+
+[node name="BitPicker" parent="." unique_id=217132595 instance=ExtResource("2_8uf6j")]
+visible = false

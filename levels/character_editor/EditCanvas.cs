@@ -6,14 +6,25 @@ namespace Project.CharacterEditing;
 
 public partial class EditCanvas : CanvasLayer {
 	[Export] public required CharacterEditor Parent;
-	[Export] public required LineEdit DisplayName;
-	[Export] public required LineEdit Authors;
-	[Export] public required FilePickerButton ModelPicker;
+	[Export] public required TabContainer TabContainer;
 	[Export] public required Label Error;
 	[Export] public required Label Info;
-
 	[Export] public required Button SaveButton;
 	[Export] public required ProgressBar SaveProgressBar;
+
+	[Export] public required PackedScene BitPickerScene;
+	[Export] public required PackedScene BitPickerButtonScene;
+
+	[ExportGroup("Info")]
+	[Export] public required LineEdit DisplayName;
+	[Export] public required LineEdit Authors;
+
+	[ExportGroup("Model")]
+	[Export] public required FilePickerButton ModelPicker;
+
+	[ExportGroup("Animations")]
+	[Export] public required Container AnimationNameContainer;
+	[Export] public required Container AnimationBitContainer;
 
 	// TODO: Add a file watcher and reload everything when the character file changes externally
 
@@ -23,11 +34,31 @@ public partial class EditCanvas : CanvasLayer {
 		SaveButton.Pressed += async () => await Parent.SaveCharacter();
 		SaveProgressBar.Value = 0;
 		ModelPicker.AddFilter(FileFormat.GltfModel);
+		TabContainer.CurrentTab = 0;
 
 		Parent.CharacterLoaded += () => {
 			if (Parent.File is not { } file) return;
 			DisplayName.Text = file.DisplayName;
 			Authors.Text = file.Authors.Join();
+
+			AnimationNameContainer.QueueFreeChildren();
+			AnimationBitContainer.QueueFreeChildren();
+			if (Parent.ModelAnimationPlayer is {} animPlayer) {
+				foreach (var animation in animPlayer.GetAllAnimations()) {
+					var nameButton = new Button { Text = animation, Flat = true };
+					nameButton.Pressed += () => {
+						animPlayer.Stop();
+						animPlayer.Play(nameButton.Text);
+					};
+					AnimationNameContainer.AddChild(nameButton);
+
+					var bitButton = BitPickerButtonScene.Instantiate<BitPickerButton>();
+					bitButton.Picker.Selected += bitId => {
+						GD.Print($"Bit id '{bitId}' was selected!");
+					};
+					AnimationBitContainer.AddChild(bitButton);
+				}
+			}
 		};
 		ModelPicker.FileSelected += path => Commit(async _ => await Parent.LoadModel(path));
 		DisplayName.TextSubmitted += text => Commit(f => f.DisplayName = text);

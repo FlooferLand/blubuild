@@ -14,6 +14,8 @@ public partial class CharacterEditor : Node3D {
 
 	const float maxDistance = 2.0f;
 
+	public Node3D? ModelNode = null;
+	public AnimationPlayer? ModelAnimationPlayer = null;
 	public CharacterFile? File = null;
 	Vector3 rotationTarget = Vector3.Zero;
 	Vector3 positionTarget = Vector3.Zero;
@@ -103,11 +105,11 @@ public partial class CharacterEditor : Node3D {
 		if (result.LetErr(out string err)) SetError(err);
 		if (!result.LetOk(out var file)) return;
 		File = file;
-		EmitSignalCharacterLoaded();
 		SceneTransition.FadeIn(loading: true, finished: () => {
 			InitCanvas.Visible = false;
 			EditCanvas.Visible = true;
 			LoadModel(file.Model);
+			EmitSignalCharacterLoaded();
 			SceneTransition.FadeOut();
 		});
 	}
@@ -151,6 +153,8 @@ public partial class CharacterEditor : Node3D {
 			SetError("Failed to create model scene");
 			return;
 		}
+		ModelNode = root as Node3D;
+		ModelAnimationPlayer = root.GetNodeOrNull<AnimationPlayer>(nameof(AnimationPlayer));
 		foreach (var child in BotHolder.GetChildren()) child?.QueueFree();
 		BotHolder.AddChild(root);
 	}

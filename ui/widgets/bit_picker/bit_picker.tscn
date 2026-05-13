@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b8y0jksgwvc7k"]
+
+[ext_resource type="Script" uid="uid://cli70vv0lhfxc" path="res://ui/widgets/bit_picker/BitPicker.cs" id="1_jsstp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4aft"]
+bg_color = Color(0.06, 0.06, 0.06, 0.8784314)
+
+[node name="BitPicker" type="PopupPanel" unique_id=217132595 node_paths=PackedStringArray("Tree")]
+oversampling_override = 1.0
+title = "Bit picker"
+initial_position = 2
+size = Vector2i(600, 600)
+visible = true
+borderless = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4aft")
+script = ExtResource("1_jsstp")
+Tree = NodePath("VBoxContainer/Tree")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1908526561]
+offset_right = 600.0
+offset_bottom = 600.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1451354504]
+layout_mode = 2
+text = "Bit Picker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tree" type="Tree" parent="VBoxContainer" unique_id=1043564181]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+hide_root = true
+select_mode = 1

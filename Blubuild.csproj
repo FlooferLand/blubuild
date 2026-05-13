@@ -26,6 +26,8 @@
         <ProjectReference Include="GodotUtils\GodotUtils.csproj" />
     </ItemGroup>
     <ItemGroup>
+        <Folder Include="addons\main\importers\" />
+        <Folder Include="addons\main\inspectors\" />
         <Folder Include="scripts\interfaces\" />
         <Folder Include="scripts\networking\packets\" />
     </ItemGroup>

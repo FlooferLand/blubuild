@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Godot;
 using Godot.Collections;
 using GodotUtils;
-using FileAccess = Godot.FileAccess;
 
 namespace Project;
 
