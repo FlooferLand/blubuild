@@ -12,22 +12,19 @@ namespace Project;
  * It also allows for stacking of animations
  */
 public partial class BotAnimationComp : Node3D {
-    struct AnimState {
+    record struct AnimState(BitData Data) {
         public bool Active = false;
         public float Weight = 0.0f;
-        public BotMovement Movement = null!;
-        public AnimState(BotMovement movement) {
-            Movement = movement;
-        }
     }
 
     [Export] public required AnimationPlayer AnimPlayer;
     [Export] public required Skeleton3D Skeleton;
-    [Export] public required BotData BotData;
 
     [ExportGroup("Local")]
     [Export] public required AudioStreamPlayer3D PneumaticFire;
     [Export] public required AudioStreamPlayer3D PneumaticRelease;
+
+    public required CharacterFile File = null!;
 
     AnimationTree tree = null!;
     AnimationNodeBlendTree root = null!;
@@ -49,9 +46,9 @@ public partial class BotAnimationComp : Node3D {
         AnimPlayer.SpeedScale = 0.0f;
 
         // States
-        foreach ((int bitId, var movement) in BotData.BitMapping) {
-            var state = new AnimState(movement);
-            animStates[movement.AnimName] = state;
+        foreach (var (_, data) in File.BitData.BitsToData) {
+            var state = new AnimState(data);
+            animStates[data.Anim] = state;
         }
 
         // AnimationTree
@@ -93,17 +90,17 @@ public partial class BotAnimationComp : Node3D {
         foreach ((string key, var state) in animStates) {
             var s = state;
             s.Weight = state.Active
-                ? Mathf.Clamp(state.Weight + (float) delta * state.Movement.FlowIn,  0f, 1f)
-                : Mathf.Clamp(state.Weight - (float) delta * state.Movement.FlowOut, 0f, 1f);
+                ? Mathf.Clamp(state.Weight + (float) delta * state.Data.Flows.In,  0f, 1f)
+                : Mathf.Clamp(state.Weight - (float) delta * state.Data.Flows.Out, 0f, 1f);
             animStates[key] = s;
             tree.Set($"parameters/{NodeSeekName(key)}/seek_request", s.Weight);
         }
     }
 
-    public void SetBit(int bitId, bool on) {
-        if (!BotData.BitMapping.TryGetValue(bitId, out var movement)) return;
-        if (!animStates.TryGetValue(movement.AnimName, out var state)) return;
+    public void SetBit(MappedBit bit, bool on) {
+        if (!File.BitData.BitsToData.TryGetValue(bit, out var data)) return;
+        if (!animStates.TryGetValue(data.Anim, out var state)) return;
         state.Active = on;
-        animStates[movement.AnimName] = state;
+        animStates[data.Anim] = state;
     }
 }

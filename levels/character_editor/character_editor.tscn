@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do3mwonfrjypa" path="res://ui/widgets/transitions/pull_transition.tscn" id="4_y2rf3"]
 [ext_resource type="PackedScene" uid="uid://cjiy4neb0rqp4" path="res://ui/widgets/file_picker/file_picker_button.tscn" id="5_8qviq"]
 [ext_resource type="PackedScene" uid="uid://bdmqhuh8l2wou" path="res://ui/widgets/bit_picker/bit_picker_button.tscn" id="5_uxla0"]
+[ext_resource type="PackedScene" uid="uid://csycp4451thd4" path="res://ui/widgets/flow_edit/flow_edit.tscn" id="6_1miut"]
 
 [sub_resource type="Environment" id="Environment_nbema"]
 background_mode = 2
@@ -192,41 +193,46 @@ text = "Error"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "TabContainer", "Error", "Info", "SaveButton", "SaveProgressBar", "DisplayName", "Authors", "ModelPicker", "AnimationNameContainer", "AnimationBitContainer")]
+[node name="EditCanvas" type="CanvasLayer" parent="." unique_id=556747703 node_paths=PackedStringArray("Parent", "TabContainer", "Error", "Info", "SaveButton", "SaveProgressBar", "DisplayName", "Authors", "ModelPicker", "AnimationContainer")]
 script = ExtResource("4_7edw4")
 Parent = NodePath("..")
-TabContainer = NodePath("SidePanel/MarginContainer/TabContainer")
+TabContainer = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer")
 Error = NodePath("CornerPanel/PanelContainer/MarginContainer/VBoxContainer/Error")
 Info = NodePath("CornerPanel/PanelContainer/MarginContainer/VBoxContainer/Info")
 SaveButton = NodePath("CornerPanel/PanelContainer/MarginContainer/VBoxContainer/Save")
 SaveProgressBar = NodePath("CornerPanel/PanelContainer/MarginContainer/VBoxContainer/SaveProgress")
 BitPickerScene = ExtResource("4_8qviq")
 BitPickerButtonScene = ExtResource("5_uxla0")
-DisplayName = NodePath("SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name/LineEdit")
-Authors = NodePath("SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors/LineEdit")
-ModelPicker = NodePath("SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker/FilePickerButton")
-AnimationNameContainer = NodePath("SidePanel/MarginContainer/TabContainer/Animations/VBoxContainer/HBoxContainer/AnimationNames")
-AnimationBitContainer = NodePath("SidePanel/MarginContainer/TabContainer/Animations/VBoxContainer/HBoxContainer/AnimationBits")
+FlowEditScene = ExtResource("6_1miut")
+DisplayName = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name/LineEdit")
+Authors = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors/LineEdit")
+ModelPicker = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker/FilePickerButton")
+AnimationContainer = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Animations/ScrollContainer/GridContainer")
 
-[node name="SidePanel" type="PanelContainer" parent="EditCanvas" unique_id=1342952534]
-anchors_preset = -1
+[node name="HSplitContainer" type="HSplitContainer" parent="EditCanvas" unique_id=752642030]
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 262.0
 grow_horizontal = 2
 grow_vertical = 2
+touch_dragger_enabled = true
 
-[node name="MarginContainer" type="MarginContainer" parent="EditCanvas/SidePanel" unique_id=1897937165]
+[node name="SidePanel" type="PanelContainer" parent="EditCanvas/HSplitContainer" unique_id=1342952534]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EditCanvas/HSplitContainer/SidePanel" unique_id=1897937165]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TabContainer" type="TabContainer" parent="EditCanvas/SidePanel/MarginContainer" unique_id=937751367]
+[node name="TabContainer" type="TabContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer" unique_id=937751367]
 layout_mode = 2
 current_tab = 2
+clip_tabs = false
 
-[node name="Info" type="MarginContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer" unique_id=434641614]
+[node name="Info" type="MarginContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer" unique_id=434641614]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -235,32 +241,32 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info" unique_id=829944787]
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info" unique_id=829944787]
 layout_mode = 2
 
-[node name="Name" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer" unique_id=1369443867]
+[node name="Name" type="HBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer" unique_id=1369443867]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name" unique_id=1606087070]
+[node name="Label" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name" unique_id=1606087070]
 layout_mode = 2
 text = "Name"
 
-[node name="LineEdit" type="LineEdit" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name" unique_id=1895529700]
+[node name="LineEdit" type="LineEdit" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name" unique_id=1895529700]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Authors" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer" unique_id=1127729183]
+[node name="Authors" type="HBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer" unique_id=1127729183]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors" unique_id=1589418173]
+[node name="Label" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors" unique_id=1589418173]
 layout_mode = 2
 text = "Author(s)"
 
-[node name="LineEdit" type="LineEdit" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors" unique_id=432419054]
+[node name="LineEdit" type="LineEdit" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors" unique_id=432419054]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Model" type="MarginContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer" unique_id=168028402]
+[node name="Model" type="MarginContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer" unique_id=168028402]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -269,21 +275,21 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Model" unique_id=77780110]
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Model" unique_id=77780110]
 layout_mode = 2
 
-[node name="ModelPicker" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer" unique_id=1097225333]
+[node name="ModelPicker" type="HBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer" unique_id=1097225333]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker" unique_id=1352099111]
+[node name="Label" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker" unique_id=1352099111]
 layout_mode = 2
 text = "Model"
 
-[node name="FilePickerButton" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker" unique_id=2029266648 instance=ExtResource("5_8qviq")]
+[node name="FilePickerButton" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker" unique_id=2029266648 instance=ExtResource("5_8qviq")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Animations" type="MarginContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer" unique_id=417415193]
+[node name="Animations" type="MarginContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer" unique_id=417415193]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -291,24 +297,19 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Animations" unique_id=1417132560]
+[node name="ScrollContainer" type="ScrollContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Animations" unique_id=1790774321]
 layout_mode = 2
+horizontal_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Animations/VBoxContainer" unique_id=2053210191]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="AnimationNames" type="VBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Animations/VBoxContainer/HBoxContainer" unique_id=819095312]
-clip_contents = true
+[node name="GridContainer" type="GridContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Animations/ScrollContainer" unique_id=403247134]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+columns = 3
 
-[node name="AnimationBits" type="VBoxContainer" parent="EditCanvas/SidePanel/MarginContainer/TabContainer/Animations/VBoxContainer/HBoxContainer" unique_id=558334667]
-clip_contents = true
+[node name="Empty" type="Control" parent="EditCanvas/HSplitContainer" unique_id=222147656]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="CornerPanel" type="MarginContainer" parent="EditCanvas" unique_id=760698683]
 anchors_preset = 3

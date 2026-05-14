@@ -14,12 +14,17 @@
         <Compile Remove="script_templates\**" />
         <Compile Remove="Bluchalk\**" />
         <Compile Remove="Blutest\**" />
+        <Compile Update="Blugenerator\Class1.cs">
+          <Link>Bluanalyze\Class1.cs</Link>
+        </Compile>
+        <Compile Remove="Blugenerator\**" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Remove="GodotUtils\**" />
         <EmbeddedResource Remove="script_templates\**" />
         <EmbeddedResource Remove="Bluchalk\**" />
         <EmbeddedResource Remove="Blutest\**" />
+        <EmbeddedResource Remove="Blugenerator\**" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="Bluchalk\Bluchalk.csproj" />

@@ -53,15 +53,16 @@ public partial class BitPicker : PopupPanel {
 					var item = Tree.CreateItem(fixtureItem);
 					item.SetText(0, (bitAction.Length != 0) ? bitAction : "Unused");
 					item.SetText(1, bitId.ToString());
-					item.SetText(2, bitId.FormatDrawered());
+					item.SetText(2, Drawer.FormatBit(bitId));
 					Data[item] = new MappedBit(chartId, bitId);
 				}
 			}
 		}
 
 		var maxSize = GetViewport().GetVisibleRect().Size;
-		Size = new Vector2I((int)(maxSize.X * 0.7f), (int)(maxSize.Y * 0.9f));
-		Popup();
+		var minSize = new Vector2I((int)(maxSize.X * 0.8f), (int)(maxSize.Y * 0.9f));
+		ContentScaleSize = minSize;
+		PopupCentered(minSize);
 	}
 
 	public void Close() {

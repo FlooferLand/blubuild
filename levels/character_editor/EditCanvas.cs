@@ -14,6 +14,7 @@ public partial class EditCanvas : CanvasLayer {
 
 	[Export] public required PackedScene BitPickerScene;
 	[Export] public required PackedScene BitPickerButtonScene;
+	[Export] public required PackedScene FlowEditScene;
 
 	[ExportGroup("Info")]
 	[Export] public required LineEdit DisplayName;
@@ -23,8 +24,7 @@ public partial class EditCanvas : CanvasLayer {
 	[Export] public required FilePickerButton ModelPicker;
 
 	[ExportGroup("Animations")]
-	[Export] public required Container AnimationNameContainer;
-	[Export] public required Container AnimationBitContainer;
+	[Export] public required GridContainer AnimationContainer;
 
 	// TODO: Add a file watcher and reload everything when the character file changes externally
 
@@ -41,22 +41,48 @@ public partial class EditCanvas : CanvasLayer {
 			DisplayName.Text = file.DisplayName;
 			Authors.Text = file.Authors.Join();
 
-			AnimationNameContainer.QueueFreeChildren();
-			AnimationBitContainer.QueueFreeChildren();
+			AnimationContainer.QueueFreeChildren();
+			foreach (string text in new string[] { "Animation", "Bit", "Flows" }) {
+				AnimationContainer.AddChild(new Label { Text = text, SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
+			}
 			if (Parent.ModelAnimationPlayer is {} animPlayer) {
 				foreach (var animation in animPlayer.GetAllAnimations()) {
-					var nameButton = new Button { Text = animation, Flat = true };
+					// Animation name
+					var nameButton = new Button { Text = animation };
 					nameButton.Pressed += () => {
 						animPlayer.Stop();
 						animPlayer.Play(nameButton.Text);
 					};
-					AnimationNameContainer.AddChild(nameButton);
 
+					// Flow selector
+					var flowEdit = FlowEditScene.Instantiate<FlowEdit>();
+
+					// Bit selector
 					var bitButton = BitPickerButtonScene.Instantiate<BitPickerButton>();
 					bitButton.Picker.Selected += () => {
-						GD.Print($"Bit id '{bitButton.Picker.SelectedBit}' was selected!");
+						var selected = bitButton.Picker.SelectedBit;
+						file.BitData.Add(selected, new BitData(animation, flowEdit.Value));
 					};
-					AnimationBitContainer.AddChild(bitButton);
+
+					// Adding (has to be in a different order)
+					if (file.BitData.AnimToBits.TryGetValue(animation, out var bit)) {
+						bitButton.SetBit(bit);
+						if (file.BitData.BitsToData.TryGetValue(bit, out var data)) {
+							flowEdit.Value = data.Flows;
+						}
+					}
+					flowEdit.Changed += () => {
+						var selected = bitButton.Picker.SelectedBit;
+						var flow = flowEdit.Value;
+						if (file.BitData.BitsToData.TryGetValue(selected, out var data)) {
+							data.Flows.Set(flow);
+						}
+					};
+
+					nameButton.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
+					AnimationContainer.AddChild(nameButton);
+					AnimationContainer.AddChild(bitButton);
+					AnimationContainer.AddChild(flowEdit);
 				}
 			}
 		};

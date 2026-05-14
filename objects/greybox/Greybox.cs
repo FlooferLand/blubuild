@@ -4,7 +4,7 @@ using Godot;
 namespace Project;
 
 public partial class Greybox : Node3D {
-	[Signal] public delegate void SignalFrameEventHandler(int[] frame);
+	[Signal] public delegate void SignalFrameEventHandler(Bit[] frame, StringName chart);
 
 	[Export] public required ReelToReel ReelToReel;
 
@@ -20,10 +20,10 @@ public partial class Greybox : Node3D {
 			lastFrameSeek += ReelToReel.FrameDuration; // fixed step, not = Seek
 
 			if (seekInt < loadedShow.signal.Length) {
-				var frame = new List<int>();
-				int i = seekInt;
+				var frame = new List<Bit>();
+				Bit i = seekInt;
 				for (; i < loadedShow.signal.Length; i++) {
-					int s = loadedShow.signal[i];
+					Bit s = loadedShow.signal[i];
 					if (s == 0) break;
 					frame.Add(s);
 				}
@@ -34,7 +34,7 @@ public partial class Greybox : Node3D {
 	}
 
 	[Rpc(CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, TransferChannel = TransferChannels.ShowSignal)]
-	void SendSignalFrame(int[] frame) {
-		EmitSignalSignalFrame(frame);
+	void SendSignalFrame(Bit[] frame, StringName mapping) {
+		EmitSignalSignalFrame(frame, mapping);
 	}
 }

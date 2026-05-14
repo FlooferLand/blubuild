@@ -5,6 +5,7 @@ using GodotUtils;
 
 namespace Project;
 
+/// Contains all the bit to/from name mappings
 public readonly record struct BitChart(Dictionary<string, BitChart.Fixture> Fixtures) {
     public readonly record struct Fixture(Dictionary<Bit, string> ActionNames);
 

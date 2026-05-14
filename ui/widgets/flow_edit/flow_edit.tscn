@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://csycp4451thd4"]
+
+[ext_resource type="Script" uid="uid://y4i5ruix7ky8" path="res://ui/widgets/flow_edit/FlowEdit.cs" id="1_f6ecn"]
+[ext_resource type="PackedScene" uid="uid://cj0jha8g8dajw" path="res://ui/widgets/number_edit/NumberEdit.tscn" id="2_0lp68"]
+
+[node name="FlowEdit" type="PanelContainer" unique_id=1543469683 node_paths=PackedStringArray("InEdit", "OutEdit")]
+offset_right = 50.0
+offset_bottom = 34.0
+script = ExtResource("1_f6ecn")
+InEdit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/In")
+OutEdit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Out")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=857939750]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=866031881]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1242903911]
+layout_mode = 2
+
+[node name="In" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=796969871 instance=ExtResource("2_0lp68")]
+layout_mode = 2
+tooltip_text = "Flow In"
+Value = 1.0
+MaxValue = 2.0
+
+[node name="Out" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1991877842 instance=ExtResource("2_0lp68")]
+layout_mode = 2
+tooltip_text = "Flow Out"
+Value = 1.0
+MaxValue = 2.0

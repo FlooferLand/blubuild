@@ -256,7 +256,7 @@ world_3d = SubResource("World3D_2ywry")
 transparent_bg = true
 handle_input_locally = false
 msaa_3d = 1
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene/SubViewport" unique_id=443957599]
@@ -277,14 +277,48 @@ shadow_enabled = true
 [node name="Foxy" parent="Scene/SubViewport" unique_id=2078506636 instance=ExtResource("4_wu0v4")]
 transform = Transform3D(0.39073107, 0, 0.92050487, 0, 1, 0, -0.92050487, 0, 0.39073107, -0.935, -0.415, -1.04)
 
+[node name="UserControl" type="MarginContainer" parent="." unique_id=1978762715]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -339.0
+offset_bottom = 114.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="UserControl" unique_id=319414498]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UserControl/PanelContainer" unique_id=327941851]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserControl/PanelContainer/MarginContainer" unique_id=1537009031]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UserControl/PanelContainer/MarginContainer/VBoxContainer" unique_id=2071358486]
+layout_mode = 2
+text = "Not signed in"
+
+[node name="UsernameEdit" type="LineEdit" parent="UserControl/PanelContainer/MarginContainer/VBoxContainer" unique_id=343748912]
+layout_mode = 2
+placeholder_text = "Username"
+
 [node name="MiddleMenu" type="Control" parent="." unique_id=841935055 node_paths=PackedStringArray("StartPlaytest", "CharacterEditor", "JoinByIP", "UsernameEdit", "SceneTransition")]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -205.0
-offset_right = 205.0
+offset_left = -254.0
+offset_right = 254.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_qey2a")
@@ -293,7 +327,7 @@ CharacterEditorScene = ExtResource("9_66ocq")
 StartPlaytest = NodePath("VBoxContainer/StartPlaytest")
 CharacterEditor = NodePath("VBoxContainer/CharacterEditor")
 JoinByIP = NodePath("VBoxContainer/IpJoin")
-UsernameEdit = NodePath("VBoxContainer/UsernameEdit")
+UsernameEdit = NodePath("../UserControl/PanelContainer/MarginContainer/VBoxContainer/UsernameEdit")
 SceneTransition = NodePath("../PullTransition")
 
 [node name="Background" type="Control" parent="MiddleMenu" unique_id=1181423831]
@@ -374,10 +408,6 @@ text = "Character editor"
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="UsernameEdit" type="LineEdit" parent="MiddleMenu/VBoxContainer" unique_id=343748912]
-layout_mode = 2
-placeholder_text = "Username"
 
 [node name="SettingsWidget" parent="MiddleMenu/VBoxContainer" unique_id=114646099 instance=ExtResource("11_66ocq")]
 layout_mode = 2

@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Godot;
 using GodotUtils;
 using SharpCompress.Archives;
 using SharpCompress.Archives.Zip;
@@ -20,6 +19,7 @@ public class CharacterFile {
     public string Id = "";
     public string DisplayName = "";
     public string[] Authors = Array.Empty<string>();
+    public readonly BitMappingData BitData = new();
     public Model? Model = null;
 
     public required string FilePath;
@@ -28,7 +28,7 @@ public class CharacterFile {
 
     /// Returns an error if there is one
     [Pure]
-    public async Task<string?> Write(ProgressHolder? progress = null) =>
+    public async Task<string?> Write(ProgressHolder progress) =>
         await Write(FilePath, progress);
 
     // TODO: Write files to memory, and only then write it to a file. In case the file fails to write, it doesn't actually corrupt the physical file.
@@ -36,7 +36,7 @@ public class CharacterFile {
     [Pure]
     public async Task<string?> Write(string path, ProgressHolder progress) {
         var result = FileUtils.OpenWriteStream(path);
-        if (result.LetErr(out string err)) return err;
+        if (result.LetErr(out string e)) return e;
         await using var stream = result.Unwrap();
 
         // Creating the archive
@@ -58,6 +58,12 @@ public class CharacterFile {
             await writer.WriteDirectoryAsync("models");
             await writer.WriteAsync($"models/main.{model.Extension}", modelStream);
         }
+        if (BitData.BitsToData.Count > 0) {
+            progress.Set("Writing bitmap.txt");
+            (string? text, string? err) = BitData.ToText();
+            if (err != null) Result.Err($"Failed to write bit data: {err}");
+            await writer.WriteAsync($"bitmap.txt", new MemoryStream(Encoding.UTF8.GetBytes(text!)));
+        }
         return null;
     }
 
@@ -78,7 +84,7 @@ public class CharacterFile {
             entries = (await archive.EntriesAsync.ToListAsync())
                 .Where(e => e is { IsDirectory: false, Key: not null })
                 .ToDictionary(e => e.Key!);
-        } catch (IncompleteArchiveException e) {
+        } catch (IncompleteArchiveException) {
             stream.Position = 0;
             return Result.Err($"Archive is incomplete ({stream.Length} bytes)");
         } catch (Exception e) {

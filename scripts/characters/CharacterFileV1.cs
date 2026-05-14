@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 using Godot;
 using Godot.Collections;
@@ -9,6 +10,18 @@ namespace Project;
 public record CharacterFileV1 : CharacterFileVersion {
     public override int Version => 1;
     public override async Task<Result<CharacterFile>> Run(CharacterFile file, ProgressHolder progress) {
+        // Loading the bit mapping
+        const string bitmapFile = "bitmap.txt";
+        if (HasFile(bitmapFile)) {
+            progress.Set($"Reading '{bitmapFile}'");
+            await using var stream = await OpenFile(bitmapFile);
+            if (stream == null) return Result.Err($"Failed to read {bitmapFile}");
+            string text = Encoding.UTF8.GetString(stream.GetBuffer());
+            (var data, string? error) = BitMappingData.FromText(text);
+            if (error != null) return Result.Err(error);
+            file.BitData.SetFrom(data);
+        }
+
         // Searching textures
         var textures = new Dictionary<string, Image>();
         foreach (string key in ListFolder("models")) {

@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b8y0jksgwvc7k" path="res://ui/widgets/bit_picker/bit_picker.tscn" id="2_8uf6j"]
 
 [node name="BitPickerButton" type="Button" unique_id=1879374016 node_paths=PackedStringArray("Picker")]
+custom_minimum_size = Vector2(128, 0)
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 95.0
-offset_bottom = 40.0
+offset_right = 132.0
+offset_bottom = 51.0
 text = "Pick a bit"
 script = ExtResource("1_i4p0e")
 Picker = NodePath("BitPicker")

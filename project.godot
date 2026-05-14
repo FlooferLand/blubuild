@@ -18,6 +18,8 @@ config/name="Blubuild"
 config/version="1.0.0"
 run/main_scene="uid://bv3htlv02xc31"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+run/load_shell_environment=true
+boot_splash/show_image=false
 config/icon="uid://dhaws16p7alkj"
 config/macos_native_icon="uid://dhaws16p7alkj"
 config/windows_native_icon="res://assets/images/logo.ico"
@@ -49,11 +51,19 @@ gdscript/warnings/unsafe_call_argument=1
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1366
+window/size/window_height_override=768
 window/subwindows/embed_subwindows=false
 
 [dotnet]
 
 project/assembly_name="Blubuild"
+
+[gui]
+
+theme/custom="uid://clli4k1x7xtda"
 
 [input]
 
@@ -124,3 +134,7 @@ anti_aliasing/quality/msaa_3d=2
 occlusion_culling/use_occlusion_culling=true
 lights_and_shadows/positional_shadow/atlas_size=8192
 lights_and_shadows/positional_shadow/atlas_size.mobile=4096
+
+[xr]
+
+shaders/enabled=true

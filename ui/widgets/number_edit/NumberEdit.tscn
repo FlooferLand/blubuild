@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cj0jha8g8dajw"]
+
+[ext_resource type="Script" uid="uid://c3gn7nycdgv4x" path="res://ui/widgets/number_edit/NumberEdit.cs" id="1_31w53"]
+[ext_resource type="Texture2D" uid="uid://bygbnpwysx43n" path="res://ui/widgets/number_edit/box.svg" id="1_fkqt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmv0x"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.074825324, 0.12342029, 0.17200029, 1)
+border_width_left = 63
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12881947, 0.25727385, 0.36042643, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[node name="NumberEdit" type="HBoxContainer" unique_id=796969871 node_paths=PackedStringArray("LineEdit", "Slider")]
+custom_minimum_size = Vector2(0, 24)
+offset_right = 84.0
+offset_bottom = 30.0
+script = ExtResource("1_31w53")
+LineEdit = NodePath("VBoxContainer/LineEdit")
+Slider = NodePath("VBoxContainer/HSlider")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=9168546]
+layout_mode = 2
+theme_override_constants/separation = -8
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=530256383]
+layout_mode = 2
+text = "0.0"
+max_length = 5
+select_all_on_focus = true
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=2106742947]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_icons/grabber = ExtResource("1_fkqt7")
+theme_override_icons/grabber_highlight = ExtResource("1_fkqt7")
+theme_override_icons/grabber_disabled = ExtResource("1_fkqt7")
+theme_override_styles/slider = SubResource("StyleBoxFlat_tmv0x")
+max_value = 1.0
+step = 0.1
+ticks_on_borders = true
+ticks_position = 3

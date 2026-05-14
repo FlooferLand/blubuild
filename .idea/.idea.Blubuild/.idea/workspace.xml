@@ -8,20 +8,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/types/bits/Bit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/bits/Drawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/bits/MappedBit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/BitMappingData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/Flow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/bits/BitData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/Bluchalk.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blutest/Blutest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blutest/Blutest.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/GodotUtils.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/bots/Bot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/foxy/foxy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/bots/foxy/foxy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/foxy/foxy_data.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/BitChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/BitChart.cs.uid" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs.uid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/greybox/Greybox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/greybox/Greybox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resources/BotData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resources/BotData.cs.uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resources/BotMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resources/BotMovement.cs.uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/bits/Bit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/bits/Bit.cs.uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/bits/MappedBit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/MappedBit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui.theme" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.theme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPickerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPickerButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker_button.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker_button.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/title_widget/title_widget.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/title_widget/title_widget.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +68,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0ce8305c3861435dbb60368d95359d6f14928/94/2f9344f0/MemoryMappedFile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/7e/69b793b5/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/9d/0b00bf5d/Action`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/470ad52ba9de4e6d9929e0b976179d3a580800/28/c9c0ebb7/StringName.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4881db23b1834147bd6855274699690d580800/0d/30f39b3b/StringExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/1a/f1eacdfb/ReadOnlyStream.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/21/076f6594/SevenZipArchive.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,6 +99,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c2225fe053e38b55e07d8ce74c88896ffb33ea3a48fb3a4a44134858a6bbd81/MultiplayerPeer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cfcfa3591cfe8e7d99db20c818f3316e394a8bffff43622336f3662fe8971e/Stream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6a5900c23694563a395d0edcee9eca7c90908/_41dba/IProgress.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d98be6eaa7445b7eb5caec7916b10e37af115adb1635b6336772135513ae6/StringBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e23dedd93ae6d269e79141175e2335183e215e2c7d8593663cef57ff7d7/FbxDocument.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f0d5842055c33862fb8e733d61c64dd5fe95a1f13d5a45db2e3b17b9ef0ac/MemoryStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f436541dc64ec2d36f3d8295813a34d8a040fcc3e8dcd4c1575a302a91ff1/ImageTexture.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,15 +129,18 @@
     <setting file="file://$PROJECT_DIR$/objects/speaker/SpeakerVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/AudioBuses.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/GlobalUsings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/IPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/TransferChannels.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/scripts/resources/BotMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/types/Flow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/types/Model.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/types/bits/Drawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/utils/FileUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/screens/select_show/SelectShowScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/widgets/file_picker/FilePickerButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/widgets/flow_edit/FlowEdit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/widgets/number_edit/NumberEdit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -348,7 +371,8 @@
       <workItem from="1778598801516" duration="20061000" />
       <workItem from="1778627555232" duration="8000" />
       <workItem from="1778627657591" duration="8061000" />
-      <workItem from="1778679286803" duration="5964000" />
+      <workItem from="1778679286803" duration="22560000" />
+      <workItem from="1778773959583" duration="14076000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -446,7 +470,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778635869048</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some bit things">
+      <option name="closed" value="true" />
+      <created>1778686132253</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1778686132254</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Re-arrange bits">
+      <option name="closed" value="true" />
+      <created>1778686157658</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1778686157658</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +519,9 @@
     <MESSAGE value="Fix progress holder not reporting information properly" />
     <MESSAGE value="Add camera movement to character editor" />
     <MESSAGE value="Add basic W.I.P bit picker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add basic W.I.P bit picker" />
+    <MESSAGE value="Some bit things" />
+    <MESSAGE value="Re-arrange bits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-arrange bits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
