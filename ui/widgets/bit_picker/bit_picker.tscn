@@ -5,26 +5,38 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4aft"]
 bg_color = Color(0.06, 0.06, 0.06, 0.8784314)
 
-[node name="BitPicker" type="PopupPanel" unique_id=217132595 node_paths=PackedStringArray("Tree")]
+[node name="BitPicker" type="PopupPanel" unique_id=217132595 node_paths=PackedStringArray("Search", "Tree")]
 oversampling_override = 1.0
 title = "Bit picker"
 initial_position = 2
-size = Vector2i(600, 500)
+size = Vector2i(600, 800)
 visible = true
+wrap_controls = false
 unresizable = false
 borderless = false
 theme_override_styles/panel = SubResource("StyleBoxFlat_w4aft")
 script = ExtResource("1_jsstp")
+Search = NodePath("VBoxContainer/LineEdit")
 Tree = NodePath("VBoxContainer/Tree")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1908526561]
-offset_right = 600.0
-offset_bottom = 500.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=262937877]
+layout_mode = 2
+placeholder_text = "Search for a bit here"
+clear_button_enabled = true
 
 [node name="Tree" type="Tree" parent="VBoxContainer" unique_id=1043564181]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 column_titles_visible = true
+allow_search = false
 hide_root = true
 select_mode = 1
+scroll_horizontal_enabled = false

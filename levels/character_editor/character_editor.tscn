@@ -44,6 +44,18 @@ size = Vector3(0.3, 0.3, 0)
 [sub_resource type="SphereShape3D" id="SphereShape3D_8qviq"]
 radius = 0.29
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1miut"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="CharacterEditor" type="Node3D" unique_id=1733658327 node_paths=PackedStringArray("BotHolder", "CameraHolder", "Camera", "SceneTransition", "InitCanvas", "EditCanvas")]
 script = ExtResource("1_skgct")
 BotHolder = NodePath("BotHolder")
@@ -137,6 +149,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1miut")
 
 [node name="CenterContainer" type="CenterContainer" parent="InitCanvas/PanelContainer" unique_id=144662854]
 layout_mode = 2
@@ -204,8 +217,8 @@ SaveProgressBar = NodePath("CornerPanel/PanelContainer/MarginContainer/VBoxConta
 BitPickerScene = ExtResource("4_8qviq")
 BitPickerButtonScene = ExtResource("5_uxla0")
 FlowEditScene = ExtResource("6_1miut")
-DisplayName = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name/LineEdit")
-Authors = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors/LineEdit")
+DisplayName = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/GridContainer/NameEdit")
+Authors = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/GridContainer/AuthorsEdit")
 ModelPicker = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Model/VBoxContainer/ModelPicker/FilePickerButton")
 AnimationContainer = NodePath("HSplitContainer/SidePanel/MarginContainer/TabContainer/Animations/ScrollContainer/GridContainer")
 
@@ -215,7 +228,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-touch_dragger_enabled = true
+theme_override_constants/minimum_grab_thickness = 48
+drag_area_offset = 8
 
 [node name="SidePanel" type="PanelContainer" parent="EditCanvas/HSplitContainer" unique_id=1342952534]
 layout_mode = 2
@@ -229,11 +243,10 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TabContainer" type="TabContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer" unique_id=937751367]
 layout_mode = 2
-current_tab = 2
+current_tab = 0
 clip_tabs = false
 
 [node name="Info" type="MarginContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer" unique_id=434641614]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -241,28 +254,23 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info" unique_id=829944787]
+[node name="GridContainer" type="GridContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info" unique_id=414437836]
 layout_mode = 2
+columns = 2
 
-[node name="Name" type="HBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer" unique_id=1369443867]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name" unique_id=1606087070]
+[node name="NameLabel" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/GridContainer" unique_id=1606087070]
 layout_mode = 2
 text = "Name"
 
-[node name="LineEdit" type="LineEdit" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Name" unique_id=1895529700]
+[node name="NameEdit" type="LineEdit" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/GridContainer" unique_id=1895529700]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Authors" type="HBoxContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer" unique_id=1127729183]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors" unique_id=1589418173]
+[node name="AuthorsLabel" type="Label" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/GridContainer" unique_id=1589418173]
 layout_mode = 2
 text = "Author(s)"
 
-[node name="LineEdit" type="LineEdit" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/VBoxContainer/Authors" unique_id=432419054]
+[node name="AuthorsEdit" type="LineEdit" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer/Info/GridContainer" unique_id=432419054]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -290,6 +298,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Animations" type="MarginContainer" parent="EditCanvas/HSplitContainer/SidePanel/MarginContainer/TabContainer" unique_id=417415193]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10

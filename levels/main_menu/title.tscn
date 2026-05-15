@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://d328lre4wicsq" path="res://levels/main_menu/BeatTimer.cs" id="2_26oqi"]
 [ext_resource type="Texture2D" uid="uid://dhaws16p7alkj" path="res://assets/images/logo.svg" id="3_jnmcb"]
 [ext_resource type="PackedScene" uid="uid://cyvrlujru6gse" path="res://bots/foxy/model/Foxy.gltf" id="4_wu0v4"]
+[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/graphics/good_env.tres" id="5_3tl3s"]
+[ext_resource type="Script" uid="uid://dn7qgsjeb5w2e" path="res://objects/graphics/GraphicsLoader.cs" id="6_xavrb"]
 [ext_resource type="Script" uid="uid://bgdrwqhoq2u3" path="res://levels/main_menu/MiddleMenu.cs" id="7_qey2a"]
 [ext_resource type="PackedScene" uid="uid://c1wx1iw8q0gv3" path="res://ui/widgets/title_widget/title_widget.tscn" id="8_4s7fn"]
 [ext_resource type="PackedScene" uid="uid://c2crtmvgpbe1v" path="res://levels/game/game.tscn" id="8_ljyev"]
@@ -15,10 +17,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ywry"]
 bg_color = Color(0.05625219, 0.07301488, 0.1065472, 1)
 
-[sub_resource type="Environment" id="Environment_jnmcb"]
-
 [sub_resource type="World3D" id="World3D_2ywry"]
-environment = SubResource("Environment_jnmcb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ros5a"]
 bg_color = Color(0.11834886, 0.14400503, 0.1979791, 1)
@@ -276,6 +275,10 @@ shadow_enabled = true
 
 [node name="Foxy" parent="Scene/SubViewport" unique_id=2078506636 instance=ExtResource("4_wu0v4")]
 transform = Transform3D(0.39073107, 0, 0.92050487, 0, 1, 0, -0.92050487, 0, 0.39073107, -0.935, -0.415, -1.04)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scene/SubViewport" unique_id=1333005590]
+environment = ExtResource("5_3tl3s")
+script = ExtResource("6_xavrb")
 
 [node name="UserControl" type="MarginContainer" parent="." unique_id=1978762715]
 layout_mode = 1

@@ -8,38 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/BitMappingData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/Flow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/types/bits/BitData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/autoloads/GraphicsAutoload.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/bots/Bot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/foxy/foxy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/bots/foxy/foxy.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/foxy/foxy_data.tres" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/world_env.tres" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/greybox/Greybox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/greybox/Greybox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/resources/BotData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/resources/BotData.cs.uid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/resources/BotMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/resources/BotMovement.cs.uid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/bits/Bit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/bits/Bit.cs.uid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/types/bits/MappedBit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/MappedBit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui.theme" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.theme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPickerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPickerButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker_button.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker_button.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/title_widget/title_widget.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/title_widget/title_widget.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/flow_edit/flow_edit.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/flow_edit/flow_edit.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/settings_widget/settings_widget.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/settings_widget/settings_widget.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +72,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4315e118db18cc24415b7ec439e413a60c969c71375e5cd8bcca4f7e9c69f7/SerializationBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67ebf210a4bac0747df5febc8332ccaba90acb21287798fde37a06d8eb942b/Encoding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6a802af2346a87e430fb66291f320aa22871259d47c2bc928a59f14b42aa34/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71f134c2c07aaaaf17b017ca3da7e8c67a1e5e113930899908632c45926e465/GodotObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/766d8dbfea1985463a3c5cb519ef8fbd442d8af1f7c76e69d5b9f66febbf2ac/CollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cc4929bc2bdceddf74ff4a91a75bff7a69b96bfc484c76d0dfd43d5579b96/SceneTree.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d6d226110fec0f17d8164c66de3653eba4a8960812067d534e02cfdb23ffa/Tween.cs" root0="FORCE_HIGHLIGHTING" />
@@ -121,6 +104,7 @@
     <setting file="file://$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/main_menu/MultiplayerStarter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/autoloads/music/MusicGlobal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/objects/graphics/GraphicsLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/greybox/Greybox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/player/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
@@ -130,6 +114,7 @@
     <setting file="file://$PROJECT_DIR$/scripts/AudioBuses.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/GlobalUsings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/autoloads/GraphicsAutoload.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/characters/CharacterFileV1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/IPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/networking/TransferChannels.cs" root0="FORCE_HIGHLIGHTING" />
@@ -372,7 +357,7 @@
       <workItem from="1778627555232" duration="8000" />
       <workItem from="1778627657591" duration="8061000" />
       <workItem from="1778679286803" duration="22560000" />
-      <workItem from="1778773959583" duration="14076000" />
+      <workItem from="1778773959583" duration="19730000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -486,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778686157658</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add a flow edit widget and more UI stuff">
+      <option name="closed" value="true" />
+      <created>1778797182647</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1778797182647</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +514,8 @@
     <MESSAGE value="Add basic W.I.P bit picker" />
     <MESSAGE value="Some bit things" />
     <MESSAGE value="Re-arrange bits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-arrange bits" />
+    <MESSAGE value="Add a flow edit widget and more UI stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a flow edit widget and more UI stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

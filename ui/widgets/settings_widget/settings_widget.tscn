@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://d01qolvrxvvi"]
 
 [ext_resource type="Script" uid="uid://mkbjb3nphpgn" path="res://ui/widgets/settings_widget/SettingsWidget.cs" id="1_tymfo"]
-[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/world_env.tres" id="2_hv072"]
+[ext_resource type="Environment" uid="uid://cxuluoiw8vor8" path="res://assets/graphics/shit_env.tres" id="2_gglja"]
+[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/graphics/good_env.tres" id="2_hv072"]
+[ext_resource type="Environment" uid="uid://c3j0plr6u7bxi" path="res://assets/graphics/bad_env.tres" id="3_a0h4q"]
 
-[node name="SettingsWidget" type="PanelContainer" unique_id=409275632 node_paths=PackedStringArray("BadGraphicsButton", "GoodGraphicsButton")]
+[node name="SettingsWidget" type="PanelContainer" unique_id=409275632 node_paths=PackedStringArray("ShitGraphicsButton", "BadGraphicsButton", "GoodGraphicsButton")]
+custom_minimum_size = Vector2(0, 300)
 anchors_preset = -1
 anchor_right = 0.36800003
 anchor_bottom = 0.106000006
@@ -12,9 +15,12 @@ offset_bottom = 0.31199646
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tymfo")
-Environment = ExtResource("2_hv072")
-BadGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphical presets/BadGraphics")
-GoodGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphical presets/GoodGraphics")
+ShitEnvironment = ExtResource("2_gglja")
+BadEnvironment = ExtResource("3_a0h4q")
+GoodEnvironment = ExtResource("2_hv072")
+ShitGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets/ShitGraphics")
+BadGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets/ShitGraphics")
+GoodGraphicsButton = NodePath("VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets/GoodGraphics")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=124743652]
 layout_mode = 2
@@ -25,17 +31,48 @@ text = "Settings:"
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=938998405]
 layout_mode = 2
+size_flags_vertical = 3
 current_tab = 0
 
-[node name="Graphical presets" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=2026174990]
+[node name="Graphics" type="MarginContainer" parent="VBoxContainer/TabContainer" unique_id=1618264935]
 layout_mode = 2
-alignment = 1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 0
 
-[node name="BadGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphical presets" unique_id=1750465677]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Graphics" unique_id=1051929242]
 layout_mode = 2
-text = "Shit"
 
-[node name="GoodGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphical presets" unique_id=1349125638]
+[node name="Presets" type="HBoxContainer" parent="VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=2026174990]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets" unique_id=2140061954]
+layout_mode = 2
+text = "Presets"
+
+[node name="ShitGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets" unique_id=1750465677]
+layout_mode = 2
+text = "Awful"
+
+[node name="BadGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets" unique_id=1563967859]
+layout_mode = 2
+text = "Bad"
+
+[node name="GoodGraphics" type="Button" parent="VBoxContainer/TabContainer/Graphics/VBoxContainer/Presets" unique_id=1349125638]
 layout_mode = 2
 text = "Good"
+
+[node name="Audio" type="MarginContainer" parent="VBoxContainer/TabContainer" unique_id=1102988907]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio" unique_id=340329662]
+layout_mode = 2

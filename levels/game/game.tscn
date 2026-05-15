@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://b4aylrhxu2msc" path="res://scripts/networking/NetworkManager.cs" id="1_sg147"]
 [ext_resource type="PackedScene" uid="uid://de2k8uj3pffye" path="res://objects/player/player.tscn" id="2_71jyj"]
 [ext_resource type="Material" uid="uid://6ntkjjlg1fm4" path="res://assets/materials/carpet/carpet.tres" id="3_71jyj"]
-[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/world_env.tres" id="3_ee62o"]
+[ext_resource type="Environment" uid="uid://c43b6hm83w2gs" path="res://assets/graphics/good_env.tres" id="3_ee62o"]
 [ext_resource type="PackedScene" uid="uid://brpm3ba25tof" path="res://bots/foxy/foxy.tscn" id="4_6ojey"]
 [ext_resource type="PackedScene" uid="uid://ficl248gk3iw" path="res://objects/reel_to_reel/reel_to_reel.tscn" id="5_0axs7"]
+[ext_resource type="Script" uid="uid://dn7qgsjeb5w2e" path="res://objects/graphics/GraphicsLoader.cs" id="5_2mluw"]
 [ext_resource type="Texture2D" uid="uid://d1570xge3n413" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_Color.jpg" id="5_wsbxy"]
 [ext_resource type="Texture2D" uid="uid://dntxtqfgli1q" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_NormalGL.jpg" id="6_81lwq"]
 [ext_resource type="PackedScene" uid="uid://buj2upqoj2vmx" path="res://objects/greybox/greybox.tscn" id="6_mkwu1"]
@@ -46,6 +47,7 @@ PlayerContainer = NodePath("../Players")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=299933618]
 environment = ExtResource("3_ee62o")
+script = ExtResource("5_2mluw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=282406396]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

@@ -35,6 +35,7 @@ SystemAutoload="*uid://bfff471ngoyrl"
 NetworkTransport="*uid://dlatxubn1cnsa"
 MusicGlobal="*uid://cp7micybvv6dd"
 BitChartRegistry="*uid://dtrkyxila6tbr"
+GraphicsAutoload="*uid://we0hqx8bwm2q"
 
 [debug]
 

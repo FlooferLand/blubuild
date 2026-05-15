@@ -6,6 +6,8 @@
 [node name="FlowEdit" type="PanelContainer" unique_id=1543469683 node_paths=PackedStringArray("InEdit", "OutEdit")]
 offset_right = 50.0
 offset_bottom = 34.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 script = ExtResource("1_f6ecn")
 InEdit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/In")
 OutEdit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Out")
