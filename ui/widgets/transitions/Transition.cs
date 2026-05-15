@@ -58,7 +58,7 @@ public partial class Transition : CanvasLayer {
         material?.SetShaderParameter("shader_parameter/cutoff", 1.0f - finalCutoff);
         material?.SetShaderParameter("shader_parameter/pull", 1.0f - finalPull);
 
-        const float duration = 0.3f;
+        const float duration = 0.2f;
         callback = finished;
         tween?.Kill();
         tween = CreateTween();

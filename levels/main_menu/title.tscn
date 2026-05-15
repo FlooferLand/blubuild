@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c2crtmvgpbe1v" path="res://levels/game/game.tscn" id="8_ljyev"]
 [ext_resource type="PackedScene" uid="uid://cbkhoe4b788jh" path="res://levels/character_editor/character_editor.tscn" id="9_66ocq"]
 [ext_resource type="PackedScene" uid="uid://d01qolvrxvvi" path="res://ui/widgets/settings_widget/settings_widget.tscn" id="11_66ocq"]
+[ext_resource type="Script" uid="uid://bdfyk45lmr5l4" path="res://levels/main_menu/SettingsMenu.cs" id="11_xavrb"]
 [ext_resource type="PackedScene" uid="uid://do3mwonfrjypa" path="res://ui/widgets/transitions/pull_transition.tscn" id="13_3tl3s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ywry"]
@@ -195,7 +196,7 @@ _data = {
 &"intro": SubResource("Animation_t7fky")
 }
 
-[node name="MainMenu" type="Control" unique_id=612633532 node_paths=PackedStringArray("BeatTimer", "AnimationPlayer", "ViewportCamera", "Bots")]
+[node name="MainMenu" type="Control" unique_id=612633532 node_paths=PackedStringArray("BeatTimer", "AnimationPlayer", "ViewportCamera", "Bots", "MiddleMenu", "SettingsMenu", "ToSettingsButton", "SettingsBackButton", "Transition")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,6 +208,11 @@ BeatTimer = NodePath("BeatTimer")
 AnimationPlayer = NodePath("AnimationPlayer")
 ViewportCamera = NodePath("Scene/SubViewport/Camera3D")
 Bots = [NodePath("Scene/SubViewport/Foxy")]
+MiddleMenu = NodePath("MiddleMenu")
+SettingsMenu = NodePath("SettingsMenu")
+ToSettingsButton = NodePath("MiddleMenu/VBoxContainer/Settings")
+SettingsBackButton = NodePath("SettingsMenu/MarginContainer/VBoxContainer/BackToMiddleButton")
+Transition = NodePath("PullTransition")
 
 [node name="BeatTimer" type="Node" parent="." unique_id=371356066]
 script = ExtResource("2_26oqi")
@@ -399,21 +405,83 @@ alignment = 1
 clear_button_enabled = true
 
 [node name="Separator3" type="Control" parent="MiddleMenu/VBoxContainer" unique_id=847464664]
-custom_minimum_size = Vector2(0, 128)
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="CharacterEditor" type="Button" parent="MiddleMenu/VBoxContainer" unique_id=995987698]
 layout_mode = 2
 text = "Character editor"
 
-[node name="Separator2" type="Control" parent="MiddleMenu/VBoxContainer" unique_id=478794436]
-custom_minimum_size = Vector2(0, 128)
+[node name="Settings" type="Button" parent="MiddleMenu/VBoxContainer" unique_id=624942554]
+layout_mode = 2
+text = "Settings"
+
+[node name="SettingsMenu" type="Control" parent="." unique_id=1210831911]
+visible = false
+layout_mode = 1
+anchor_left = 0.49400002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.4800415
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(956, 546)
+script = ExtResource("11_xavrb")
+
+[node name="Background" type="Control" parent="SettingsMenu" unique_id=37229206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="SettingsMenu/Background" unique_id=1108637683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ros5a")
+
+[node name="Grid" type="TextureRect" parent="SettingsMenu/Background" unique_id=1404898824]
+modulate = Color(1, 1, 1, 0.03529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeu1g")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu" unique_id=1518671425]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/MarginContainer" unique_id=1659079530]
+layout_mode = 2
+
+[node name="SettingsWidget" parent="SettingsMenu/MarginContainer/VBoxContainer" unique_id=409275632 instance=ExtResource("11_66ocq")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SettingsWidget" parent="MiddleMenu/VBoxContainer" unique_id=114646099 instance=ExtResource("11_66ocq")]
+[node name="BackToMiddleButton" type="Button" parent="SettingsMenu/MarginContainer/VBoxContainer" unique_id=585405486]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
 
 [node name="FullscreenTitle" type="Control" parent="." unique_id=2066367137]
 visible = false

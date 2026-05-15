@@ -8,20 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/autoloads/GraphicsAutoload.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/world_env.tres" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/character_editor.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui.theme" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.theme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/bit_picker.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/flow_edit/flow_edit.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/flow_edit/flow_edit.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/settings_widget/SettingsWidget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/settings_widget/settings_widget.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/settings_widget/settings_widget.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/levels/init/Init.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/main_menu/MiddleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/main_menu/MultiplayerStarter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/levels/main_menu/SettingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/autoloads/music/MusicGlobal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/graphics/GraphicsLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/objects/greybox/Greybox.cs" root0="FORCE_HIGHLIGHTING" />
@@ -357,7 +348,8 @@
       <workItem from="1778627555232" duration="8000" />
       <workItem from="1778627657591" duration="8061000" />
       <workItem from="1778679286803" duration="22560000" />
-      <workItem from="1778773959583" duration="19730000" />
+      <workItem from="1778773959583" duration="19821000" />
+      <workItem from="1778860493170" duration="1836000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -479,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778797182647</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add a bunch of things I forgot">
+      <option name="closed" value="true" />
+      <created>1778803549533</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1778803549533</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +515,8 @@
     <MESSAGE value="Some bit things" />
     <MESSAGE value="Re-arrange bits" />
     <MESSAGE value="Add a flow edit widget and more UI stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a flow edit widget and more UI stuff" />
+    <MESSAGE value="Add a bunch of things I forgot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a bunch of things I forgot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

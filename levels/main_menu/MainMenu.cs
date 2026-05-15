@@ -9,6 +9,11 @@ public partial class MainMenu : Control {
     [Export] public required AnimationPlayer AnimationPlayer;
     [Export] public required Camera3D ViewportCamera;
     [Export] public required Array<Node3D> Bots { get; set; }
+    [Export] public required MiddleMenu MiddleMenu;
+    [Export] public required SettingsMenu SettingsMenu;
+    [Export] public required Button ToSettingsButton;
+    [Export] public required Button SettingsBackButton;
+    [Export] public required Transition Transition;
 
     float initialCamY = 0f;
 
@@ -17,6 +22,23 @@ public partial class MainMenu : Control {
         AnimationPlayer.Play(OS.IsDebugBuild() ? "RESET" : "intro");
         BeatTimer.Beat += _ => PlayRandomAnimation();
         MusicGlobal.Play(MusicGlobal.Track.TitleTheme);
+
+        MiddleMenu.Visible = true;
+        SettingsMenu.Visible = false;
+        ToSettingsButton.Pressed += () => {
+            Transition.FadeIn(() => {
+                MiddleMenu.Visible = false;
+                SettingsMenu.Visible = true;
+                Transition.FadeOut();
+            });
+        };
+        SettingsBackButton.Pressed += () => {
+            Transition.FadeIn(() => {
+                MiddleMenu.Visible = true;
+                SettingsMenu.Visible = false;
+                Transition.FadeOut();
+            });
+        };
     }
 
     public override void _Process(double delta) {
