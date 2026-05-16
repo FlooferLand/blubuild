@@ -8,10 +8,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38056c24-2aec-4f0d-a7f1-678a313ea881" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/types/interaction/IPlayerInteractable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/interaction/InteractContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/interaction/InteractState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/types/interaction/InteractType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blubuild/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/main_menu/title.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/main_menu/title.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/transitions/Transition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blubuild.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/shows/IShowFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bluchalk/shows/RshwFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/safety/Result.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/game/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/levels/game/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/greybox/Greybox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/greybox/Greybox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/player/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/objects/player/player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/reel_to_reel/ReelToReel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/reel_to_reel/ReelToReel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/reel_to_reel/reel_to_reel.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/objects/reel_to_reel/reel_to_reel.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/speaker/Speaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/objects/speaker/Speaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/networking/TransferChannels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/networking/TransferChannels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/BitMappingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/BitMappingData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/FileAccessStream.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/FileAccessStream.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/FileAccessStream.cs.uid" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/source/FileAccessStream.cs.uid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/Model.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/Model.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/types/bits/BitChart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/utils/BitChartRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils/BitChartRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/screens/pause/pause_screen.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/bit_picker/BitPicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/title_widget/title_widget.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/title_widget/title_widget.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +69,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/9d/0b00bf5d/Action`2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/470ad52ba9de4e6d9929e0b976179d3a580800/28/c9c0ebb7/StringName.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4881db23b1834147bd6855274699690d580800/0d/30f39b3b/StringExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/66e86cb8e85148a9a531567a2fb8c0eef45728/2d/55474485/Nullable`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/1a/f1eacdfb/ReadOnlyStream.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/21/076f6594/SevenZipArchive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/771fe3af82ea463883a08bfec9d3ab0922d200/59/c9caaddc/ReadOnlySubStream.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,6 +90,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4315e118db18cc24415b7ec439e413a60c969c71375e5cd8bcca4f7e9c69f7/SerializationBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67ebf210a4bac0747df5febc8332ccaba90acb21287798fde37a06d8eb942b/Encoding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6a802af2346a87e430fb66291f320aa22871259d47c2bc928a59f14b42aa34/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71246fd56f7999d0787c963da3362569a1129b41237bf6d1930bffe452552/Node.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71f134c2c07aaaaf17b017ca3da7e8c67a1e5e113930899908632c45926e465/GodotObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/766d8dbfea1985463a3c5cb519ef8fbd442d8af1f7c76e69d5b9f66febbf2ac/CollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cc4929bc2bdceddf74ff4a91a75bff7a69b96bfc484c76d0dfd43d5579b96/SceneTree.cs" root0="SKIP_HIGHLIGHTING" />
@@ -86,6 +115,7 @@
     <setting file="file://$PROJECT_DIR$/bots/Bot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/better_audio_player/BetterAudioPlayer3d.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/bot_animation/BotAnimationComp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/interact/InteractComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/character_editor/CharacterEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/character_editor/EditCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/levels/character_editor/InitCanvas.cs" root0="FORCE_HIGHLIGHTING" />
@@ -349,7 +379,7 @@
       <workItem from="1778627657591" duration="8061000" />
       <workItem from="1778679286803" duration="22560000" />
       <workItem from="1778773959583" duration="19821000" />
-      <workItem from="1778860493170" duration="1836000" />
+      <workItem from="1778860493170" duration="19509000" />
     </task>
     <task id="LOCAL-00001" summary="Reboot the project!">
       <option name="closed" value="true" />
@@ -479,7 +509,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778803549533</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Some small UI changes">
+      <option name="closed" value="true" />
+      <created>1778876170893</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1778876170893</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +554,8 @@
     <MESSAGE value="Re-arrange bits" />
     <MESSAGE value="Add a flow edit widget and more UI stuff" />
     <MESSAGE value="Add a bunch of things I forgot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a bunch of things I forgot" />
+    <MESSAGE value="Some small UI changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some small UI changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

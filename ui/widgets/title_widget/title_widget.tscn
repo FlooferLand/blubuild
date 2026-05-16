@@ -24,15 +24,15 @@ shadow_color = Color(0, 0, 0, 0.6627451)
 shadow_offset = Vector2(2, 2)
 
 [node name="TitleWidget" type="PanelContainer" unique_id=999393964 node_paths=PackedStringArray("TitleScale")]
-custom_minimum_size = Vector2(265, 100)
+custom_minimum_size = Vector2(448, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -223.59375
+offset_left = -224.0
 offset_top = -50.0
-offset_right = 223.59375
+offset_right = 224.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2

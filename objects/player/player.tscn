@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddgn63l28y60p" path="res://objects/player/Player.cs" id="1_57cuq"]
 [ext_resource type="Script" uid="uid://djx2bxvdqyuv2" path="res://objects/player/PlayerInput.cs" id="2_b8yme"]
+[ext_resource type="Texture2D" uid="uid://cpqcvu50f6chf" path="res://ui/textures/crosshair.svg" id="3_ssrue"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wfy3h"]
 properties/0/path = NodePath(".:position")
@@ -50,7 +51,7 @@ height = 0.025
 material = SubResource("StandardMaterial3D_ssrue")
 size = Vector2(0.1, 0.055)
 
-[node name="Player" type="CharacterBody3D" unique_id=1693905901 node_paths=PackedStringArray("Head", "Camera", "InteractRay", "BodyPivot", "PlayerInput", "Nameplate", "Model")]
+[node name="Player" type="CharacterBody3D" unique_id=1693905901 node_paths=PackedStringArray("Head", "Camera", "InteractRay", "BodyPivot", "PlayerInput", "Nameplate", "Model", "Crosshair")]
 collision_layer = 2
 wall_min_slide_angle = 0.0872665
 script = ExtResource("1_57cuq")
@@ -61,6 +62,7 @@ BodyPivot = NodePath("Pivot")
 PlayerInput = NodePath("InputSynchronizer")
 Nameplate = NodePath("Nameplate")
 Model = NodePath("Pivot/Model")
+Crosshair = NodePath("HUD/Root/Crosshair/TextureRect")
 
 [node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=697153966]
 replication_config = SubResource("SceneReplicationConfig_wfy3h")
@@ -113,7 +115,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 fov = 80.0
 
 [node name="InteractRay" type="RayCast3D" parent="Pivot/Head" unique_id=1701467710]
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -2.5)
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="FootstepManager" type="Node" parent="." unique_id=411544777]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2123992250]
+
+[node name="Root" type="Control" parent="HUD" unique_id=1116524009]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 2
+
+[node name="Crosshair" type="CenterContainer" parent="HUD/Root" unique_id=167637505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Root/Crosshair" unique_id=1735844994]
+layout_mode = 2
+texture = ExtResource("3_ssrue")
+stretch_mode = 3

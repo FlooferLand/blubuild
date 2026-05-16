@@ -4,6 +4,7 @@ using Godot;
 namespace Project;
 
 public partial class Greybox : Node3D {
+	[Signal] public delegate void ShowLoadedEventHandler();
 	[Signal] public delegate void SignalFrameEventHandler(Bit[] frame, StringName chart);
 
 	[Export] public required ReelToReel ReelToReel;
@@ -12,9 +13,18 @@ public partial class Greybox : Node3D {
 	double lastFrameSeek = 0;
 	int seekInt = 0;
 
+	public override void _Ready() {
+		ReelToReel.ShowLoaded += () => {
+			lastFrameSeek = 0;
+			seekInt = 0;
+			EmitSignalShowLoaded();
+		};
+	}
+
 	// Server-only
 	public override void _PhysicsProcess(double delta) {
 		if (ReelToReel.ServerLoadedShow is not { } loadedShow) return;
+		if (ReelToReel.ServerLoadedChart is not { } mapping) return;
 
 		while (Seek >= lastFrameSeek + ReelToReel.FrameDuration) {
 			lastFrameSeek += ReelToReel.FrameDuration; // fixed step, not = Seek
@@ -27,7 +37,7 @@ public partial class Greybox : Node3D {
 					if (s == 0) break;
 					frame.Add(s);
 				}
-				Rpc(nameof(SendSignalFrame), frame.ToArray());
+				Rpc(nameof(SendSignalFrame), frame.ToArray(), mapping);
 				seekInt = i + 1;
 			}
 		}

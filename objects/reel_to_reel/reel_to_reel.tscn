@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xg47yku81kl2" path="res://objects/reel_to_reel/ReelToReel.cs" id="1_8agwl"]
 [ext_resource type="Texture2D" uid="uid://d1570xge3n413" path="res://assets/materials/carpet/CarpetFabric_024_1K-JPG_Color.jpg" id="1_a2p1s"]
+[ext_resource type="PackedScene" uid="uid://bd0xfxhmbxuo1" path="res://components/interact/InteractComponent.tscn" id="3_op3js"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ppowr"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -20,10 +21,9 @@ properties/0/path = NodePath(".:Seek")
 properties/0/spawn = true
 properties/0/replication_mode = 2
 
-[node name="ReelToReel" type="Node3D" unique_id=1048385554 node_paths=PackedStringArray("SeekSync", "TempLoadTime")]
+[node name="ReelToReel" type="Node3D" unique_id=1048385554 node_paths=PackedStringArray("SeekSync")]
 script = ExtResource("1_8agwl")
 SeekSync = NodePath("SeekSync")
-TempLoadTime = NodePath("AutoLoadTime")
 
 [node name="Model" type="Node3D" parent="." unique_id=537839055]
 
@@ -46,3 +46,8 @@ replication_config = SubResource("SceneReplicationConfig_8agwl")
 [node name="AutoLoadTime" type="Timer" parent="." unique_id=755905711]
 one_shot = true
 autostart = true
+
+[node name="InteractComponent" parent="." unique_id=527580061 node_paths=PackedStringArray("Listener") instance=ExtResource("3_op3js")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+Listener = NodePath("..")
+Size = Vector3(0.6, 0.6, 0.6)

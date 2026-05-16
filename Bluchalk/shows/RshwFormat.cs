@@ -19,8 +19,10 @@ public class RshwFormat : ShowFormat<RshwFormat.RshwData> {
     const string AudioKeyword = "audio";
     const string VideoKeyword = "video";
 
-    static Result<RshwData> _Read(Stream stream) {
-        var result = new RshwData();
+    public override string Extension => "rshw";
+
+    static Result<RshwData> _Read(Stream stream, string path) {
+        var result = new RshwData {  };
         try {
             var root = NrbfDecoder.DecodeClassRecord(stream);
 
@@ -96,6 +98,6 @@ public class RshwFormat : ShowFormat<RshwFormat.RshwData> {
         }
     }
 
-    protected override Result<RshwData> Read(Stream stream) => _Read(stream);
+    protected override Result<RshwData> Read(Stream stream, string path) => _Read(stream, path);
     protected override Result<Unit> Write(Stream stream, RshwData data) => _Write(stream, data);
 }

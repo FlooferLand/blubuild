@@ -10,6 +10,9 @@ public static class TransferChannels {
     /** High bandwidth show data */
     public const int ShowAudio = 2;
 
+    /** Low bandwidth show info */
+    public const int ShowMessage = 3;
+
     /** Low bandwidth player messages. For instance an interaction packet, or actual player text messages. */
-    public const int PlayerMessages = 3;
+    public const int PlayerMessages = 4;
 }

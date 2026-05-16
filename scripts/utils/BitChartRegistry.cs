@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Godot;
 using GodotUtils;
@@ -12,7 +13,8 @@ public partial class BitChartRegistry : Node {
 
     public static BitChartRegistry Instance { get; private set; } = null!;
 
-    public Dictionary<string, BitChart> Charts { get; private set; } = new();
+    public static Dictionary<string, BitChart> Charts { get; } = new();
+    public static Dictionary<string, string> ExtensionToId { get; } = new();
 
     public BitChartRegistry() {
         Instance = this;
@@ -23,20 +25,22 @@ public partial class BitChartRegistry : Node {
         EmitSignalUpdate();
     }
 
-    public async Task Clear() {
+    public async ValueTask Clear() {
         Charts.Clear();
+        ExtensionToId.Clear();
         await RegisterDefault();
     }
 
     /// Returns an error, if any
-    public async Task<string?> Register(string id, BitChart chart) {
+    public async ValueTask<string?> Register(string id, BitChart chart) {
         if (!Charts.TryAdd(id, chart)) return $"The chart '{id}' already exists";
+        foreach (string ext in chart.ShowExtensions) ExtensionToId.Add(ext, id);
         Log.Info($"Registered bit chart '{id}'! ({chart.Fixtures.Count} fixtures)");
         EmitSignalUpdate();
         return null;
     }
 
     async Task RegisterDefault() {
-        await Register("rae", BitChart.Load("res://assets/builtin/bitcharts/rae.csv").Unwrap());
+        await Register("rae", BitChart.Load("res://assets/builtin/bitcharts/rae.csv", ["rshw"]).Unwrap());
     }
 }

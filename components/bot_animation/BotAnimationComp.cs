@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Godot;
 
 namespace Project;
-
-// TODO: Clean up this catastrophy
-//       This is what working with AnimationTree does to one
 
 /**
  * Replacement for AnimationPlayer that uses math to animate basic physics.
@@ -17,14 +15,13 @@ public partial class BotAnimationComp : Node3D {
         public float Weight = 0.0f;
     }
 
-    [Export] public required AnimationPlayer AnimPlayer;
-    [Export] public required Skeleton3D Skeleton;
-
     [ExportGroup("Local")]
     [Export] public required AudioStreamPlayer3D PneumaticFire;
     [Export] public required AudioStreamPlayer3D PneumaticRelease;
 
-    public required CharacterFile File = null!;
+    public CharacterFile? File = null;
+    public AnimationPlayer? AnimPlayer;
+    public Skeleton3D? Skeleton;
 
     AnimationTree tree = null!;
     AnimationNodeBlendTree root = null!;
@@ -36,13 +33,39 @@ public partial class BotAnimationComp : Node3D {
     static string NodeAddName(string movement) => $"add_{movement}";
 
     public override void _Ready() {
-        tree = new AnimationTree { AnimPlayer = AnimPlayer.GetPath() };
+        tree = new AnimationTree();
         AddChild(tree);
 
         root = new AnimationNodeBlendTree();
         tree.TreeRoot = root;
-        tree.Active = true;
+        tree.Active = false;
+    }
 
+    public override void _Process(double delta) {
+        foreach ((string key, var state) in animStates) {
+            var s = state;
+            s.Weight = state.Active
+                ? Mathf.Clamp(state.Weight + (float) delta * state.Data.Flows.In,  0f, 1f)
+                : Mathf.Clamp(state.Weight - (float) delta * state.Data.Flows.Out, 0f, 1f);
+            animStates[key] = s;
+            tree.Set($"parameters/{NodeSeekName(key)}/seek_request", s.Weight);
+        }
+    }
+
+    /// Can return an error
+    public async Task<string?> LoadCharacter(CharacterFile file) {
+        animStates.Clear();
+        tree.Active = false;
+        foreach (var name in root.GetNodeList()) {
+            root.RemoveNode(name);
+        }
+
+        if (file.Model is not { } model) return "Model is null";
+        if (!(await model.CreateScene()).LetOk(out var scene)) return "Scene could not be created";
+
+        File = file;
+        AnimPlayer = scene.GetNodeOrNull<AnimationPlayer>(nameof(AnimationPlayer));
+        if (AnimPlayer == null) return $"No {nameof(AnimationPlayer)} found";
         AnimPlayer.SpeedScale = 0.0f;
 
         // States
@@ -84,20 +107,12 @@ public partial class BotAnimationComp : Node3D {
             }
         }
         root.ConnectNode("output", 0, prevName);
-    }
-
-    public override void _Process(double delta) {
-        foreach ((string key, var state) in animStates) {
-            var s = state;
-            s.Weight = state.Active
-                ? Mathf.Clamp(state.Weight + (float) delta * state.Data.Flows.In,  0f, 1f)
-                : Mathf.Clamp(state.Weight - (float) delta * state.Data.Flows.Out, 0f, 1f);
-            animStates[key] = s;
-            tree.Set($"parameters/{NodeSeekName(key)}/seek_request", s.Weight);
-        }
+        tree.Active = true;
+        return null;
     }
 
     public void SetBit(MappedBit bit, bool on) {
+        if (File == null) return;
         if (!File.BitData.BitsToData.TryGetValue(bit, out var data)) return;
         if (!animStates.TryGetValue(data.Anim, out var state)) return;
         state.Active = on;

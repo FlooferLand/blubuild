@@ -137,23 +137,21 @@ public partial class CharacterEditor : Node3D {
 			SetError(result.Error!);
 			return;
 		}
-		LoadModel(result.Value);
+		await LoadModel(result.Value);
 	}
 
-	public void LoadModel(Model? model) {
+	public async Task LoadModel(Model? model) {
 		using var progress = new ProgressHolder("Creating a scene", HandleProgress);
 
+		// Loading (or unloading) the model
 		File?.Model = model;
 		if (!model.HasValue) return;
-		var document = model.Value.Document;
-		var state = model.Value.State;
 
-		var root = document.GenerateScene(state, bakeFps: 60f, trimming: true);
-		if (root == null) {
-			SetError("Failed to create model scene");
-			return;
-		}
-		ModelNode = root as Node3D;
+		var result = await model.Value.CreateScene();
+		SetError(result.Error);
+		if (!result.LetOk(out var root)) return;
+
+		ModelNode = root;
 		ModelAnimationPlayer = root.GetNodeOrNull<AnimationPlayer>(nameof(AnimationPlayer));
 		foreach (var child in BotHolder.GetChildren()) child?.QueueFree();
 		BotHolder.AddChild(root);

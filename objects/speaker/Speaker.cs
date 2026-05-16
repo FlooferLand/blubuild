@@ -29,7 +29,8 @@ public partial class Speaker : Node3D {
 				if (Greybox.ReelToReel.ServerLoadedWav is not { } wavHeader) return;
 				RpcId(id, nameof(ClientReceiveWavHeader), wavHeader.SampleRate, wavHeader.Bits, wavHeader.Channels);
 			};
-			Greybox.ReelToReel.ServerShowLoaded += () => {
+			Greybox.ReelToReel.ShowLoaded += () => {
+				byteSeek = 0;
 				if (Greybox.ReelToReel.ServerLoadedWav is not { } wavHeader) return;
 				stream.MixRate = wavHeader.SampleRate;
 				Rpc(nameof(ClientReceiveWavHeader), wavHeader.SampleRate, wavHeader.Bits, wavHeader.Channels);

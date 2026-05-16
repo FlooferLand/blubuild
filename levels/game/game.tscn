@@ -55,6 +55,10 @@ light_energy = 0.445
 light_angular_distance = 1.0
 shadow_enabled = true
 
+[node name="Foxy" parent="." unique_id=1191031499 node_paths=PackedStringArray("Greybox") instance=ExtResource("4_6ojey")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.8077226, 0, 0)
+Greybox = NodePath("../Map/Greybox")
+
 [node name="Map" type="Node3D" parent="." unique_id=1070789087]
 
 [node name="Area" type="CSGCombiner3D" parent="Map" unique_id=168153153]
@@ -117,10 +121,6 @@ ReelToReel = NodePath("../ReelToReel")
 
 [node name="Speaker" parent="Map" unique_id=202403579 node_paths=PackedStringArray("Greybox") instance=ExtResource("7_6mtqr")]
 transform = Transform3D(-0.3862763, 0, -0.9223831, 0, 1, 0, 0.9223831, 0, -0.3862763, -6.1403747, 0.002177596, -0.9424628)
-Greybox = NodePath("../Greybox")
-
-[node name="Foxy" parent="Map" unique_id=1191031499 node_paths=PackedStringArray("Greybox") instance=ExtResource("4_6ojey")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.8077226, 0, 0)
 Greybox = NodePath("../Greybox")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Map" unique_id=901095487]

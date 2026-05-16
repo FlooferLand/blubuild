@@ -6,17 +6,20 @@ using GodotUtils;
 namespace Project;
 
 /// Contains all the bit to/from name mappings
-public readonly record struct BitChart(Dictionary<string, BitChart.Fixture> Fixtures) {
+public readonly record struct BitChart(
+    Dictionary<string, BitChart.Fixture> Fixtures,
+    string[] ShowExtensions
+) {
     public readonly record struct Fixture(Dictionary<Bit, string> ActionNames);
 
-    public static Result<BitChart> Load(string path) {
+    public static Result<BitChart> Load(string path, string[] showExtensions) {
         using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
         if (file == null) return Result.Err($"Failed to read bitchart at '{path}': {FileAccess.GetOpenError()}");
 
         // Parsing the CSV
-        (var csv, string? err) = CsvData.ReadFromFile(file);
+        var result = CsvData.ReadFromFile(file);
+        if (!result.Try(out var csv, out string? err)) return Result.Err(err);
         file.Close();
-        if (err != null) return Result.Err(err);
         if (csv.Headers.Length < 3) return Result.Err("CSV doesn't contain all necessary fields (Bit G#, Fixture, Action)");
 
         // Parsing the header
@@ -39,7 +42,8 @@ public readonly record struct BitChart(Dictionary<string, BitChart.Fixture> Fixt
             fixture.ActionNames[bitId] = actionName;
         }
 
-        return Result.Ok(new BitChart(fixtures));
+        // TODO: Add a proper way to get viable show extensions for BitCharts
+        return Result.Ok(new BitChart(fixtures, showExtensions));
         int GetId(string match, int @default) =>
             Array.FindIndex(csv.Headers, h => h.Contains(match, StringComparison.CurrentCultureIgnoreCase)) is var i && i != -1 ? i : @default;
     }

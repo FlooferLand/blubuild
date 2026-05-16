@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bd0xfxhmbxuo1"]
+
+[ext_resource type="Script" uid="uid://dddom12cf8f2v" path="res://components/interact/InteractComponentInner.cs" id="1_o8swf"]
+[ext_resource type="Script" uid="uid://boygh5j6sgm8d" path="res://components/interact/InteractComponent.cs" id="1_rtu5l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rtu5l"]
+resource_local_to_scene = true
+size = Vector3(0, 0, 0)
+
+[node name="InteractComponent" type="Node3D" unique_id=527580061 node_paths=PackedStringArray("Inner", "Collision")]
+script = ExtResource("1_rtu5l")
+Inner = NodePath("Area3D")
+Collision = NodePath("Area3D/CollisionShape3D")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=45574834 node_paths=PackedStringArray("Outer")]
+script = ExtResource("1_o8swf")
+Outer = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1714688268]
+shape = SubResource("BoxShape3D_rtu5l")
+debug_color = Color(0.9917187, 0, 0.29687712, 1)

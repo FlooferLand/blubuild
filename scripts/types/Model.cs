@@ -15,7 +15,7 @@ public readonly record struct Model(GltfDocument Document, GltfState State) {
     public long Size => State.GlbData.Length;
 
     /// Returns an error, if there's any
-    public async Task<string?> Save(Stream stream, ProgressHolder progress) {
+    public async ValueTask<string?> Save(Stream stream, ProgressHolder progress) {
         if (!stream.CanWrite) return "Stream can't be written to";
         if (State == null) return "State is null";
         var (document, state) = (Document, State);
@@ -26,8 +26,16 @@ public readonly record struct Model(GltfDocument Document, GltfState State) {
         return null;
     }
 
+    public async ValueTask<Result<Node3D>> CreateScene() {
+        var (document, state) = (Document, State);
+        var scene = await Task.Run(() => document.GenerateScene(state, bakeFps: 60f, trimming: true));
+        if (scene is not Node3D root)
+            return Result.Err("Failed to create model scene");
+        return Result.Ok(root);
+    }
+
     /// Loads a model from the filesystem along with any textures in its folder
-    public static async Task<Result<Model>> Load(string path, ProgressHolder progress) {
+    public static async ValueTask<Result<Model>> Load(string path, ProgressHolder progress) {
         var document = new GltfDocument();
         var state = new GltfState();
         progress.Set("Reading the model file");
@@ -37,7 +45,7 @@ public readonly record struct Model(GltfDocument Document, GltfState State) {
     }
 
     /// Loads a model from a stream. Requires the textures and other data since there's no other way to get them
-    public static async Task<Result<Model>> Load(Stream stream, Dictionary<string, Image> textures, ProgressHolder progress) {
+    public static async ValueTask<Result<Model>> Load(Stream stream, Dictionary<string, Image> textures, ProgressHolder progress) {
         var document = new GltfDocument();
         var state = new GltfState();
 

@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using Godot;
 using GodotUtils;
@@ -20,6 +21,7 @@ public partial class Player : CharacterBody3D {
 	[Export] public required PlayerInput PlayerInput;
 	[Export] public required Label3D Nameplate;
 	[Export] public required MeshInstance3D Model;
+	[Export] public required Control Crosshair;
 
 	// Variables
 	[ExportGroup("Variables")]
@@ -37,6 +39,7 @@ public partial class Player : CharacterBody3D {
 			Nameplate.Text = value;
 		}
 	}
+	IPlayerInteractable? hovered = null;
 
 	public void SetNetworkPlayerId(int id) {
 		PlayerId = id;
@@ -63,14 +66,16 @@ public partial class Player : CharacterBody3D {
 			GD.PushWarning($"Player rotation should be achieved with {nameof(BodyPivot)}! Rotation was set on {Name}");
 			Rotation = Vector3.Zero;
 		}
+
+		// Interaction
+		hovered = null;
+		InteractRay.ForceRaycastUpdate();
+		if (InteractRay.GetCollider() is Node and IPlayerInteractable interactable)
+			hovered = interactable;
+		Crosshair.Modulate = hovered != null ? Colors.White : Colors.Transparent;
 	}
 
-	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
-	public void ApplyInteractionServerside() {
-		Log.Debug(InteractRay.GetCollider()?.ToString());
-	}
-
-	public void ApplyMovementServerside(double delta) {
+	void ApplyMovementServerside(double delta) {
 		// Camera
 		var mouseInput = PlayerInput.InputMouse * MouseSensitivity;
 		BodyPivot.RotateY(-mouseInput.X);
@@ -98,6 +103,30 @@ public partial class Player : CharacterBody3D {
 		// Footstep sounds
 		if (IsOnFloor()) {
 			// TODO: Footstep sounds
+		}
+	}
+
+	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferChannel = TransferChannels.PlayerMessages, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+	public async void Server_ApplyInteraction(InteractType type, InteractState state) {
+		try {
+			if (!Multiplayer.IsServer()) return;
+			if (hovered is not {} collider) return;
+
+			await collider.Interact(new InteractContext(this, type, state));
+			var path = ((Node) collider).GetPath();
+			Rpc(nameof(Client_ApplyInteraction), path, (int) type, (int) state);
+		} catch (Exception e) {
+			Log.Error(e);
+		}
+	}
+
+	[Rpc(CallLocal = false, TransferChannel = TransferChannels.PlayerMessages, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+	async void Client_ApplyInteraction(NodePath interactor, InteractType type, InteractState state) {
+		try {
+			var node = (IPlayerInteractable) GetNode(interactor);
+			await node.Interact(new InteractContext(this, type, state));
+		} catch (Exception e) {
+			Log.Error(e);
 		}
 	}
 }

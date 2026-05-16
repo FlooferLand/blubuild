@@ -68,7 +68,7 @@ public partial class BitPicker : PopupPanel {
 
 	void BuildTree() {
 		var rootItem = Tree.CreateItem();
-		foreach ((string chartId, var chart) in BitChartRegistry.Instance.Charts) {
+		foreach ((string chartId, var chart) in BitChartRegistry.Charts) {
 			var chartItem = Tree.CreateItem(rootItem);
 			chartItem.SetText(0, chartId);
 			foreach ((string fixtureId, var fixture) in chart.Fixtures) {

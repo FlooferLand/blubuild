@@ -16,11 +16,17 @@ public static class Extensions {
                && node.IsMultiplayerAuthority();
     }
 
-    /// Short for checking if I'm on the server, and sending the data to every ID expect the server one
-    public static void ServerRpcToClients(this Node node, StringName method, params Variant[] args) {
-        if (!node.Multiplayer.IsServer()) return;
-        foreach (long id in NetworkManager.Players.Keys.Where(id => id != 1)) {
-            node.RpcId(id, method, args);
+    extension (Node node) {
+        /// Short for checking if I'm on the server, and sending the data to every ID expect the server one
+        /// TODO: Check if this is even required. Rpc(..) seems to work fine
+        public void ServerRpcToClients(StringName method, params Variant[] args) {
+            if (!node.Multiplayer.IsServer()) return;
+            foreach (long id in node.Multiplayer.GetPeers().Where(id => id != 1)) {
+                node.RpcId(id, method, args);
+            }
+        }
+        public Error RpcToServer(StringName method, params Variant[] args) {
+            return node.RpcId(1, method, args);
         }
     }
 
